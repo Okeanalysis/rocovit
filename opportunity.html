@@ -542,7 +542,7 @@ nav .cta-demo:hover {
       <!-- Door 2 -->
       <div class="door-card even">
         <div class="door-icon-col">
-          <div class="icon-box" style="background: rgba(13,148,136,0.1); border: 2px solid rgba(13,148,136,0.2); color: var(--color-highlight);">âœ“</div>
+          <div class="icon-box" style="background: rgba(13,148,136,0.1); border: 2px solid rgba(13,148,136,0.2); color: var(--color-highlight);">✓</div>
         </div>
         <div class="door-text-col">
           <span class="door-num">DOOR 02</span>
@@ -555,7 +555,7 @@ nav .cta-demo:hover {
       <!-- Door 3 -->
       <div class="door-card odd">
         <div class="door-icon-col">
-          <div class="icon-box" style="background: rgba(124,58,237,0.1); border: 2px solid rgba(124,58,237,0.2); color: #7C3AED;">â†‘</div>
+          <div class="icon-box" style="background: rgba(124,58,237,0.1); border: 2px solid rgba(124,58,237,0.2); color: #7C3AED;">←</div>
         </div>
         <div class="door-text-col">
           <span class="door-num">DOOR 03</span>
@@ -568,7 +568,7 @@ nav .cta-demo:hover {
       <!-- Door 4 -->
       <div class="door-card even">
         <div class="door-icon-col">
-          <div class="icon-box" style="background: rgba(14,165,233,0.1); border: 2px solid rgba(14,165,233,0.2); color: #0EA5E9; font-size: 32px;">âœˆ</div>
+          <div class="icon-box" style="background: rgba(14,165,233,0.1); border: 2px solid rgba(14,165,233,0.2); color: #0EA5E9; font-size: 32px;">✈</div>
         </div>
         <div class="door-text-col">
           <span class="door-num">DOOR 04</span>
@@ -603,15 +603,15 @@ nav .cta-demo:hover {
         <p style="font-family: var(--font-sans); font-size: 16px; color: #64748b; line-height: 1.7; margin-bottom: 24px;">Every SME that cannot produce financial statements is a potential client your firm is currently turning away. Rocovit makes those engagements profitable. See exactly what the opportunity looks like for your practice size.</p>
         
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-          <span style="color: var(--color-highlight);">âœ“</span>
+          <span style="color: var(--color-highlight);">✓</span>
           <span style="font-family: var(--font-sans); font-size: 14px; color: var(--color-dark);">First engagement completely free - no bundle required</span>
         </div>
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-          <span style="color: var(--color-highlight);">âœ“</span>
+          <span style="color: var(--color-highlight);">✓</span>
           <span style="font-family: var(--font-sans); font-size: 14px; color: var(--color-dark);">All seven compliance output formats included in every engagement</span>
         </div>
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-          <span style="color: var(--color-highlight);">âœ“</span>
+          <span style="color: var(--color-highlight);">✓</span>
           <span style="font-family: var(--font-sans); font-size: 14px; color: var(--color-dark);">Prior year data pre-loads for returning clients automatically</span>
         </div>
       </div>
@@ -1218,8 +1218,8 @@ nav .cta-demo:hover {
         <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
         <div class="footer-socials">
           <a href="#" class="social-icon">in</a>
-          <a href="#" class="social-icon">ð•</a>
-          <a href="#" class="social-icon">âŠ•</a>
+          <a href="#" class="social-icon">ð•</a>
+          <a href="#" class="social-icon">⊕</a>
         </div>
       </div>
       <div class="footer-col">
@@ -1280,13 +1280,13 @@ nav .cta-demo:hover {
     document.querySelector('.share-btn')?.addEventListener('click', function() {
       navigator.clipboard.writeText(window.location.href).then(() => {
         const original = this.textContent;
-        this.textContent = 'Link copied âœ“';
+        this.textContent = 'Link copied ✓';
         setTimeout(() => { this.textContent = original; }, 2000);
       });
     });
 
     // MODAL LOGIC
-    const mo=document.createElement('div');mo.id='modal-overlay';mo.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:2000;opacity:0;pointer-events:none;transition:opacity 300ms ease;display:flex;align-items:center;justify-content:center;';mo.innerHTML=`<div id="modal-card" style="background:#fff;border-radius:16px;padding:48px;width:480px;max-width:calc(100vw - 48px);position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.3);"><button id="modal-close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;color:#94a3b8;cursor:pointer;">Ã—</button><div id="modal-form-content"><h2 style="font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:#0f172a;margin-bottom:8px;">Book a Demo</h2><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;margin-bottom:32px;">A member of the Rocovit team will be in touch within 24 hours.</p><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Full Name</label><input type="text" placeholder="Jane Mensah" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Email Address</label><input type="email" placeholder="jane@firm.com" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Company Name</label><input type="text" placeholder="Mensah & Associates" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">SME Clients Per Month</label><select style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;background:white;"><option value="">Select range</option><option>1-10 clients</option><option>11-25 clients</option><option>26-75 clients</option><option>76-200 clients</option><option>200+ clients</option></select></div><button id="modal-submit" style="width:100%;padding:14px;background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;border:none;border-radius:8px;cursor:pointer;margin-top:4px;">Request Demo</button></div><div id="modal-confirm" style="display:none;text-align:center;padding:20px 0;"><div style="width:64px;height:64px;border-radius:50%;background:#F0FDF4;border:2px solid #BBF7D0;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;">âœ“</div><h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;color:#0f172a;margin-bottom:8px;">You are confirmed.</h3><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;">A member of the Rocovit team will be in touch within 24 hours.</p></div></div>`;
+    const mo=document.createElement('div');mo.id='modal-overlay';mo.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:2000;opacity:0;pointer-events:none;transition:opacity 300ms ease;display:flex;align-items:center;justify-content:center;';mo.innerHTML=`<div id="modal-card" style="background:#fff;border-radius:16px;padding:48px;width:480px;max-width:calc(100vw - 48px);position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.3);"><button id="modal-close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;color:#94a3b8;cursor:pointer;">×</button><div id="modal-form-content"><h2 style="font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:#0f172a;margin-bottom:8px;">Book a Demo</h2><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;margin-bottom:32px;">A member of the Rocovit team will be in touch within 24 hours.</p><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Full Name</label><input type="text" placeholder="Jane Mensah" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Email Address</label><input type="email" placeholder="jane@firm.com" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Company Name</label><input type="text" placeholder="Mensah & Associates" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">SME Clients Per Month</label><select style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;background:white;"><option value="">Select range</option><option>1-10 clients</option><option>11-25 clients</option><option>26-75 clients</option><option>76-200 clients</option><option>200+ clients</option></select></div><button id="modal-submit" style="width:100%;padding:14px;background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;border:none;border-radius:8px;cursor:pointer;margin-top:4px;">Request Demo</button></div><div id="modal-confirm" style="display:none;text-align:center;padding:20px 0;"><div style="width:64px;height:64px;border-radius:50%;background:#F0FDF4;border:2px solid #BBF7D0;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;">✓</div><h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;color:#0f172a;margin-bottom:8px;">You are confirmed.</h3><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;">A member of the Rocovit team will be in touch within 24 hours.</p></div></div>`;
     document.body.appendChild(mo);
     function openModal(){mo.style.opacity='1';mo.style.pointerEvents='all';document.body.style.overflow='hidden';}
     function closeModal(){mo.style.opacity='0';mo.style.pointerEvents='none';document.body.style.overflow='';}
