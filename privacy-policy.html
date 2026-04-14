@@ -1,0 +1,1259 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Rocovit</title>
+  <style>
+/* ===== NAVIGATION MASTER ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  height: var(--nav-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  transition: 300ms ease;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.logo-symbol {
+  color: var(--color-highlight);
+  margin-left: 4px;
+  font-size: 18px;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-dark);
+  transition: 200ms;
+}
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.currency-nav-pill {
+  background: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-login {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 200ms;
+}
+.btn-login:hover {
+  background: rgba(37,99,235,0.05);
+}
+nav .cta-demo {
+  background: var(--color-highlight);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+nav .cta-demo:hover {
+  opacity: 0.9;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  transition: 0.3s ease;
+}
+.mobile-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer.open {
+  max-height: 500px;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.mobile-drawer a {
+  padding: 16px 24px;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 16px;
+  display: block;
+}
+.mobile-drawer a:hover {
+  color: var(--color-primary);
+  background: var(--color-light);
+}
+.mobile-drawer .drawer-cta {
+  padding: 20px 24px;
+  background: #f8fafc;
+}
+.mobile-drawer .drawer-cta .cta-demo {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--color-highlight);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 16px !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .btn-login {
+    display: none !important;
+  }
+  .currency-nav-pill {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+  }
+  nav .cta-demo {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    white-space: nowrap !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+  }
+  .nav-container {
+    padding: 0 !important;
+  }
+}
+/* ===== END NAVIGATION MASTER ===== */
+
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #0f172a;
+      --color-highlight: #0d9488;
+      --color-light: #f8fafc;
+      --color-white: #ffffff;
+      --color-border: #e2e8f0;
+      --font-display: "Syne", sans-serif;
+      --font-sans: "DM Sans", sans-serif;
+      --font-mono: "DM Mono", monospace;
+      --nav-height: 72px;
+      --nav-height-mobile: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-white);
+      color: var(--color-dark);
+      padding-top: var(--nav-height);
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+      background: var(--color-dark);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      padding: 60px 24px;
+    }
+
+    .hero-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 44px;
+      color: var(--color-white);
+      margin-bottom: 12px;
+    }
+
+    .last-updated {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    /* Body Section */
+    .policy-body {
+      background: var(--color-white);
+      padding: 60px 24px;
+    }
+
+    .policy-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .policy-container h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--color-dark);
+      margin-top: 48px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 12px;
+    }
+
+    .policy-container h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-dark);
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    .policy-container p {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .policy-container ul {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.7;
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .policy-container strong {
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+
+    /* Footer */
+    footer {
+      background: #080F1E;
+      padding: 80px 24px 40px;
+    }
+
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      gap: 48px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .footer-diamond {
+      color: #0d9488;
+      font-size: 18px;
+    }
+
+    .footer-wordmark {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      color: #2563eb;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 13px;
+      text-decoration: none;
+      font-family: var(--font-sans);
+    }
+
+    .social-icon:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-col-header {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: #94a3b8;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .compliance-badge {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .dot-green {
+      background: #16A34A;
+    }
+
+    .dot-blue {
+      background: #2563eb;
+    }
+
+    .badge-title {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #ffffff;
+    }
+
+    .badge-sub {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .footer-divider {
+      max-width: 1200px;
+      margin: 48px auto 24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom span, .footer-bottom a {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #64748b;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: #ffffff;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+      nav .nav-centre-links {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: var(--nav-height-mobile) !important;
+      }
+      .hero {
+        min-height: calc(100vh - var(--nav-height-mobile));
+        padding: 40px 24px;
+      }
+      .mobile-drawer {
+        top: var(--nav-height-mobile) !important;
+      }
+      /* Fix hero padding below fixed nav */
+      .hero,
+      [class*="hero"],
+      [class*="page-hero"],
+      [class*="article-hero"],
+      [class*="blog-hero"],
+      [class*="legal-hero"],
+      [class*="policy-hero"] {
+        padding-top: 40px !important;
+      }
+      .nav-bar {
+        padding: 0 !important;
+        height: 56px !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .nav-container {
+        padding: 0 16px !important;
+        height: 56px !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+      .nav-links {
+        display: none !important;
+      }
+      .btn-login {
+        display: none !important;
+      }
+      .currency-pill {
+        display: none !important;
+      }
+      .hamburger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0 !important;
+      }
+      .btn-demo {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        white-space: nowrap !important;
+        height: 32px !important;
+        line-height: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .nav-right {
+        gap: 8px !important;
+        align-items: center !important;
+        height: 56px !important;
+        display: flex !important;
+      }
+      .logo {
+        display: flex !important;
+        align-items: center !important;
+        height: 56px !important;
+      }
+      /* Typography */
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+      }
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Section spacing */
+      section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      /* Navigation */
+      .mobile-drawer a {
+        padding: 16px 24px;
+        text-decoration: none;
+        color: var(--color-dark);
+        font-family: var(--font-sans);
+        font-weight: 500;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 16px;
+      }
+
+      .drawer-cta {
+        padding: 16px;
+      }
+
+      .mobile-drawer .cta-demo {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+      }
+
+      /* Footer */
+      .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+      }
+      .footer-legal {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+      }
+
+      /* Modal full screen */
+      #modal-overlay {
+        align-items: flex-end !important;
+      }
+      #modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 90vh !important;
+        border-radius: 16px 16px 0 0 !important;
+        padding: 32px 20px !important;
+        overflow-y: auto !important;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+
+      /* Buttons */
+      button.cta-demo,
+      a.cta-demo {
+        min-height: 48px !important;
+        font-size: 15px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+    @media (max-width: 768px) {
+      /* Hero two column to single column */
+      .hero-container,
+      [class*="hero-layout"],
+      [class*="hero-columns"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      .hero-text,
+      [class*="hero-left"],
+      [class*="hero-content"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-visual,
+      #hero-visual-placeholder,
+      [class*="hero-right"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Hero stat pills wrap */
+      [class*="stat-pills"],
+      [class*="hero-pills"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+
+      /* Revenue card numbers smaller on mobile */
+      .rev-number {
+        font-size: 22px !important;
+      }
+      .revenue-divider {
+        padding: 0 8px !important;
+      }
+
+      /* All three column grids to single column */
+      [class*="three-col"],
+      [class*="cards-grid"],
+      [class*="article-grid"],
+      [class*="blog-cards"],
+      [class*="output-cards"],
+      [class*="related-cards"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* All two column grids to single column */
+      [class*="two-col"],
+      [class*="alternating"],
+      [class*="split-layout"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      /* Cards full width */
+      [class*="card"],
+      [class*="-card"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      /* FLEX ROWS TO COLUMN */
+      [class*="trust-bar"],
+      [class*="sme-callout"],
+      [class*="profession-crisis"],
+      [class*="roi-container"],
+      [class*="calculator-container"],
+      [class*="footer-brand"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
+      .bundle-cards-row,
+      [class*="bundle-cards"],
+      [class*="pricing-cards"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .bundle-card,
+      [class*="bundle-card"],
+      [class*="pricing-card"] {
+        min-width: 260px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+
+      /* Swipe hint label */
+      .swipe-hint {
+        display: block !important;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: #94a3b8;
+        text-align: center;
+        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+      }
+
+      /* ARTICLE PAGES */
+      [class*="article-hero"],
+      .article-hero {
+        padding: 100px 20px 40px !important;
+      }
+      [class*="article-body"],
+      .article-body {
+        padding: 40px 20px !important;
+      }
+      [class*="stat-callout"],
+      .stat-callout {
+        padding: 16px !important;
+      }
+      [class*="stat-number"] {
+        font-size: 28px !important;
+      }
+      [class*="pull-quote"],
+      blockquote {
+        margin: 20px 0 !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+      }
+      [class*="related-articles"] {
+        padding: 40px 20px !important;
+      }
+      [class*="related-cards"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* BLOG INDEX PAGE */
+      [class*="featured-article"],
+      .featured-article {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      [class*="featured-visual"],
+      .featured-visual {
+        height: 180px !important;
+        min-height: 0 !important;
+      }
+      [class*="subscribe-form"],
+      #subscribe-form {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      #subscribe-form input {
+        width: 100% !important;
+      }
+      #subscribe-form button {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+
+      /* OPPORTUNITY PAGE - FIVE DOORS */
+      [class*="door-row"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      [class*="door-icon"] {
+        margin: 0 auto 16px !important;
+      }
+      [class*="door-text"] {
+        text-align: left !important;
+      }
+
+      /* ABOUT PAGE - FOUNDER AND STATS */
+      [class*="founder-card"],
+      [class*="founder-layout"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+      [class*="stats-grid"],
+      [class*="shortage-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* SECURITY PAGE */
+      [class*="security-grid"],
+      [class*="trust-grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      [class*="faq-item"] {
+        padding: 16px 0 !important;
+      }
+
+      /* HOW IT WORKS PAGE */
+      [class*="pipeline-steps"],
+      [class*="steps-container"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="step-arrow"],
+      [class*="connecting-arrow"] {
+        display: none !important;
+      }
+
+      /* OUTPUTS PAGE */
+      [class*="output-row"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      [class*="output-visual"] {
+        width: 100% !important;
+      }
+
+      /* LEGAL PAGES */
+      .legal-container {
+        padding: 60px 20px !important;
+      }
+      .legal-content h1 {
+        font-size: 32px !important;
+      }
+
+      /* FINAL CTA */
+      [class*="final-cta"],
+      .final-cta-section {
+        padding: 60px 20px !important;
+        text-align: center !important;
+      }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-5 ===== */
+    @media (max-width: 768px) {
+      /* Legal hero */
+      [class*="legal-hero"],
+      [class*="policy-hero"],
+      [class*="page-hero"] {
+        padding: 80px 20px 36px !important;
+        min-height: 0 !important;
+      }
+
+      /* Legal hero headline */
+      [class*="legal-hero"] h1,
+      [class*="policy-hero"] h1 {
+        font-size: 28px !important;
+      }
+
+      /* Legal body */
+      [class*="legal-body"],
+      [class*="policy-body"] {
+        padding: 36px 20px !important;
+      }
+
+      /* Legal H2 headings */
+      [class*="legal-body"] h2,
+      [class*="policy-body"] h2 {
+        font-size: 20px !important;
+        margin-top: 36px !important;
+        padding-bottom: 10px !important;
+      }
+
+      /* Legal H3 headings */
+      [class*="legal-body"] h3,
+      [class*="policy-body"] h3 {
+        font-size: 16px !important;
+        margin-top: 24px !important;
+      }
+
+      /* Legal body text */
+      [class*="legal-body"] p,
+      [class*="policy-body"] p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Legal lists */
+      [class*="legal-body"] ul,
+      [class*="legal-body"] ol,
+      [class*="policy-body"] ul,
+      [class*="policy-body"] ol {
+        padding-left: 16px !important;
+        font-size: 15px !important;
+      }
+
+      /* Cookie table - horizontal scroll */
+      table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        font-size: 13px !important;
+        width: 100% !important;
+      }
+      table::-webkit-scrollbar {
+        display: none !important;
+      }
+      th {
+        font-size: 11px !important;
+        padding: 10px 12px !important;
+        white-space: nowrap !important;
+      }
+      td {
+        font-size: 13px !important;
+        padding: 10px 12px !important;
+        min-width: 100px !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="site-uniform.css"></head>
+<body>
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="outputs.html">Outputs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+<button class="btn-login">Login</button>
+      <button class="cta-demo">Book a Demo</button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="how-it-works.html">How It Works</a>
+  <a href="outputs.html">Outputs</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="security.html">Security</a>
+  <a href="about.html">About Us</a>
+  <div class="drawer-cta">
+    <button class="cta-demo">Book a Demo</button>
+  </div>
+</div>
+
+  <section class="hero">
+    <div class="hero-container">
+      <h1>Privacy Policy</h1>
+      <span class="last-updated">Last updated: March 2026</span>
+    </div>
+  </section>
+
+  <section class="policy-body">
+    <div class="policy-container">
+      <h2>1. Who We Are</h2>
+      <p>Rocovit Limited operates the Rocovit platform at rocovit.com. We are a financial statement production engine serving accounting firms and audit practices across emerging markets. For privacy enquiries contact <strong>privacy@rocovit.com</strong>.</p>
+
+      <h2>2. What Data We Collect</h2>
+      <p>We collect and process data in three categories:</p>
+      <ul>
+        <li><strong>Account data:</strong> name, email, company name, role, and billing information collected at registration.</li>
+        <li><strong>Engagement data:</strong> financial data uploaded or connected by your firm including bank statements, ledger exports, prior year financial statements, and open banking feeds.</li>
+        <li><strong>Usage data:</strong> platform activity logs, feature usage, session data, browser type, and IP address.</li>
+      </ul>
+
+      <h2>3. How We Use Your Data</h2>
+      <p>We use your data for five primary purposes:</p>
+      <ul>
+        <li><strong>Delivering the Rocovit service:</strong> processing engagements and generating outputs.</li>
+        <li><strong>Account management:</strong> login, billing, and support.</li>
+        <li><strong>Platform improvement:</strong> aggregate usage analytics to improve features.</li>
+        <li><strong>Security and compliance:</strong> fraud detection, audit logging, and regulatory obligations.</li>
+        <li><strong>Communications:</strong> service updates and support responses. We do not send marketing emails without explicit consent.</li>
+      </ul>
+
+      <h2>4. What We Never Do</h2>
+      <p>We make four absolute commitments to our users:</p>
+      <ul>
+        <li>We <strong>never</strong> sell your data or your clients' data to any third party.</li>
+        <li>We <strong>never</strong> use your client financial data to train AI or machine learning models.</li>
+        <li>We <strong>never</strong> share engagement data between accounting firms.</li>
+        <li>We <strong>never</strong> process your data for purposes beyond those stated in this policy.</li>
+      </ul>
+
+      <h2>5. Legal Basis for Processing</h2>
+      <p>We process data under four legal bases:</p>
+      <ul>
+        <li><strong>Contract performance:</strong> processing necessary to deliver the Rocovit service you have contracted for.</li>
+        <li><strong>Legal obligation:</strong> retaining financial records as required by applicable law.</li>
+        <li><strong>Legitimate interests:</strong> security monitoring, fraud prevention, and platform improvement using aggregate data.</li>
+        <li><strong>Consent:</strong> marketing communications where you have explicitly opted in.</li>
+      </ul>
+
+      <h2>6. Data Retention</h2>
+      <ul>
+        <li><strong>Financial engagement data:</strong> retained for 7 years in line with regulatory requirements across our operating markets.</li>
+        <li><strong>Account data:</strong> retained for the duration of your account plus 90 days post-cancellation.</li>
+        <li><strong>Usage logs:</strong> retained for 24 months.</li>
+        <li><strong>On cancellation:</strong> your data remains accessible for 90 days then is permanently deleted. You may request immediate deletion at any time.</li>
+      </ul>
+
+      <h2>7. Data Security</h2>
+      <ul>
+        <li>AES-256 encryption for all data at rest.</li>
+        <li>TLS 1.3 for all data in transit.</li>
+        <li>Tenant-level database isolation - no firm can access another firm's data.</li>
+        <li>Immutable audit logs for all data access events.</li>
+        <li>SOC 2 Type II certification in progress - current controls meet SOC 2 requirements in practice.</li>
+      </ul>
+
+      <h2>8. Your Rights</h2>
+      <p>The following rights are available to all users regardless of location:</p>
+      <ul>
+        <li><strong>Access:</strong> request a copy of all data we hold about you.</li>
+        <li><strong>Correction:</strong> request correction of inaccurate data.</li>
+        <li><strong>Deletion:</strong> request permanent deletion of your data.</li>
+        <li><strong>Portability:</strong> request your data in a machine-readable format.</li>
+        <li><strong>Objection:</strong> object to processing for legitimate interests purposes.</li>
+      </ul>
+      <p>To exercise any right email <strong>privacy@rocovit.com</strong>. All requests acknowledged within 48 hours and processed within 30 days.</p>
+
+      <h3>Jurisdiction Specific Rights</h3>
+      <p><strong>Nigeria (NDPR):</strong> Nigerian users have the right to be informed, right of access, right to object to processing, right to rectification, right to erasure, and right to data portability.</p>
+      <p><strong>South Africa (POPIA):</strong> South African users have the right to notification, right of access, right to correction, and right to objection.</p>
+      <p><strong>European Union (GDPR):</strong> EU users have the right to be informed, access, rectification, erasure, restrict processing, data portability, object, and rights in relation to automated decision making and profiling.</p>
+
+      <h2>9. Regulatory Compliance</h2>
+      <h3>NDPR (Nigeria)</h3>
+      <p>Rocovit complies with the Nigeria Data Protection Regulation administered by the Nigeria Data Protection Commission. Nigerian data subjects may lodge complaints with the NDPC.</p>
+      <h3>POPIA (South Africa)</h3>
+      <p>Rocovit meets POPIA requirements for South African data subjects. We have appointed an Information Officer as required.</p>
+      <h3>GDPR (European Union)</h3>
+      <p>Rocovit complies with GDPR for EU data subjects. We maintain a lawful basis for all processing and honour all data subject rights. EU data subjects may lodge complaints with their national supervisory authority.</p>
+      <h3>International Transfers</h3>
+      <p>Where data is transferred outside the country of collection we apply appropriate safeguards including standard contractual clauses.</p>
+
+      <h2>10. Cookies and Tracking</h2>
+      <p>We use essential cookies for session management and authentication. We use analytics cookies to understand aggregate platform usage. We do not use advertising or tracking cookies. See our Cookie Policy for full details.</p>
+
+      <h2>11. Third Party Services</h2>
+      <p>We use third party services for cloud infrastructure, payment processing, and email delivery. All third parties are bound by data processing agreements and may only process your data as instructed by Rocovit. We do not share personal data with third parties for their own purposes.</p>
+
+      <h2>12. Children</h2>
+      <p>Rocovit is a professional platform intended for use by accounting firms and registered businesses. We do not knowingly collect data from individuals under 18.</p>
+
+      <h2>13. Changes to This Policy</h2>
+      <p>We will notify registered users by email of material changes to this policy at least 30 days before they take effect. Continued use of Rocovit after the effective date constitutes acceptance of the updated policy.</p>
+
+      <h2>14. Contact</h2>
+      <p>For any privacy question, data request, or complaint: <strong>privacy@rocovit.com</strong>. We acknowledge all messages within 48 hours.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-diamond"></span>
+          <span class="footer-wordmark">Rocovit</span>
+        </div>
+        <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-icon" aria-label="Twitter">ð•</a>
+          <a href="#" class="social-icon" aria-label="Website">âŠ•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">PRODUCT</p>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPANY</p>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="opportunity.html">SME Opportunity</a>
+        <a href="mailto:hello@rocovit.com">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPLIANCE</p>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">NDPR Compliant</span><span class="badge-sub">Nigeria Data Protection Regulation</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">POPIA Compliant</span><span class="badge-sub">South Africa</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">GDPR Compliant</span><span class="badge-sub">European Union</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-blue"></span>
+          <div><span class="badge-title">SOC 2 - In Progress</span><span class="badge-sub">Certification underway</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 Rocovit Limited. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll behaviour
+    window.addEventListener('scroll',()=>{
+      const nav=document.querySelector('nav');
+      if(window.scrollY>60){
+        nav.style.boxShadow='0 2px 20px rgba(0,0,0,0.08)';
+        nav.style.padding='12px 24px';
+      } else {
+        nav.style.boxShadow='none';
+        nav.style.padding='20px 24px';
+      }
+    });
+
+    // Currency pill
+    const flags={USD:'US',NGN:'NG',AED:'AE',KES:'KE',ZAR:'ZA',GBP:'GB'};
+    function updateNavPill(c){
+      const p=document.querySelector('.currency-nav-pill');
+      if(p) p.textContent=flags[c]+' '+c;
+    }
+    document.querySelector('.currency-nav-pill')?.addEventListener('click',()=>{
+      const currencies=['USD','NGN','AED','KES','ZAR','GBP'];
+      const current=localStorage.getItem('rocovit_currency')||'USD';
+      const next=currencies[(currencies.indexOf(current)+1)%currencies.length];
+      localStorage.setItem('rocovit_currency',next);
+      updateNavPill(next);
+    });
+
+    // Mobile drawer toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (hamburger && mobileDrawer) {
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileDrawer.classList.toggle('open');
+      });
+
+      // Close drawer when clicking outside
+      document.addEventListener('click', (e) => {
+        if (mobileDrawer.classList.contains('open') && 
+            !mobileDrawer.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+        }
+      });
+
+      // Close drawer when clicking a link
+      mobileDrawer.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+        });
+      });
+    }
+
+    // Initialise on load
+    const initCurr=localStorage.getItem('rocovit_currency')||'USD';
+    updateNavPill(initCurr);
+
+    // Modal Logic
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

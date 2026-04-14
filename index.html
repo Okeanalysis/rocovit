@@ -1,0 +1,3014 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocovit | Automated Tax Compliance for SMEs</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap');
+
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #0f172a;
+      --color-highlight: #0d9488;
+      --color-light: #f8fafc;
+      --color-white: #ffffff;
+      --color-border: #e2e8f0;
+      --font-display: "Syne", sans-serif;
+      --font-sans: "DM Sans", sans-serif;
+      --font-mono: "DM Mono", monospace;
+      --nav-height: 72px;
+      --nav-height-mobile: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-white);
+      color: var(--color-dark);
+      padding-top: var(--nav-height);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+      padding: 0 24px;
+      transition: 300ms ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Left: Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--color-primary);
+    }
+
+    .logo-symbol {
+      color: var(--color-highlight);
+      margin-left: 4px;
+      font-size: 18px;
+    }
+
+    /* Centre: Links */
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--color-dark);
+      transition: 200ms;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-primary);
+    }
+
+    /* Right: Actions */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .currency-nav-pill {
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-login {
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+      background: transparent;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 200ms;
+    }
+
+    .btn-login:hover {
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .cta-demo {
+      background: var(--color-highlight);
+      color: var(--color-white);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 20px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: 200ms;
+    }
+
+    .cta-demo:hover {
+      opacity: 0.9;
+    }
+
+    /* Mobile Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1001;
+      padding: 0;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-dark);
+      transition: 0.3s ease;
+      transform-origin: center;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      width: 100%;
+      background: var(--color-white);
+      z-index: 1000;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-drawer.open {
+      max-height: 500px;
+    }
+
+    .mobile-drawer a {
+      padding: 16px 24px;
+      text-decoration: none;
+      color: var(--color-dark);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 16px;
+    }
+
+    .mobile-drawer .drawer-cta {
+      padding: 20px 24px;
+      background: #f8fafc;
+    }
+
+    .mobile-drawer .cta-demo {
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--color-dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 24px 100px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 52% 48%;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text {
+      /* Container for text elements */
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0;
+      animation: fadeInLeft 0.6s ease forwards;
+      animation-delay: 0.1s;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 52px;
+      color: var(--color-white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeInLeft 0.6s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      color: #94a3b8;
+      line-height: 1.6;
+      max-width: 520px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeInLeft 0.6s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeInLeft 0.5s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .stat-pill {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 8px 18px;
+      border-radius: 20px;
+    }
+
+    .pill-teal {
+      background: rgba(13, 148, 136, 0.15);
+      border: 1px solid rgba(13, 148, 136, 0.3);
+      color: var(--color-highlight);
+    }
+
+    .pill-blue {
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      color: var(--color-primary);
+    }
+
+    .hero-cta-group {
+      opacity: 0;
+      animation: fadeInLeft 0.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .hero-btn {
+      font-size: 16px;
+      padding: 15px 40px;
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .hero-btn:hover {
+      background: #0b7a70;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.35);
+    }
+
+    .risk-reversal {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 14px;
+      display: block;
+      opacity: 0;
+      animation: fadeInLeft 0.4s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    #hero-visual-placeholder {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 36px;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    .revenue-card {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .revenue-card-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .revenue-columns {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .revenue-col {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .rev-col-header {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .rev-col-header-teal {
+      color: var(--color-highlight);
+    }
+    .rev-number {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 26px;
+      line-height: 1;
+      color: #64748b;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .rev-number-rocovit {
+      color: var(--color-highlight);
+    }
+    .rev-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+    .rev-sub-teal {
+      color: var(--color-highlight);
+    }
+    .rev-bar {
+      height: 6px;
+      border-radius: 3px;
+      width: 100%;
+    }
+    .rev-bar-manual {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .rev-bar-rocovit {
+      background: var(--color-highlight);
+      width: 0%;
+      animation: growBar 1.5s ease forwards;
+      animation-delay: 1.2s;
+    }
+    @keyframes growBar {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    .revenue-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px;
+      gap: 4px;
+    }
+    .rev-divider-line {
+      width: 1px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .rev-multiplier {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-highlight);
+      background: var(--color-dark);
+      border: 1px solid var(--color-highlight);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .revenue-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 20px;
+      margin-top: 4px;
+    }
+    .revenue-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .revenue-footer-row:last-child {
+      border-bottom: none;
+    }
+    .rev-footer-label {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .rev-footer-value {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--color-highlight);
+    }
+    .rev-footer-white {
+      color: var(--color-white);
+    }
+    .revenue-assumption {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #475569;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-24px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 1100px) {
+      .rev-number { font-size: 22px; }
+      .revenue-divider { padding: 0 8px; }
+    }
+    @media (max-width: 900px) {
+      .rev-number { font-size: 18px; }
+      .revenue-card-label { font-size: 9px; }
+      .rev-col-header { font-size: 8px; }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: var(--nav-height-mobile) !important;
+      }
+      .hero {
+        padding-top: 120px;
+      }
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      #hero-visual-placeholder {
+        display: none;
+      }
+      .hero-headline {
+        font-size: 28px;
+      }
+      .hero-subheadline {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hero-headline {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Homepage navigation mobile fix */
+      .nav-links {
+        display: none !important;
+      }
+      .btn-login {
+        display: none !important;
+      }
+      .currency-nav-pill {
+        display: none !important;
+      }
+      .hamburger {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        cursor: pointer !important;
+        padding: 4px !important;
+        z-index: 1001 !important;
+      }
+      .hamburger span {
+        width: 20px !important;
+        height: 2px !important;
+        background: var(--color-dark) !important;
+        border-radius: 2px !important;
+        display: block !important;
+      }
+      .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+      }
+      .nav-actions .cta-demo {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        border-radius: 6px !important;
+        white-space: nowrap !important;
+        min-height: 0 !important;
+        height: auto !important;
+        line-height: 1.4 !important;
+      }
+      .nav-container {
+        padding: 0 16px !important;
+        height: 100% !important;
+      }
+
+      /* Mobile drawer */
+      .mobile-drawer {
+        position: fixed !important;
+        top: var(--nav-height-mobile) !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: white !important;
+        z-index: 999 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 400ms ease !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+      }
+      .mobile-drawer.open {
+        max-height: 500px !important;
+        border-bottom: 1px solid var(--color-border) !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+      }
+      .mobile-links {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 8px 0 !important;
+      }
+      .mobile-links a {
+        display: flex !important;
+        align-items: center !important;
+        padding: 14px 24px !important;
+        font-family: var(--font-sans) !important;
+        font-size: 15px !important;
+        color: var(--color-dark) !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid var(--color-border) !important;
+        min-height: 48px !important;
+      }
+      .mobile-links a:hover {
+        color: var(--color-primary) !important;
+        background: var(--color-light) !important;
+      }
+      .mobile-links .cta-demo {
+        margin: 16px !important;
+        padding: 14px !important;
+        background: var(--color-highlight) !important;
+        color: white !important;
+        font-family: var(--font-sans) !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        border: none !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        width: calc(100% - 32px) !important;
+        text-align: center !important;
+      }
+      nav {
+        height: var(--nav-height-mobile) !important;
+        padding: 0 16px !important;
+        z-index: 1000;
+      }
+    }
+
+    /* Trust Bar */
+    .trust-bar {
+      background: var(--color-white);
+      padding: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .trust-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .trust-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      flex-shrink: 0;
+    }
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-dark);
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 4px 14px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #16A34A;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      animation: pulse 1.5s infinite ease;
+      vertical-align: middle;
+    }
+    .live-indicator {
+      display: flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-dark);
+      flex-shrink: 0;
+    }
+
+    /* Proof Numbers */
+    .proof {
+      background: var(--color-light);
+      padding: 80px 24px;
+    }
+    .proof-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .proof-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .proof-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .proof-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-dark);
+    }
+    .proof-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .proof-col {
+      flex: 1;
+      text-align: center;
+    }
+    .proof-number {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 64px;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+    .proof-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-dark);
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .proof-desc {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.5;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+    .proof-divider {
+      width: 1px;
+      height: 80px;
+      background: var(--color-border);
+      flex-shrink: 0;
+    }
+    .proof-source {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 48px;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .proof-divider { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .proof-headline { font-size: 28px; }
+      .proof-number { font-size: 48px; }
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-container { justify-content: center; text-align: center; }
+    }
+
+    /* Problem Section */
+    .problem {
+      background: var(--color-white);
+      padding: 100px 24px;
+    }
+    .problem-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .problem-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .problem-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-dark);
+      line-height: 1.2;
+      margin-bottom: 32px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .problem-col-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .label-red { color: #DC2626; }
+    .label-green { color: #16A34A; }
+    .problem-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #FEF2F2;
+    }
+    .problem-row:last-child { border-bottom: none; }
+    .icon-x {
+      width: 20px;
+      height: 20px;
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #DC2626;
+      font-size: 12px;
+    }
+    .icon-check {
+      width: 20px;
+      height: 20px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #16A34A;
+      font-size: 11px;
+    }
+    .problem-text {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: var(--color-dark);
+    }
+
+    /* Solution Section */
+    .solution {
+      background: var(--color-light);
+      padding: 80px 24px;
+    }
+    .solution-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .solution-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .solution-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--color-dark);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .solution-body {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      color: #4B5563;
+      line-height: 1.8;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      background: var(--color-dark);
+      padding: 100px 24px;
+    }
+    .how-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .how-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .how-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .how-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-white);
+      margin-bottom: 16px;
+    }
+    .how-subheadline {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: #94a3b8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .step-grid {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .step-card {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 36px;
+      position: relative;
+      transition: transform 200ms ease, border-color 200ms ease;
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(13,148,136,0.4);
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+    .step-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--color-white);
+      margin-bottom: 12px;
+    }
+    .step-desc {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .step-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-highlight);
+      background: rgba(13,148,136,0.1);
+      border: 1px solid rgba(13,148,136,0.2);
+      border-radius: 20px;
+      padding: 4px 12px;
+      display: inline-block;
+    }
+    .step-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-highlight);
+      opacity: 0.4;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .how-footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .how-link {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--color-highlight);
+      text-decoration: none;
+      display: inline-block;
+      transition: 200ms;
+    }
+    .how-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .problem-headline { font-size: 28px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .solution-headline { font-size: 24px; }
+      .how-headline { font-size: 28px; }
+      .step-grid { flex-direction: column; }
+      .step-arrow { display: none; }
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: var(--color-light);
+      padding: 100px 24px;
+    }
+    .testimonials-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .testimonials-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .testimonials-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-dark);
+    }
+    .testimonials-grid {
+      display: flex;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      flex: 1;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .time-comparison {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .pill-before {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #DC2626;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .time-arrow {
+      color: #94a3b8;
+      font-family: var(--font-mono);
+      font-size: 14px;
+    }
+    .pill-after {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #16A34A;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .testimonial-quote {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--color-dark);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .testimonial-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .firm-type {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-highlight);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .firm-location {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    /* Profession Crisis Section */
+    .crisis {
+      background: var(--color-dark);
+      padding: 100px 24px;
+    }
+    .crisis-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .crisis-narrative {
+      /* Left column */
+    }
+    .crisis-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .crisis-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .crisis-p {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .crisis-link {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--color-highlight);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 8px;
+      transition: 200ms;
+    }
+    .crisis-link:hover {
+      text-decoration: underline;
+    }
+    .crisis-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .stat-card-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--color-white);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 80px;
+    }
+    .stat-card-info {
+      /* Right side of stat card */
+    }
+    .stat-card-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-highlight);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .stat-card-source {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1024px) {
+      .testimonials-grid {
+        flex-direction: column;
+      }
+      .crisis-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .testimonials-headline { font-size: 28px; }
+    }
+
+    /* Outputs Preview Section */
+    .outputs {
+      background: var(--color-white);
+      padding: 100px 24px;
+    }
+    .outputs-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .outputs-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .outputs-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .outputs-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-dark);
+      margin-bottom: 16px;
+    }
+    .outputs-subheadline {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .outputs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .output-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .output-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .output-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--color-dark);
+      margin-bottom: 6px;
+    }
+    .output-desc {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .geo-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .outputs-footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .outputs-link {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--color-highlight);
+      text-decoration: none;
+      display: inline-block;
+      transition: 200ms;
+    }
+    .outputs-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Blog Preview Section */
+    .blog {
+      background: var(--color-dark);
+      padding: 80px 24px;
+    }
+    .blog-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .blog-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .blog-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .blog-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--color-white);
+      margin-bottom: 16px;
+    }
+    .blog-subheadline {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: #94a3b8;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      transition: transform 200ms ease, border-color 200ms ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(13,148,136,0.4);
+    }
+    .blog-card-header {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-card-symbol {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 56px;
+      color: rgba(255,255,255,0.12);
+    }
+    .blog-card-body {
+      padding: 24px;
+    }
+    .blog-category {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-highlight);
+      background: rgba(13,148,136,0.08);
+      border: 1px solid rgba(13,148,136,0.15);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .blog-card-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--color-white);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .blog-card-summary {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .blog-read-link {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-highlight);
+    }
+    .blog-footer {
+      text-align: center;
+      margin-top: 36px;
+    }
+    .blog-link {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--color-highlight);
+      text-decoration: none;
+      display: inline-block;
+      transition: 200ms;
+    }
+    .blog-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1024px) {
+      .outputs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .outputs-headline { font-size: 28px; }
+      .outputs-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+
+    footer{background:#080F1E;padding:80px 24px 40px}
+    .footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:48px}
+    .footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+    .footer-diamond{color:#0d9488;font-size:18px}
+    .footer-wordmark{font-family:"Syne",sans-serif;font-weight:700;font-size:20px;color:#2563eb}
+    .footer-tagline{font-family:"DM Sans",sans-serif;font-size:14px;color:#64748b;margin-bottom:24px;line-height:1.5}
+    .footer-socials{display:flex;gap:8px}
+    .social-icon{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;text-decoration:none;font-family:"DM Sans",sans-serif}
+    .social-icon:hover{background:rgba(255,255,255,0.12)}
+    .footer-col-header{font-family:"DM Mono",monospace;font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px}
+    .footer-col a{display:block;font-family:"DM Sans",sans-serif;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:12px}
+    .footer-col a:hover{color:#ffffff}
+    .compliance-badge{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;margin-bottom:8px}
+    .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px}
+    .dot-green{background:#16A34A}
+    .dot-blue{background:#2563eb}
+    .badge-title{display:block;font-family:"DM Mono",monospace;font-size:11px;color:#ffffff}
+    .badge-sub{display:block;font-family:"DM Sans",sans-serif;font-size:11px;color:#64748b;margin-top:2px}
+    .footer-divider{max-width:1200px;margin:48px auto 24px;height:1px;background:rgba(255,255,255,0.06)}
+    .footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .footer-bottom span,.footer-bottom a{font-family:"DM Sans",sans-serif;font-size:13px;color:#64748b;text-decoration:none}
+    .footer-bottom a:hover{color:#ffffff}
+    .footer-legal{display:flex;gap:24px}
+    @media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+      nav .nav-centre-links {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Typography */
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+      }
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Section spacing */
+      section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      /* Navigation */
+      .nav-centre-links {
+        display: none !important;
+      }
+      .nav-actions .btn-login {
+        display: none !important;
+      }
+      .nav-actions {
+        gap: 8px !important;
+      }
+
+      /* Footer */
+      .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+      }
+      .footer-legal {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+      }
+
+      /* Modal full screen */
+      #modal-overlay {
+        align-items: flex-end !important;
+      }
+      #modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 90vh !important;
+        border-radius: 16px 16px 0 0 !important;
+        padding: 32px 20px !important;
+        overflow-y: auto !important;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+
+      /* Buttons */
+      .nav-actions .cta-demo {
+        min-height: 0 !important;
+        height: auto !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+    @media (max-width: 768px) {
+      /* Hero two column to single column */
+      .hero-container,
+      [class*="hero-layout"],
+      [class*="hero-columns"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      .hero-text,
+      [class*="hero-left"],
+      [class*="hero-content"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-visual,
+      #hero-visual-placeholder,
+      [class*="hero-right"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Hero stat pills wrap */
+      [class*="stat-pills"],
+      [class*="hero-pills"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+
+      /* Revenue card numbers smaller on mobile */
+      .rev-number {
+        font-size: 22px !important;
+      }
+      .revenue-divider {
+        padding: 0 8px !important;
+      }
+
+      /* All three column grids to single column */
+      [class*="three-col"],
+      [class*="cards-grid"],
+      [class*="article-grid"],
+      [class*="blog-cards"],
+      [class*="output-cards"],
+      [class*="related-cards"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* All two column grids to single column */
+      [class*="two-col"],
+      [class*="alternating"],
+      [class*="split-layout"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      /* Cards full width */
+      [class*="card"],
+      [class*="-card"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      /* FLEX ROWS TO COLUMN */
+      [class*="trust-bar"],
+      [class*="sme-callout"],
+      [class*="profession-crisis"],
+      [class*="roi-container"],
+      [class*="calculator-container"],
+      [class*="footer-brand"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
+      .bundle-cards-row,
+      [class*="bundle-cards"],
+      [class*="pricing-cards"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .bundle-card,
+      [class*="bundle-card"],
+      [class*="pricing-card"] {
+        min-width: 260px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+
+      /* Swipe hint label */
+      .swipe-hint {
+        display: block !important;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: #94a3b8;
+        text-align: center;
+        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+      }
+
+      /* ARTICLE PAGES */
+      [class*="article-hero"],
+      .article-hero {
+        padding: 100px 20px 40px !important;
+      }
+      [class*="article-body"],
+      .article-body {
+        padding: 40px 20px !important;
+      }
+      [class*="stat-callout"],
+      .stat-callout {
+        padding: 16px !important;
+      }
+      [class*="stat-number"] {
+        font-size: 28px !important;
+      }
+      [class*="pull-quote"],
+      blockquote {
+        margin: 20px 0 !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+      }
+      [class*="related-articles"] {
+        padding: 40px 20px !important;
+      }
+      [class*="related-cards"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* BLOG INDEX PAGE */
+      [class*="featured-article"],
+      .featured-article {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      [class*="featured-visual"],
+      .featured-visual {
+        height: 180px !important;
+        min-height: 0 !important;
+      }
+      [class*="subscribe-form"],
+      #subscribe-form {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      #subscribe-form input {
+        width: 100% !important;
+      }
+      #subscribe-form button {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+
+      /* OPPORTUNITY PAGE - FIVE DOORS */
+      [class*="door-row"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      [class*="door-icon"] {
+        margin: 0 auto 16px !important;
+      }
+      [class*="door-text"] {
+        text-align: left !important;
+      }
+
+      /* ABOUT PAGE - FOUNDER AND STATS */
+      [class*="founder-card"],
+      [class*="founder-layout"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+      [class*="stats-grid"],
+      [class*="shortage-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* SECURITY PAGE */
+      [class*="security-grid"],
+      [class*="trust-grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      [class*="faq-item"] {
+        padding: 16px 0 !important;
+      }
+
+      /* HOW IT WORKS PAGE */
+      [class*="pipeline-steps"],
+      [class*="steps-container"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="step-arrow"],
+      [class*="connecting-arrow"] {
+        display: none !important;
+      }
+      [class*="step-card"] {
+        width: 100% !important;
+      }
+
+      /* OUTPUTS PAGE */
+      [class*="output-row"],
+      [class*="output-alternating"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="output-row"].even,
+      [class*="output-row"].odd {
+        flex-direction: column !important;
+      }
+      [class*="output-visual"] {
+        min-height: 160px !important;
+        height: 160px !important;
+      }
+
+      /* LEGAL PAGES */
+      [class*="legal-hero"],
+      .legal-hero {
+        padding: 80px 20px 40px !important;
+      }
+      [class*="legal-body"],
+      .legal-body {
+        padding: 40px 20px !important;
+      }
+      table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        font-size: 13px !important;
+        width: 100% !important;
+      }
+      th, td {
+        min-width: 100px !important;
+        padding: 10px 12px !important;
+      }
+
+      /* PROOF NUMBERS SECTION */
+      [class*="proof-numbers"],
+      [class*="stats-row"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      [class*="proof-divider"],
+      [class*="stat-divider"] {
+        display: none !important;
+      }
+      [class*="proof-number"],
+      [class*="stat-number-large"] {
+        font-size: 48px !important;
+      }
+
+      /* FINAL CTA SECTIONS */
+      [class*="final-cta"] button,
+      [class*="final-cta"] .cta-demo {
+        width: 100% !important;
+        max-width: 360px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
+    /* Sticky CTA Bar - hidden by default, mobile only */
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--color-dark);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 20px;
+      z-index: 998;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .sticky-cta-btn {
+      width: 100%;
+      background: var(--color-highlight);
+      color: white;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      min-height: 48px;
+    }
+    .sticky-cta-btn:hover {
+      background: #0b7a70;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar {
+        display: none;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-1-a ===== */
+    @media (max-width: 768px) {
+      .revenue-card {
+        display: none !important;
+      }
+      .hero-mobile-stats {
+        display: flex !important;
+      }
+    }
+    @media (min-width: 769px) {
+      .hero-mobile-stats {
+        display: none !important;
+      }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-1-b ===== */
+    @media (max-width: 768px) {
+      .problem-grid {
+        display: none !important;
+      }
+      .problem-mobile-tabs {
+        display: block !important;
+      }
+    }
+    @media (min-width: 769px) {
+      .problem-mobile-tabs {
+        display: none !important;
+      }
+    }
+    .tab-toggle {
+      display: flex;
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      padding: 4px;
+      margin: 0 auto 24px;
+      max-width: 320px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 16px;
+      border: none;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-text-light);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 200ms;
+    }
+    .tab-btn.active {
+      background: white;
+      color: var(--color-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 300ms ease-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .tab-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-1-c ===== */
+    @media (max-width: 768px) {
+      .testimonials-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 24px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+      }
+      .testimonials-grid::-webkit-scrollbar {
+        display: none !important;
+      }
+      .testimonial-card {
+        min-width: 85vw !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+      .testimonials-swipe-hint {
+        display: block !important;
+      }
+      .testimonials-dots {
+        display: flex !important;
+      }
+    }
+    @media (min-width: 769px) {
+      .testimonials-swipe-hint {
+        display: none !important;
+      }
+      .testimonials-dots {
+        display: none !important;
+      }
+    }
+    .testimonials-swipe-hint {
+      display: none;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .testimonials-dots {
+      display: none;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .testimonials-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-border);
+      transition: background 200ms ease;
+      cursor: pointer;
+    }
+    .testimonials-dot.active {
+      background: var(--color-highlight);
+      width: 20px;
+      border-radius: 3px;
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-1-d ===== */
+    @media (max-width: 768px) {
+      .outputs-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 24px !important;
+        padding-right: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+      }
+      .outputs-grid::-webkit-scrollbar {
+        display: none !important;
+      }
+      .output-card {
+        min-width: 280px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+      .outputs-swipe-hint {
+        display: block !important;
+      }
+
+      /* Profession Crisis - targeted fix */
+      .crisis-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        max-width: 100% !important;
+      }
+      .crisis-narrative {
+        width: 100% !important;
+      }
+      .crisis-headline {
+        font-size: 26px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
+      }
+      .crisis-p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 14px !important;
+      }
+      .crisis-stats {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        overflow: hidden !important;
+      }
+      .stat-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+      }
+      .stat-card-num {
+        font-size: 32px !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+      }
+      .stat-card-info {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: 1 !important;
+      }
+      .stat-card-label {
+        font-size: 11px !important;
+        display: block !important;
+        margin-bottom: 4px !important;
+        white-space: nowrap !important;
+      }
+      .stat-card-source {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+      }
+      .crisis {
+        padding: 60px 20px !important;
+      }
+    }
+    @media (min-width: 769px) {
+      .outputs-swipe-hint {
+        display: none !important;
+      }
+    }
+    .outputs-swipe-hint {
+      display: none;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: opacity 500ms ease;
+    }
+  </style>
+  <link rel="stylesheet" href="site-uniform.css"></head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
+
+      <div class="nav-links">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">About Us</a>
+      </div>
+
+      <div class="nav-actions">
+<button class="btn-login">Login</button>
+        <button class="cta-demo">Book a Demo</button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="how-it-works.html">How It Works</a>
+    <a href="outputs.html">Outputs</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="security.html">Security</a>
+    <a href="about.html">About Us</a>
+    <div class="drawer-cta">
+      <button class="cta-demo">Book a Demo</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <span class="hero-eyebrow">FOR ACCOUNTING FIRMS AND AUDIT PRACTICES</span>
+        <h1 class="hero-headline">Unlock more revenue without increasing your workforce or work time.</h1>
+        <p class="hero-subheadline">Turn slow, manual financial statement preparation into fast, profitable engagements, including tax computations and schedules, so you can serve more clients profitably.</p>
+        
+        <div class="hero-stats">
+          <div class="stat-pill pill-teal">5X client capacity</div>
+          <div class="stat-pill pill-blue">First engagement free</div>
+        </div>
+
+        <div class="hero-cta-group">
+          <button class="cta-demo hero-btn">Book a Demo</button>
+          <span class="risk-reversal">First engagement free. No credit card. No commitment.</span>
+        </div>
+      </div>
+
+      <div id="hero-visual-placeholder">
+        <div class="revenue-card">
+          <p class="revenue-card-label">YOUR REVENUE OPPORTUNITY</p>
+
+          <div class="revenue-columns">
+            <div class="revenue-col revenue-col-left">
+              <p class="rev-col-header">WITHOUT ROCOVIT</p>
+              <p class="rev-number rev-number-manual" id="manual-revenue">calculating...</p>
+              <p class="rev-sub">7 clients / month</p>
+              <div class="rev-bar rev-bar-manual"></div>
+            </div>
+
+            <div class="revenue-divider">
+              <div class="rev-divider-line"></div>
+              <div class="rev-multiplier">5Ã—</div>
+              <div class="rev-divider-line"></div>
+            </div>
+
+            <div class="revenue-col revenue-col-right">
+              <p class="rev-col-header rev-col-header-teal">WITH ROCOVIT</p>
+              <p class="rev-number rev-number-rocovit" id="rocovit-revenue">calculating...</p>
+              <p class="rev-sub rev-sub-teal">35 clients / month</p>
+              <div class="rev-bar rev-bar-rocovit"></div>
+            </div>
+          </div>
+
+          <div class="revenue-footer">
+            <div class="revenue-footer-row">
+              <span class="rev-footer-label">Annual revenue unlocked</span>
+              <span class="rev-footer-value" id="annual-unlocked">-</span>
+            </div>
+            <div class="revenue-footer-row">
+              <span class="rev-footer-label">Firms already live</span>
+              <span class="rev-footer-value rev-footer-white">18+</span>
+            </div>
+          </div>
+
+          <p class="revenue-assumption" id="calc-assumption">at avg $94 fee - 5X Rocovit capacity</p>
+        </div>
+        <div class="hero-mobile-stats" style="display:none;flex-direction:column;gap:0;width:100%;">
+          <div style="text-align:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <p style="font-family:'DM Mono',monospace;font-size:10px;color:#0d9488;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:8px;">CLIENT CAPACITY</p>
+            <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:48px;color:#0d9488;line-height:1;margin-bottom:4px;">5X</p>
+            <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#64748b;">More clients. Same team.</p>
+          </div>
+          <div style="text-align:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+            <p style="font-family:'DM Mono',monospace;font-size:10px;color:#2563eb;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:8px;">FEWER ERRORS</p>
+            <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:48px;color:#2563eb;line-height:1;margin-bottom:4px;">75%</p>
+            <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#64748b;">Reduction in preparation errors.</p>
+          </div>
+          <div style="text-align:center;padding:20px 0;">
+            <p style="font-family:'DM Mono',monospace;font-size:10px;color:#ffffff;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:8px;">PER ENGAGEMENT</p>
+            <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:48px;color:#ffffff;line-height:1;margin-bottom:4px;">3 hrs</p>
+            <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#64748b;">Down from 10 to 15 days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="trust-container">
+      <span class="trust-label">USED BY ACCOUNTING AND AUDIT FIRMS ACROSS</span>
+      <div class="trust-badges">
+        <span class="badge">NG Nigeria</span>
+        <span class="badge">AE UAE</span>
+        <span class="badge">KE Kenya</span>
+        <span class="badge">ZA South Africa</span>
+      </div>
+      <div class="live-indicator">
+        <span class="live-dot"></span>
+        <span>18+ firms live</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="proof-container">
+      <div class="proof-header">
+        <span class="proof-eyebrow">THE RESULTS</span>
+        <h2 class="proof-headline">Already working. Already proven.</h2>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-col">
+          <span class="proof-number">5X</span>
+          <span class="proof-label">CLIENT CAPACITY</span>
+          <p class="proof-desc">More SME clients served by the same team - the market opens without adding headcount</p>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-col">
+          <span class="proof-number">75%</span>
+          <span class="proof-label">FEWER ERRORS</span>
+          <p class="proof-desc">Reduction in preparation errors reported by audit firms currently using Rocovit</p>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-col">
+          <span class="proof-number">3 hrs</span>
+          <span class="proof-label">PER ENGAGEMENT</span>
+          <p class="proof-desc">Down from 10 to 15 days - the mechanism that makes the SME market profitable to enter</p>
+        </div>
+      </div>
+      <p class="proof-source">From accounting and audit firms currently using Rocovit across Nigeria, UAE and Kenya.</p>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="problem-container">
+      <span class="problem-eyebrow">WHY THIS EXISTS</span>
+      <h2 class="problem-headline">The SME market is not unprofitable. Your current workflow makes it unprofitable.</h2>
+      <div class="problem-grid">
+        <div class="problem-col">
+          <span class="problem-col-label label-red">THE MANUAL REALITY</span>
+          <div class="problem-row">
+            <div class="icon-x">Ã—</div>
+            <span class="problem-text">One SME engagement takes 10 to 15 working days</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-x">Ã—</div>
+            <span class="problem-text">Errors compound across manual steps and require rework</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-x">Ã—</div>
+            <span class="problem-text">SME fees do not justify the time investment</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-x">Ã—</div>
+            <span class="problem-text">Firms turn away clients they are fully capable of serving</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-x">Ã—</div>
+            <span class="problem-text">Each new client requires the same setup work from scratch</span>
+          </div>
+        </div>
+        <div class="problem-col">
+          <span class="problem-col-label label-green">WITH ROCOVIT</span>
+          <div class="problem-row">
+            <div class="icon-check">âœ“</div>
+            <span class="problem-text">Same engagement completed in under 3 hours</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-check">âœ“</div>
+            <span class="problem-text">AI-assisted allocation with full audit trail eliminates rework</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-check">âœ“</div>
+            <span class="problem-text">SME engagements become profitable at any fee point</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-check">âœ“</div>
+            <span class="problem-text">Serve 5X more clients with the same team</span>
+          </div>
+          <div class="problem-row">
+            <div class="icon-check">âœ“</div>
+            <span class="problem-text">Prior year data pre-loads the next engagement automatically</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-mobile-tabs" style="display:none;">
+        <div class="tab-toggle">
+          <button class="tab-btn active" onclick="switchTab('manual')">Manual</button>
+          <button class="tab-btn" onclick="switchTab('rocovit')">With Rocovit</button>
+        </div>
+        
+        <div id="manual-tab" class="tab-content active">
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-red);">Ã—</div>
+            <span class="problem-text">One SME engagement takes 10 to 15 working days</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-red);">Ã—</div>
+            <span class="problem-text">Errors compound across manual steps and require rework</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-red);">Ã—</div>
+            <span class="problem-text">SME fees do not justify the time investment</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-red);">Ã—</div>
+            <span class="problem-text">Firms turn away clients they are fully capable of serving</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-red);">Ã—</div>
+            <span class="problem-text">Each new client requires the same setup work from scratch</span>
+          </div>
+        </div>
+
+        <div id="rocovit-tab" class="tab-content">
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-highlight);">âœ“</div>
+            <span class="problem-text">Same engagement completed in under 3 hours</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-highlight);">âœ“</div>
+            <span class="problem-text">AI-assisted allocation with full audit trail eliminates rework</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-highlight);">âœ“</div>
+            <span class="problem-text">SME engagements become profitable at any fee point</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-highlight);">âœ“</div>
+            <span class="problem-text">Serve 5X more clients with the same team</span>
+          </div>
+          <div class="tab-row">
+            <div class="tab-icon" style="color:var(--color-highlight);">âœ“</div>
+            <span class="problem-text">Prior year data pre-loads the next engagement automatically</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution">
+    <div class="solution-container">
+      <span class="solution-eyebrow">THE SOLUTION</span>
+      <h2 class="solution-headline">Where QuickBooks and Xero stop at bookkeeping, Rocovit starts at production.</h2>
+      <p class="solution-body">Rocovit is a financial statement production engine. It ingests raw financial data from four sources - bank statements, open banking feeds, bookkeeping ledgers, and prior year financials - and produces complete IFRS-compliant financial statements and seven compliance output packs automatically. Built on IFRS for SMEs adopted across 70+ countries. One engine. Every market.</p>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="how-container">
+      <div class="how-header">
+        <span class="how-eyebrow">HOW IT WORKS</span>
+        <h2 class="how-headline">From raw data to seven compliance outputs in three steps.</h2>
+        <p class="how-subheadline">No clean trial balance required. Start from wherever your client's data actually is.</p>
+      </div>
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3 class="step-title">Connect your data sources</h3>
+          <p class="step-desc">Rocovit ingests from four sources simultaneously - prior year financials, open banking feeds, uploaded bank statements, and bookkeeping ledger exports. No clean trial balance required.</p>
+          <span class="step-tag">4 data sources</span>
+        </div>
+        <div class="step-arrow">â†’</div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3 class="step-title">Review AI allocations</h3>
+          <p class="step-desc">Rocovit clusters transactions and predicts the correct chart of accounts mapping with a confidence score. You review flagged exceptions only. The audit trail builds automatically.</p>
+          <span class="step-tag">AI-assisted - full audit trail</span>
+        </div>
+        <div class="step-arrow">â†’</div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3 class="step-title">Download seven compliance outputs</h3>
+          <p class="step-desc">One click generates all seven compliance packs simultaneously - tax, bank loan, investor DD, audit papers, visa financials, tender pack, and M&A readiness. Every format. Every market.</p>
+          <span class="step-tag">7 outputs - 78 countries</span>
+        </div>
+      </div>
+      <div class="how-footer">
+        <a href="how-it-works.html" class="how-link">See the full 7-step pipeline â†’</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonials-container">
+      <div class="testimonials-header">
+        <span class="testimonials-eyebrow">WHAT FIRMS SAY</span>
+        <h2 class="testimonials-headline">Real firms. Real results.</h2>
+      </div>
+      <p class="testimonials-swipe-hint">â† Swipe to read more â†’</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="time-comparison">
+            <span class="pill-before">10 days</span>
+            <span class="time-arrow">â†’</span>
+            <span class="pill-after">3 hours</span>
+          </div>
+          <p class="testimonial-quote">"What used to take our team the better part of two weeks now takes a single morning. We have taken on clients we would have previously turned away entirely."</p>
+          <div class="testimonial-footer">
+            <span class="firm-type">AUDIT FIRM</span>
+            <span class="firm-location">Lagos, Nigeria</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="time-comparison">
+            <span class="pill-before">12 days</span>
+            <span class="time-arrow">â†’</span>
+            <span class="pill-after">2.5 hours</span>
+          </div>
+          <p class="testimonial-quote">"The four-source data ingestion alone saved us days of manual extraction. Rocovit starts where our clients actually are, not where we wish they were."</p>
+          <div class="testimonial-footer">
+            <span class="firm-type">ACCOUNTING PRACTICE</span>
+            <span class="firm-location">Abuja, Nigeria</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="time-comparison">
+            <span class="pill-before">8 days</span>
+            <span class="time-arrow">â†’</span>
+            <span class="pill-after">Under 3 hours</span>
+          </div>
+          <p class="testimonial-quote">"Client capacity increased 5X in the first quarter. We are now profitable on engagements we used to decline."</p>
+          <div class="testimonial-footer">
+            <span class="firm-type">AUDIT FIRM</span>
+            <span class="firm-location">Port Harcourt, Nigeria</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials-dots">
+        <div class="testimonials-dot active" onclick="scrollToTestimonial(0)"></div>
+        <div class="testimonials-dot" onclick="scrollToTestimonial(1)"></div>
+        <div class="testimonials-dot" onclick="scrollToTestimonial(2)"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="crisis" style="overflow:hidden;">
+    <div class="crisis-container">
+      <div class="crisis-narrative">
+        <span class="crisis-eyebrow">THE BIGGER PICTURE</span>
+        <h2 class="crisis-headline">The market is not shrinking. The profession is.</h2>
+        <p class="crisis-p">More than 300,000 accountants have left the profession since 2020. 75% of current CPAs are approaching retirement. The Big Four have committed over $8 billion to AI - not to replace accountants, but because AI is the only way the remaining accountants can serve the demand that is growing as the profession shrinks.</p>
+        <p class="crisis-p">The firms that build SME capacity now will capture the market the shrinking profession is leaving behind. Rocovit is how.</p>
+        <a href="about.html" class="crisis-link">Read the full analysis â†’</a>
+      </div>
+      <div class="crisis-stats">
+        <div class="stat-card">
+          <div class="stat-card-num">300,000+</div>
+          <div class="stat-card-info">
+            <span class="stat-card-label">ACCOUNTANTS GONE</span>
+            <p class="stat-card-source">Left the profession since 2020 - Bureau of Labor Statistics</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">75%</div>
+          <div class="stat-card-info">
+            <span class="stat-card-label">NEARING RETIREMENT</span>
+            <p class="stat-card-source">Current CPAs approaching retirement age - AICPA</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">$8.2B</div>
+          <div class="stat-card-info">
+            <span class="stat-card-label">BIG FOUR AI BET</span>
+            <p class="stat-card-source">Deloitte $3B + KPMG $4.2B + EY $1B - verified 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="outputs">
+    <div class="outputs-container">
+      <div class="outputs-header">
+        <span class="outputs-eyebrow">COMPLIANCE OUTPUTS</span>
+        <h2 class="outputs-headline">One engagement. Seven documents. Every door open.</h2>
+        <p class="outputs-subheadline">Every SME client you serve with Rocovit leaves with every document they need to borrow capital, file taxes, win tenders, raise investment, and grow.</p>
+      </div>
+      <p class="outputs-swipe-hint">Swipe to see all outputs</p>
+      <div class="outputs-grid">
+        <div class="output-card" style="border-left: 4px solid #D97706;">
+          <h3 class="output-title">Tax Compliance Pack</h3>
+          <p class="output-desc">Complete tax computation and filing-ready documents.</p>
+          <span class="geo-badge" style="background: rgba(217,119,6,0.08); color: #D97706;">78 COUNTRIES</span>
+        </div>
+        <div class="output-card" style="border-left: 4px solid var(--color-primary);">
+          <h3 class="output-title">Bank Loan Pack</h3>
+          <p class="output-desc">Lender-ready financial statements with key ratios.</p>
+          <span class="geo-badge" style="background: rgba(37,99,235,0.08); color: var(--color-primary);">GLOBAL</span>
+        </div>
+        <div class="output-card" style="border-left: 4px solid #16A34A;">
+          <h3 class="output-title">Investor Due Diligence</h3>
+          <p class="output-desc">Audit-ready financials for investor review.</p>
+          <span class="geo-badge" style="background: rgba(22,163,74,0.08); color: #16A34A;">GLOBAL</span>
+        </div>
+        <div class="output-card" style="border-left: 4px solid #7C3AED;">
+          <h3 class="output-title">Audit Working Papers</h3>
+          <p class="output-desc">Full working paper pack with sign-off trail.</p>
+          <span class="geo-badge" style="background: rgba(124,58,237,0.08); color: #7C3AED;">GLOBAL</span>
+        </div>
+        <div class="output-card" style="border-left: 4px solid #0EA5E9;">
+          <h3 class="output-title">Visa Financial Pack</h3>
+          <p class="output-desc">Certified financials for visa applications.</p>
+          <span class="geo-badge" style="background: rgba(14,165,233,0.08); color: #0EA5E9;">UK - UAE - CA</span>
+        </div>
+        <div class="output-card" style="border-left: 4px solid #D97706;">
+          <h3 class="output-title">Tender and Procurement Pack</h3>
+          <p class="output-desc">Government and corporate tender submissions.</p>
+          <span class="geo-badge" style="background: rgba(217,119,6,0.08); color: #D97706;">AFRICA - EU</span>
+        </div>
+        <div class="output-card" style="border-left: 4px solid var(--color-highlight);">
+          <h3 class="output-title">M&A Readiness Pack</h3>
+          <p class="output-desc">Acquisition-grade financials for exits.</p>
+          <span class="geo-badge" style="background: rgba(13,148,136,0.08); color: var(--color-highlight);">GLOBAL</span>
+        </div>
+      </div>
+      <div class="outputs-footer">
+        <a href="outputs.html" class="outputs-link">See full details on all seven outputs â†’</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog">
+    <div class="blog-container">
+      <div class="blog-header">
+        <span class="blog-eyebrow">INSIGHTS</span>
+        <h2 class="blog-headline">The SME market is yours to take. Here is how.</h2>
+        <p class="blog-subheadline">Practical guides for firms ready to serve the clients most practices are still turning away.</p>
+      </div>
+      <div class="blog-grid">
+        <a href="blog-sme-market.html" class="blog-card">
+          <div class="blog-card-header" style="background: linear-gradient(135deg,#1e3a5f,#2563eb);">
+            <span class="blog-card-symbol">$</span>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-category">MARKET OPPORTUNITY</span>
+            <h3 class="blog-card-headline">Why accounting firms turn away SME clients - and what it costs both sides</h3>
+            <p class="blog-card-summary">The economics behind why 65 million SMEs are unserved and what changes when it becomes profitable to serve them.</p>
+            <span class="blog-read-link">Read â†’</span>
+          </div>
+        </a>
+        <a href="blog-tax-reforms.html" class="blog-card">
+          <div class="blog-card-header" style="background: linear-gradient(135deg,#064e3b,#0d9488);">
+            <span class="blog-card-symbol">₦</span>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-category">TAX REFORM</span>
+            <h3 class="blog-card-headline">How Nigeria's new tax reforms are creating demand accountants cannot meet manually</h3>
+            <p class="blog-card-summary">FIRS compliance expansion is generating more work than the profession can absorb. Here is what it means for your practice.</p>
+            <span class="blog-read-link">Read â†’</span>
+          </div>
+        </a>
+        <a href="blog-5x-capacity.html" class="blog-card">
+          <div class="blog-card-header" style="background: linear-gradient(135deg,#3b0764,#7c3aed);">
+            <span class="blog-card-symbol">5Ã—</span>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-category">PRACTICE GROWTH</span>
+            <h3 class="blog-card-headline">How to serve 5X more clients without hiring a single new accountant</h3>
+            <p class="blog-card-summary">Manual preparation limits capacity. Here is exactly how firms using Rocovit have broken through that ceiling.</p>
+            <span class="blog-read-link">Read â†’</span>
+          </div>
+        </a>
+      </div>
+      <div class="blog-footer">
+        <a href="blog.html" class="blog-link">View all articles â†’</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sme-callout" style="background: var(--color-light); padding: 48px 24px; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="sme-callout-container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div class="sme-callout-left">
+        <span style="font-family: var(--font-mono); font-size: 10px; color: var(--color-highlight); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; display: block;">FOR SME OWNERS</span>
+        <p style="font-family: var(--font-sans); font-size: 16px; color: var(--color-dark); max-width: 560px; line-height: 1.5;">Are you an SME owner who needs financial statements to access funding, win tenders, or stay compliant?</p>
+      </div>
+      <div class="sme-callout-right">
+        <a href="opportunity.html" style="background: var(--color-white); border: 1px solid var(--color-border); color: var(--color-dark); font-family: var(--font-sans); font-weight: 600; font-size: 14px; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: 200ms;" onmouseover="this.style.borderColor='var(--color-primary)';this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)';this.style.color='var(--color-dark)'">See what financial statements unlock for your business â†’</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" style="background: var(--color-dark); padding: 100px 24px; text-align: center;">
+    <div class="final-cta-container" style="max-width: 700px; margin: 0 auto;">
+      <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); margin-bottom: 16px; display: block;">GET STARTED</span>
+      <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 44px; color: var(--color-white); line-height: 1.2; margin-bottom: 16px;">First engagement free. No credit card. No commitment.</h2>
+      <p style="font-family: var(--font-sans); font-size: 17px; color: #94a3b8; margin-bottom: 40px; line-height: 1.6;">Join accounting firms already unlocking the SME market across Nigeria, UAE, Kenya and beyond.</p>
+      <button class="cta-demo" style="background: var(--color-highlight); color: white; font-family: var(--font-sans); font-weight: 600; font-size: 16px; padding: 16px 48px; border-radius: 8px; border: none; cursor: pointer; transition: all 200ms;" onmouseover="this.style.background='#0b7a70';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,148,136,0.35)'" onmouseout="this.style.background='var(--color-highlight)';this.style.transform='translateY(0)';this.style.boxShadow='none'">Book a Demo</button>
+      <p style="font-family: var(--font-sans); font-size: 13px; color: #64748b; margin-top: 16px;">First engagement completely free. No setup fee. No credit card.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-diamond"></span>
+          <span class="footer-wordmark">Rocovit</span>
+        </div>
+        <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-icon" aria-label="Twitter">ð•</a>
+          <a href="#" class="social-icon" aria-label="Website">âŠ•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">PRODUCT</p>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPANY</p>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="opportunity.html">SME Opportunity</a>
+        <a href="mailto:hello@rocovit.com">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPLIANCE</p>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">NDPR Compliant</span><span class="badge-sub">Nigeria Data Protection Regulation</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">POPIA Compliant</span><span class="badge-sub">South Africa</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">GDPR Compliant</span><span class="badge-sub">European Union</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-blue"></span>
+          <div><span class="badge-title">SOC 2 - In Progress</span><span class="badge-sub">Certification underway</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 Rocovit Limited. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div style="background:#080F1E;height:80px;display:flex;align-items:center;justify-content:center;">
+    <span style="font-family:'DM Sans',sans-serif;font-size:13px;color:#64748b;">© 2026 Rocovit Limited</span>
+  </div>
+
+  <script>
+    // Scroll behaviour
+    window.addEventListener('scroll',()=>{
+      const nav=document.querySelector('nav');
+      if(window.scrollY>60){
+        nav.style.boxShadow='0 2px 20px rgba(0,0,0,0.08)';
+      } else {
+        nav.style.boxShadow='none';
+      }
+    });
+
+    // Currency pill
+    const flags={USD:'US',NGN:'NG',AED:'AE',KES:'KE',ZAR:'ZA',GBP:'GB'};
+    function updateNavPill(c){
+      const p=document.querySelector('.currency-nav-pill');
+      if(p) p.textContent=flags[c]+' '+c;
+      if(typeof updateRevenueVisual === 'function') updateRevenueVisual(c);
+    }
+    document.querySelector('.currency-nav-pill')?.addEventListener('click',()=>{
+      const currencies=['USD','NGN','AED','KES','ZAR','GBP'];
+      const current=localStorage.getItem('rocovit_currency')||'USD';
+      const next=currencies[(currencies.indexOf(current)+1)%currencies.length];
+      localStorage.setItem('rocovit_currency',next);
+      updateNavPill(next);
+    });
+
+    // Mobile drawer toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.querySelector('.mobile-drawer');
+
+    if (hamburger && mobileDrawer) {
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileDrawer.classList.toggle('open');
+      });
+
+      // Close drawer when clicking outside
+      document.addEventListener('click', (e) => {
+        if (mobileDrawer.classList.contains('open') && 
+            !mobileDrawer.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+        }
+      });
+
+      // Close drawer when clicking a link
+      mobileDrawer.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+        });
+      });
+    }
+
+    // Modal
+    const modalOverlay=document.createElement('div');
+    modalOverlay.id='modal-overlay';
+    modalOverlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:2000;opacity:0;pointer-events:none;transition:opacity 300ms ease;display:flex;align-items:center;justify-content:center;';
+    modalOverlay.innerHTML=`
+    <div id="modal-card" style="background:#fff;border-radius:16px;padding:48px;width:480px;max-width:calc(100vw - 48px);position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.3);">
+      <button id="modal-close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;color:#94a3b8;cursor:pointer;">Ã—</button>
+      <div id="modal-form-content">
+        <h2 style="font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:#0f172a;margin-bottom:8px;">Book a Demo</h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;margin-bottom:32px;">A member of the Rocovit team will be in touch within 24 hours.</p>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Full Name</label>
+          <input type="text" placeholder="Jane Mensah" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;">
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Email Address</label>
+          <input type="email" placeholder="jane@firm.com" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;">
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Company Name</label>
+          <input type="text" placeholder="Mensah & Associates" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;">
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">SME Clients Per Month</label>
+          <select style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;background:white;">
+            <option value="">Select range</option>
+            <option>1-10 clients</option>
+            <option>11-25 clients</option>
+            <option>26-75 clients</option>
+            <option>76-200 clients</option>
+            <option>200+ clients</option>
+          </select>
+        </div>
+        <button id="modal-submit" style="width:100%;padding:14px;background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;border:none;border-radius:8px;cursor:pointer;margin-top:4px;">Request Demo</button>
+      </div>
+      <div id="modal-confirm" style="display:none;text-align:center;padding:20px 0;">
+        <div style="width:64px;height:64px;border-radius:50%;background:#F0FDF4;border:2px solid #BBF7D0;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;">âœ“</div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;color:#0f172a;margin-bottom:8px;">You are confirmed.</h3>
+        <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;">A member of the Rocovit team will be in touch within 24 hours.</p>
+      </div>
+    </div>`;
+    document.body.appendChild(modalOverlay);
+    function openModal(){modalOverlay.style.opacity='1';modalOverlay.style.pointerEvents='all';document.body.style.overflow='hidden';}
+    function closeModal(){modalOverlay.style.opacity='0';modalOverlay.style.pointerEvents='none';document.body.style.overflow='';}
+    document.querySelectorAll('.cta-demo').forEach(b=>b.addEventListener('click',openModal));
+    document.getElementById('modal-close').addEventListener('click',closeModal);
+    modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+    document.getElementById('modal-submit').addEventListener('click',()=>{
+      document.getElementById('modal-form-content').style.display='none';
+      document.getElementById('modal-confirm').style.display='block';
+    });
+    // Revenue visual currency logic
+    const revRates={USD:1,NGN:1600,AED:3.67,KES:129,ZAR:18.5,GBP:0.79};
+    const revSymbols={USD:'$',NGN:'₦',AED:'AED ',KES:'KSh ',ZAR:'R',GBP:'£'};
+    const baseManualUSD=1050000/1600;
+    const baseRocovitUSD=5250000/1600;
+    const baseUnlockedUSD=50400000/1600;
+    const baseFeeUSD=150000/1600;
+
+    function fmtRev(n,currency){
+      const s=revSymbols[currency];
+      const v=Math.round(n*revRates[currency]);
+      if(v>=1000000) return s+(v/1000000).toFixed(1)+'M';
+      if(v>=1000) return s+v.toLocaleString();
+      return s+v;
+    }
+
+    function updateRevenueVisual(currency){
+      document.getElementById('manual-revenue').textContent=fmtRev(baseManualUSD,currency);
+      document.getElementById('rocovit-revenue').textContent=fmtRev(baseRocovitUSD,currency);
+      document.getElementById('annual-unlocked').textContent=fmtRev(baseUnlockedUSD,currency);
+      const feeFormatted=revSymbols[currency]+Math.round(baseFeeUSD*revRates[currency]).toLocaleString();
+      const el=document.getElementById('calc-assumption');
+      if(el) el.textContent='at avg '+feeFormatted+' fee - 5X Rocovit capacity';
+    }
+
+    // Count up animation
+    function countUp(id,targetUSD,currency,duration,delay){
+      setTimeout(()=>{
+        const el=document.getElementById(id);
+        if(!el) return;
+        const target=Math.round(targetUSD*revRates[currency]);
+        const s=revSymbols[currency];
+        const start=performance.now();
+        function update(now){
+          const progress=Math.min((now-start)/duration,1);
+          const ease=1-Math.pow(1-progress,3);
+          const val=Math.round(target*ease);
+          el.textContent=val>=1000000?s+(val/1000000).toFixed(1)+'M':s+val.toLocaleString();
+          if(progress<1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      },delay);
+    }
+
+    // Initialise on load
+    const initCurr=localStorage.getItem('rocovit_currency')||'USD';
+    updateNavPill(initCurr);
+    countUp('manual-revenue',baseManualUSD,initCurr,1500,400);
+    countUp('rocovit-revenue',baseRocovitUSD,initCurr,2000,900);
+
+    // Sticky CTA Bar - show after 300px scroll, hide near footer
+    (function() {
+      const bar = document.getElementById('sticky-cta-bar');
+      if (!bar) return;
+      const footer = document.querySelector('footer');
+      function updateStickyBar() {
+        if (window.innerWidth > 768) {
+          bar.style.display = 'none';
+          return;
+        }
+        const scrolled = window.scrollY > 300;
+        const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight + 80 : false;
+        bar.style.display = (scrolled && !footerVisible) ? 'block' : 'none';
+      }
+      window.addEventListener('scroll', updateStickyBar);
+      window.addEventListener('resize', updateStickyBar);
+      updateStickyBar();
+    })();
+
+
+
+    // Problem Section Tab Toggle
+    function switchTab(tab) {
+      const manualTab = document.getElementById('manual-tab');
+      const rocovitTab = document.getElementById('rocovit-tab');
+      const btns = document.querySelectorAll('.tab-btn');
+      
+      if (tab === 'manual') {
+        manualTab.classList.add('active');
+        rocovitTab.classList.remove('active');
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      } else {
+        manualTab.classList.remove('active');
+        rocovitTab.classList.add('active');
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+      }
+    }
+
+    // Testimonials swipe carousel dots
+    (function() {
+      const grid = document.querySelector('.testimonials-grid');
+      const dots = document.querySelectorAll('.testimonials-dot');
+      if (!grid || !dots.length) return;
+
+      function scrollToTestimonial(index) {
+        const cards = grid.querySelectorAll('.testimonial-card');
+        if (!cards[index]) return;
+        grid.scrollTo({
+          left: cards[index].offsetLeft - grid.offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+
+      window.scrollToTestimonial = scrollToTestimonial;
+
+      grid.addEventListener('scroll', function() {
+        const cards = grid.querySelectorAll('.testimonial-card');
+        let closest = 0;
+        let closestDistance = Infinity;
+        cards.forEach(function(card, i) {
+          const distance = Math.abs(card.offsetLeft - grid.offsetLeft - grid.scrollLeft);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closest = i;
+          }
+        });
+        dots.forEach(function(dot, i) {
+          dot.classList.toggle('active', i === closest);
+        });
+      });
+    })();
+
+    // Hide outputs swipe hint after first scroll
+    (function() {
+      const grid = document.querySelector('.outputs-grid');
+      const hint = document.querySelector('.outputs-swipe-hint');
+      if (!grid || !hint) return;
+      grid.addEventListener('scroll', function() {
+        hint.style.opacity = '0';
+        setTimeout(() => hint.style.display = 'none', 500);
+      }, { once: true });
+    })();
+  </script>
+  <!-- Sticky Mobile CTA Bar -->
+  <div class="sticky-cta-bar" id="sticky-cta-bar">
+    <button class="cta-demo sticky-cta-btn">Book a Demo - First Engagement Free</button>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

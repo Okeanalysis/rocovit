@@ -1,0 +1,1276 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Policy | Rocovit</title>
+  <style>
+/* ===== NAVIGATION MASTER ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  height: var(--nav-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  transition: 300ms ease;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.logo-symbol {
+  color: var(--color-highlight);
+  margin-left: 4px;
+  font-size: 18px;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-dark);
+  transition: 200ms;
+}
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.currency-nav-pill {
+  background: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-login {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 200ms;
+}
+.btn-login:hover {
+  background: rgba(37,99,235,0.05);
+}
+nav .cta-demo {
+  background: var(--color-highlight);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+nav .cta-demo:hover {
+  opacity: 0.9;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  transition: 0.3s ease;
+}
+.mobile-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer.open {
+  max-height: 500px;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.mobile-drawer a {
+  padding: 16px 24px;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 16px;
+  display: block;
+}
+.mobile-drawer a:hover {
+  color: var(--color-primary);
+  background: var(--color-light);
+}
+.mobile-drawer .drawer-cta {
+  padding: 20px 24px;
+  background: #f8fafc;
+}
+.mobile-drawer .drawer-cta .cta-demo {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--color-highlight);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 16px !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .btn-login {
+    display: none !important;
+  }
+  .currency-nav-pill {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+  }
+  nav .cta-demo {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    white-space: nowrap !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+  }
+  .nav-container {
+    padding: 0 !important;
+  }
+}
+/* ===== END NAVIGATION MASTER ===== */
+
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #0f172a;
+      --color-highlight: #0d9488;
+      --color-light: #f8fafc;
+      --color-white: #ffffff;
+      --color-border: #e2e8f0;
+      --font-display: "Syne", sans-serif;
+      --font-sans: "DM Sans", sans-serif;
+      --font-mono: "DM Mono", monospace;
+      --nav-height: 72px;
+      --nav-height-mobile: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-white);
+      color: var(--color-dark);
+      padding-top: var(--nav-height);
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+      background: var(--color-dark);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      padding: 60px 24px;
+    }
+
+    .hero-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 44px;
+      color: var(--color-white);
+      margin-bottom: 12px;
+    }
+
+    .last-updated {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    /* Body Section */
+    .policy-body {
+      background: var(--color-white);
+      padding: 60px 24px;
+    }
+
+    .policy-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .policy-container h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--color-dark);
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .policy-container p {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #374151;
+      margin-bottom: 24px;
+    }
+
+    .policy-container ul {
+      margin-bottom: 24px;
+      padding-left: 20px;
+    }
+
+    .policy-container li {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+
+    /* Table Styles */
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+      margin-top: 16px;
+    }
+
+    .cookie-table th {
+      background: var(--color-light);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cookie-table td {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: #374151;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cookie-table tr:nth-child(even) {
+      background: rgba(248, 250, 252, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--color-white);
+      padding: 80px 24px 40px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 60px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--color-primary);
+    }
+
+    .footer-wordmark {
+      color: var(--color-primary);
+    }
+
+    .footer-tagline {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: #64748b;
+      line-height: 1.5;
+      max-width: 240px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--color-dark);
+      font-size: 14px;
+      transition: 200ms;
+    }
+
+    .social-icon:hover {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .footer-col-header {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--color-dark);
+      transition: 200ms;
+    }
+
+    .footer-col a:hover {
+      color: var(--color-primary);
+    }
+
+    .compliance-badge {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .dot-green { background: #16A34A; }
+    .dot-blue { background: #2563eb; }
+
+    .badge-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-dark);
+    }
+
+    .badge-sub {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: var(--color-border);
+      max-width: 1200px;
+      margin: 60px auto 32px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      text-decoration: none;
+      color: #64748b;
+      transition: 200ms;
+    }
+
+    .footer-legal a:hover {
+      color: var(--color-primary);
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .footer-brand {
+        grid-column: span 2;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+      .hero-headline {
+        font-size: 32px;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+      nav .nav-centre-links {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: var(--nav-height-mobile) !important;
+      }
+      .hero {
+        min-height: calc(100vh - var(--nav-height-mobile));
+        padding: 40px 24px;
+      }
+      .mobile-drawer {
+        top: var(--nav-height-mobile) !important;
+      }
+      /* Fix hero padding below fixed nav */
+      .hero,
+      [class*="hero"],
+      [class*="page-hero"],
+      [class*="article-hero"],
+      [class*="blog-hero"],
+      [class*="legal-hero"],
+      [class*="policy-hero"] {
+        padding-top: 40px !important;
+      }
+      .nav-bar {
+        padding: 0 !important;
+        height: 56px !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .nav-container {
+        padding: 0 16px !important;
+        height: 56px !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+      .nav-links {
+        display: none !important;
+      }
+      .btn-login {
+        display: none !important;
+      }
+      .currency-pill {
+        display: none !important;
+      }
+      .hamburger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0 !important;
+      }
+      .btn-demo {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        white-space: nowrap !important;
+        height: 32px !important;
+        line-height: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .nav-right {
+        gap: 8px !important;
+        align-items: center !important;
+        height: 56px !important;
+        display: flex !important;
+      }
+      .logo {
+        display: flex !important;
+        align-items: center !important;
+        height: 56px !important;
+      }
+      /* Typography */
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+      }
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Section spacing */
+      section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      /* Navigation */
+      .mobile-drawer a {
+        padding: 16px 24px;
+        text-decoration: none;
+        color: var(--color-dark);
+        font-family: var(--font-sans);
+        font-weight: 500;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 16px;
+      }
+
+      .drawer-cta {
+        padding: 16px;
+      }
+
+      .mobile-drawer .cta-demo {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+      }
+
+    /* Footer */
+      .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+      }
+      .footer-legal {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+      }
+
+      /* Modal full screen */
+      #modal-overlay {
+        align-items: flex-end !important;
+      }
+      #modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 90vh !important;
+        border-radius: 16px 16px 0 0 !important;
+        padding: 32px 20px !important;
+        overflow-y: auto !important;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+
+      /* Buttons */
+      button.cta-demo,
+      a.cta-demo {
+        min-height: 48px !important;
+        font-size: 15px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+    @media (max-width: 768px) {
+      /* Hero two column to single column */
+      .hero-container,
+      [class*="hero-layout"],
+      [class*="hero-columns"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      .hero-text,
+      [class*="hero-left"],
+      [class*="hero-content"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-visual,
+      #hero-visual-placeholder,
+      [class*="hero-right"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Hero stat pills wrap */
+      [class*="stat-pills"],
+      [class*="hero-pills"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+
+      /* Revenue card numbers smaller on mobile */
+      .rev-number {
+        font-size: 22px !important;
+      }
+      .revenue-divider {
+        padding: 0 8px !important;
+      }
+
+      /* All three column grids to single column */
+      [class*="three-col"],
+      [class*="cards-grid"],
+      [class*="article-grid"],
+      [class*="blog-cards"],
+      [class*="output-cards"],
+      [class*="related-cards"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* All two column grids to single column */
+      [class*="two-col"],
+      [class*="alternating"],
+      [class*="split-layout"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      /* Cards full width */
+      [class*="card"],
+      [class*="-card"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      /* FLEX ROWS TO COLUMN */
+      [class*="trust-bar"],
+      [class*="sme-callout"],
+      [class*="profession-crisis"],
+      [class*="roi-container"],
+      [class*="calculator-container"],
+      [class*="footer-brand"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
+      .bundle-cards-row,
+      [class*="bundle-cards"],
+      [class*="pricing-cards"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .bundle-card,
+      [class*="bundle-card"],
+      [class*="pricing-card"] {
+        min-width: 260px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+
+      /* Swipe hint label */
+      .swipe-hint {
+        display: block !important;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: #94a3b8;
+        text-align: center;
+        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+      }
+
+      /* ARTICLE PAGES */
+      [class*="article-hero"],
+      .article-hero {
+        padding: 100px 20px 40px !important;
+      }
+      [class*="article-body"],
+      .article-body {
+        padding: 40px 20px !important;
+      }
+      [class*="stat-callout"],
+      .stat-callout {
+        padding: 16px !important;
+      }
+      [class*="stat-number"] {
+        font-size: 28px !important;
+      }
+      [class*="pull-quote"],
+      blockquote {
+        margin: 20px 0 !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+      }
+      [class*="related-articles"] {
+        padding: 40px 20px !important;
+      }
+      [class*="related-cards"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* BLOG INDEX PAGE */
+      [class*="featured-article"],
+      .featured-article {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      [class*="featured-visual"],
+      .featured-visual {
+        height: 180px !important;
+        min-height: 0 !important;
+      }
+      [class*="subscribe-form"],
+      #subscribe-form {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      #subscribe-form input {
+        width: 100% !important;
+      }
+      #subscribe-form button {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+
+      /* OPPORTUNITY PAGE - FIVE DOORS */
+      [class*="door-row"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      [class*="door-icon"] {
+        margin: 0 auto 16px !important;
+      }
+      [class*="door-text"] {
+        text-align: left !important;
+      }
+
+      /* ABOUT PAGE - FOUNDER AND STATS */
+      [class*="founder-card"],
+      [class*="founder-layout"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+      [class*="stats-grid"],
+      [class*="shortage-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* SECURITY PAGE */
+      [class*="security-grid"],
+      [class*="trust-grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      [class*="faq-item"] {
+        padding: 16px 0 !important;
+      }
+
+      /* HOW IT WORKS PAGE */
+      [class*="pipeline-steps"],
+      [class*="steps-container"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="step-arrow"],
+      [class*="connecting-arrow"] {
+        display: none !important;
+      }
+
+      /* OUTPUTS PAGE */
+      [class*="output-row"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      [class*="output-visual"] {
+        width: 100% !important;
+      }
+
+      /* LEGAL PAGES */
+      .legal-container {
+        padding: 60px 20px !important;
+      }
+      .legal-content h1 {
+        font-size: 32px !important;
+      }
+
+      /* FINAL CTA */
+      [class*="final-cta"],
+      .final-cta-section {
+        padding: 60px 20px !important;
+        text-align: center !important;
+      }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-5 ===== */
+    @media (max-width: 768px) {
+      /* Legal hero */
+      [class*="legal-hero"],
+      [class*="policy-hero"],
+      [class*="page-hero"] {
+        padding: 80px 20px 36px !important;
+        min-height: 0 !important;
+      }
+
+      /* Legal hero headline */
+      [class*="legal-hero"] h1,
+      [class*="policy-hero"] h1 {
+        font-size: 28px !important;
+      }
+
+      /* Legal body */
+      [class*="legal-body"],
+      [class*="policy-body"] {
+        padding: 36px 20px !important;
+      }
+
+      /* Legal H2 headings */
+      [class*="legal-body"] h2,
+      [class*="policy-body"] h2 {
+        font-size: 20px !important;
+        margin-top: 36px !important;
+        padding-bottom: 10px !important;
+      }
+
+      /* Legal H3 headings */
+      [class*="legal-body"] h3,
+      [class*="policy-body"] h3 {
+        font-size: 16px !important;
+        margin-top: 24px !important;
+      }
+
+      /* Legal body text */
+      [class*="legal-body"] p,
+      [class*="policy-body"] p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Legal lists */
+      [class*="legal-body"] ul,
+      [class*="legal-body"] ol,
+      [class*="policy-body"] ul,
+      [class*="policy-body"] ol {
+        padding-left: 16px !important;
+        font-size: 15px !important;
+      }
+
+      /* Cookie table - horizontal scroll */
+      table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        font-size: 13px !important;
+        width: 100% !important;
+      }
+      table::-webkit-scrollbar {
+        display: none !important;
+      }
+      th {
+        font-size: 11px !important;
+        padding: 10px 12px !important;
+        white-space: nowrap !important;
+      }
+      td {
+        font-size: 13px !important;
+        padding: 10px 12px !important;
+        min-width: 100px !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="site-uniform.css"></head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="outputs.html">Outputs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+<button class="btn-login">Login</button>
+      <button class="cta-demo">Book a Demo</button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="how-it-works.html">How It Works</a>
+  <a href="outputs.html">Outputs</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="security.html">Security</a>
+  <a href="about.html">About Us</a>
+  <div class="drawer-cta">
+    <button class="cta-demo">Book a Demo</button>
+  </div>
+</div>
+
+  <section class="hero">
+    <div class="hero-container">
+      <h1 class="hero-headline">Cookie Policy</h1>
+      <div class="last-updated">Last updated: March 2026</div>
+    </div>
+  </section>
+
+  <section class="policy-body">
+    <div class="policy-container">
+      <h2>1. What Are Cookies</h2>
+      <p>Cookies are small text files placed on your device when you visit a website. They allow the website to recognise your device on return visits and remember certain information about your session. Rocovit uses cookies to make the platform work correctly and to understand how it is being used in aggregate.</p>
+
+      <h2>2. The Cookies We Use</h2>
+      <p>Two categories only:</p>
+      
+      <p><strong>Essential cookies</strong> - required for the platform to function. Cannot be disabled without breaking core functionality.</p>
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Cookie name</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>rocovit_session</td>
+            <td>Maintains your authenticated session so you do not need to log in on every page</td>
+            <td>Session</td>
+            <td>Essential</td>
+          </tr>
+          <tr>
+            <td>rocovit_csrf</td>
+            <td>Protects against cross-site request forgery attacks</td>
+            <td>Session</td>
+            <td>Security</td>
+          </tr>
+          <tr>
+            <td>rocovit_currency</td>
+            <td>Remembers your selected display currency across pages</td>
+            <td>12 months</td>
+            <td>Preference</td>
+          </tr>
+          <tr>
+            <td>rocovit_consent</td>
+            <td>Records your cookie preference</td>
+            <td>12 months</td>
+            <td>Essential</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Analytics cookies</strong> - help us understand how the platform is used in aggregate. No individual profiling. No data shared with advertising networks.</p>
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Cookie name</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>_analytics_id</td>
+            <td>Assigns an anonymous identifier to measure unique visits</td>
+            <td>24 months</td>
+            <td>Analytics</td>
+          </tr>
+          <tr>
+            <td>_analytics_session</td>
+            <td>Tracks the current session for aggregate usage reporting</td>
+            <td>Session</td>
+            <td>Analytics</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Cookies We Do Not Use</h2>
+      <p>We do not use:</p>
+      <ul>
+        <li>Advertising or targeting cookies</li>
+        <li>Remarketing or retargeting cookies</li>
+        <li>Social media tracking pixels</li>
+        <li>Third party behavioural profiling cookies</li>
+        <li>Any cookies that track you across websites outside of rocovit.com</li>
+      </ul>
+
+      <h2>4. Third Party Cookies</h2>
+      <p>Rocovit does not permit third party advertising networks to set cookies on our platform. We use a limited number of third party services for infrastructure and analytics - these services process data under strict data processing agreements and do not use your data for their own advertising purposes.</p>
+
+      <h2>5. How to Control Cookies</h2>
+      <p>You can control and delete cookies through your browser settings. Instructions for major browsers:</p>
+      <ul>
+        <li><strong>Chrome:</strong> Settings â†’ Privacy and Security â†’ Cookies and other site data</li>
+        <li><strong>Firefox:</strong> Settings â†’ Privacy and Security â†’ Cookies and Site Data</li>
+        <li><strong>Safari:</strong> Preferences â†’ Privacy â†’ Manage Website Data</li>
+        <li><strong>Edge:</strong> Settings â†’ Cookies and site permissions</li>
+      </ul>
+      <p>Disabling essential cookies will prevent Rocovit from functioning correctly. Disabling analytics cookies will not affect your ability to use the platform.</p>
+
+      <h2>6. Cookie Consent</h2>
+      <p>When you first visit Rocovit we display a cookie notice that allows you to accept or decline analytics cookies. Essential cookies are always active as they are required for the platform to function. You can change your analytics cookie preference at any time by clearing your browser cookies and revisiting the site.</p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>We may update this cookie policy as our use of cookies changes. We will update the date at the top of this page and notify registered users of material changes by email.</p>
+
+      <h2>8. Contact</h2>
+      <p>For questions about how we use cookies: <a href="mailto:privacy@rocovit.com" style="color: var(--color-primary); text-decoration: none;">privacy@rocovit.com</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="footer-wordmark">Rocovit</span>
+        </a>
+        <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-icon" aria-label="Twitter">ð•</a>
+          <a href="#" class="social-icon" aria-label="Website">âŠ•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">PRODUCT</p>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPANY</p>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="opportunity.html">SME Opportunity</a>
+        <a href="mailto:hello@rocovit.com">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPLIANCE</p>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">NDPR Compliant</span><span class="badge-sub">Nigeria Data Protection Regulation</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">POPIA Compliant</span><span class="badge-sub">South Africa</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div><span class="badge-title">GDPR Compliant</span><span class="badge-sub">European Union</span></div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-blue"></span>
+          <div><span class="badge-title">SOC 2 - In Progress</span><span class="badge-sub">Certification underway</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 Rocovit Limited. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll behaviour
+    window.addEventListener('scroll',()=>{
+      const nav=document.querySelector('nav');
+      if(window.scrollY>60){
+        nav.style.boxShadow='0 2px 20px rgba(0,0,0,0.08)';
+        nav.style.padding='12px 24px';
+      } else {
+        nav.style.boxShadow='none';
+        nav.style.padding='20px 24px';
+      }
+    });
+
+    // Mobile drawer toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (hamburger && mobileDrawer) {
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileDrawer.classList.toggle('open');
+      });
+
+      // Close drawer when clicking outside
+      document.addEventListener('click', (e) => {
+        if (mobileDrawer.classList.contains('open') && 
+            !mobileDrawer.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+        }
+      });
+
+      // Close drawer when clicking a link
+      mobileDrawer.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+        });
+      });
+    }
+
+    // Currency pill
+    const flags={USD:'US',NGN:'NG',AED:'AE',KES:'KE',ZAR:'ZA',GBP:'GB'};
+    function updateNavPill(c){
+      const p=document.querySelector('.currency-nav-pill');
+      if(p) p.textContent=flags[c]+' '+c;
+    }
+    document.querySelector('.currency-nav-pill')?.addEventListener('click',()=>{
+      const currencies=['USD','NGN','AED','KES','ZAR','GBP'];
+      const current=localStorage.getItem('rocovit_currency')||'USD';
+      const next=currencies[(currencies.indexOf(current)+1)%currencies.length];
+      localStorage.setItem('rocovit_currency',next);
+      updateNavPill(next);
+    });
+    const initCurr=localStorage.getItem('rocovit_currency')||'USD';
+    updateNavPill(initCurr);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

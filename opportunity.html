@@ -1,0 +1,1359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The SME Opportunity | Rocovit</title>
+  <style>
+/* ===== NAVIGATION MASTER ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  height: var(--nav-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  transition: 300ms ease;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.logo-symbol {
+  color: var(--color-highlight);
+  margin-left: 4px;
+  font-size: 18px;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-dark);
+  transition: 200ms;
+}
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.currency-nav-pill {
+  background: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-login {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 200ms;
+}
+.btn-login:hover {
+  background: rgba(37,99,235,0.05);
+}
+nav .cta-demo {
+  background: var(--color-highlight);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+nav .cta-demo:hover {
+  opacity: 0.9;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  transition: 0.3s ease;
+}
+.mobile-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer.open {
+  max-height: 500px;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.mobile-drawer a {
+  padding: 16px 24px;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 16px;
+  display: block;
+}
+.mobile-drawer a:hover {
+  color: var(--color-primary);
+  background: var(--color-light);
+}
+.mobile-drawer .drawer-cta {
+  padding: 20px 24px;
+  background: #f8fafc;
+}
+.mobile-drawer .drawer-cta .cta-demo {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--color-highlight);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 16px !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .btn-login {
+    display: none !important;
+  }
+  .currency-nav-pill {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+  }
+  nav .cta-demo {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    white-space: nowrap !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+  }
+  .nav-container {
+    padding: 0 !important;
+  }
+}
+/* ===== END NAVIGATION MASTER ===== */
+
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #0f172a;
+      --color-highlight: #0d9488;
+      --color-light: #f8fafc;
+      --color-white: #ffffff;
+      --color-border: #e2e8f0;
+      --font-display: "Syne", sans-serif;
+      --font-sans: "DM Sans", sans-serif;
+      --font-mono: "DM Mono", monospace;
+      --nav-height: 72px;
+      --nav-height-mobile: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-dark);
+      background-color: var(--color-white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+    }
+
+
+
+    /* SECTION 1 - HERO */
+    .hero {
+      background: var(--color-dark);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .hero-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--color-highlight);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 52px;
+      color: var(--color-white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      color: #94a3b8;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 48px;
+    }
+
+    .stat-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .pill-blue {
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      color: var(--color-primary);
+    }
+
+    .pill-teal {
+      background: rgba(13, 148, 136, 0.15);
+      border: 1px solid rgba(13, 148, 136, 0.3);
+      color: var(--color-highlight);
+    }
+
+    /* SECTION 2 - THE CREDIBILITY GAP */
+    .credibility-gap {
+      background: var(--color-white);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .gap-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .credibility-gap h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-dark);
+      margin-bottom: 24px;
+    }
+
+    .credibility-gap p {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      color: #4B5563;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* SECTION 3 - THE FIVE DOORS */
+    .five-doors {
+      background: var(--color-light);
+      padding: 100px 24px;
+    }
+
+    .doors-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-dark);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: #64748b;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .door-card {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      padding: 40px 0;
+    }
+
+    .door-card:not(:last-child) {
+      margin-bottom: 80px;
+    }
+
+    .door-icon-col {
+      flex: 0 0 40%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .door-text-col {
+      flex: 0 0 60%;
+    }
+
+    .door-card.even {
+      flex-direction: row-reverse;
+    }
+
+    .icon-box {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    .door-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-highlight);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .door-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+    }
+
+    .door-desc {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: #64748b;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .door-who {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    .door-who strong {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .door-card {
+        flex-direction: column !important;
+        gap: 32px;
+        text-align: center;
+      }
+      .door-icon-col, .door-text-col {
+        flex: 0 0 100%;
+      }
+    }
+    footer{background:#080F1E;padding:80px 24px 40px}.footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:48px}.footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:12px}.footer-diamond{color:#0d9488;font-size:18px}.footer-wordmark{font-family:"Syne",sans-serif;font-weight:700;font-size:20px;color:#2563eb}.footer-tagline{font-family:"DM Sans",sans-serif;font-size:14px;color:#64748b;margin-bottom:24px;line-height:1.5}.footer-socials{display:flex;gap:8px}.social-icon{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;text-decoration:none;font-family:"DM Sans",sans-serif}.footer-col-header{font-family:"DM Mono",monospace;font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px}.footer-col a{display:block;font-family:"DM Sans",sans-serif;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:12px}.footer-col a:hover{color:#fff}.compliance-badge{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;margin-bottom:8px}.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px}.dot-green{background:#16A34A}.dot-blue{background:#2563eb}.badge-title{display:block;font-family:"DM Mono",monospace;font-size:11px;color:#fff}.badge-sub{display:block;font-family:"DM Sans",sans-serif;font-size:11px;color:#64748b;margin-top:2px}.footer-divider{max-width:1200px;margin:48px auto 24px;height:1px;background:rgba(255,255,255,0.06)}.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.footer-bottom span,.footer-bottom a{font-family:"DM Sans",sans-serif;font-size:13px;color:#64748b;text-decoration:none}.footer-bottom a:hover{color:#fff}.footer-legal{display:flex;gap:24px}@media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}@media(max-width:640px){.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+  </style>
+  <link rel="stylesheet" href="site-uniform.css"></head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="outputs.html">Outputs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+<button class="btn-login">Login</button>
+      <button class="cta-demo">Book a Demo</button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="how-it-works.html">How It Works</a>
+  <a href="outputs.html">Outputs</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="security.html">Security</a>
+  <a href="about.html">About Us</a>
+  <div class="drawer-cta">
+    <button class="cta-demo">Book a Demo</button>
+  </div>
+</div>
+
+  <!-- SECTION 1 - HERO -->
+  <section class="hero">
+    <div class="hero-container">
+      <span class="eyebrow">THE SME OPPORTUNITY</span>
+      <h1>Your business is creditworthy. The proof is what is missing.</h1>
+      <p>65 million SMEs across emerging markets are locked out of financing, contracts, and investment - not because they are bad businesses, but because they cannot produce the documents that lenders, partners, and regulators trust. Rocovit gives accountants the tools to produce that proof.</p>
+      <div class="stat-pills">
+        <div class="pill pill-blue">65M unserved SMEs</div>
+        <div class="pill pill-blue">$5.7T financing gap</div>
+        <div class="pill pill-teal">78 countries covered</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 - THE CREDIBILITY GAP -->
+  <section class="credibility-gap">
+    <div class="gap-container">
+      <span class="eyebrow">THE PROBLEM</span>
+      <h2>It is not a money problem. It is a proof problem.</h2>
+      <p>Banks, investors, government procurement offices, and immigration authorities all require the same thing before they say yes - credible financial statements prepared by a qualified accountant. Without them, your business is invisible to the formal financial system regardless of how well it performs.</p>
+      <p>This is not a small problem. The World Bank estimates that 65 million formal SMEs across emerging markets face a combined financing gap of $5.7 trillion every year. Not because the capital does not exist. Because the proof does not exist.</p>
+      <p>Rocovit gives accounting firms the tools to produce that proof - quickly, affordably, and across seven different compliance formats simultaneously. When your accountant uses Rocovit, your business gets every document it needs to access the formal economy.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 - THE FIVE DOORS -->
+  <section class="five-doors">
+    <div class="doors-container">
+      <div class="section-header">
+        <span class="eyebrow">WHAT FINANCIAL STATEMENTS UNLOCK</span>
+        <h2>Five doors your financial statements open.</h2>
+        <p>Every door requires the same key - credible financial statements produced by a qualified accountant.</p>
+      </div>
+
+      <!-- Door 1 -->
+      <div class="door-card odd">
+        <div class="door-icon-col">
+          <div class="icon-box" style="background: rgba(37,99,235,0.1); border: 2px solid rgba(37,99,235,0.2); color: var(--color-primary);">₦</div>
+        </div>
+        <div class="door-text-col">
+          <span class="door-num">DOOR 01</span>
+          <h3 class="door-title">Access business financing</h3>
+          <p class="door-desc">Banks and microfinance institutions require at least two years of financial statements before approving a business loan, overdraft, or credit facility. Without them your application is rejected regardless of your revenue or repayment capacity.</p>
+          <div class="door-who">WHO REQUIRES THIS: Commercial banks - Microfinance institutions - DFIs - Credit cooperatives</div>
+        </div>
+      </div>
+
+      <!-- Door 2 -->
+      <div class="door-card even">
+        <div class="door-icon-col">
+          <div class="icon-box" style="background: rgba(13,148,136,0.1); border: 2px solid rgba(13,148,136,0.2); color: var(--color-highlight);">âœ“</div>
+        </div>
+        <div class="door-text-col">
+          <span class="door-num">DOOR 02</span>
+          <h3 class="door-title">Win government and corporate tenders</h3>
+          <p class="door-desc">The Bureau of Public Procurement requires certified financial statements for all federal contract bids. Most SMEs are disqualified at the financial documentation stage - not because they cannot deliver the work, but because their financials are missing or incorrectly formatted.</p>
+          <div class="door-who">WHO REQUIRES THIS: Federal and state procurement offices - Corporate procurement teams - NGOs and international organisations</div>
+        </div>
+      </div>
+
+      <!-- Door 3 -->
+      <div class="door-card odd">
+        <div class="door-icon-col">
+          <div class="icon-box" style="background: rgba(124,58,237,0.1); border: 2px solid rgba(124,58,237,0.2); color: #7C3AED;">â†‘</div>
+        </div>
+        <div class="door-text-col">
+          <span class="door-num">DOOR 03</span>
+          <h3 class="door-title">Raise equity investment</h3>
+          <p class="door-desc">Venture capital firms, angel investors, private equity, and development finance institutions all require structured, auditable financial statements before committing capital. Most SMEs have never produced financials at this standard.</p>
+          <div class="door-who">WHO REQUIRES THIS: Venture capital firms - Angel investors - Private equity - DFIs - Impact investors</div>
+        </div>
+      </div>
+
+      <!-- Door 4 -->
+      <div class="door-card even">
+        <div class="door-icon-col">
+          <div class="icon-box" style="background: rgba(14,165,233,0.1); border: 2px solid rgba(14,165,233,0.2); color: #0EA5E9; font-size: 32px;">âœˆ</div>
+        </div>
+        <div class="door-text-col">
+          <span class="door-num">DOOR 04</span>
+          <h3 class="door-title">Apply for international visas and residency</h3>
+          <p class="door-desc">UK Innovator Founder visas, UAE investor residency, and Canadian business immigration programmes all require certified personal and business financial statements. This is a service most accounting firms do not currently offer - and a market most SME owners do not know exists.</p>
+          <div class="door-who">WHO REQUIRES THIS: UK Home Office - UAE GDRFA - IRCC Canada - Other immigration authorities</div>
+        </div>
+      </div>
+
+      <!-- Door 5 -->
+      <div class="door-card odd">
+        <div class="door-icon-col">
+          <div class="icon-box" style="background: rgba(217,119,6,0.1); border: 2px solid rgba(217,119,6,0.2); color: #D97706; font-size: 32px;">§</div>
+        </div>
+        <div class="door-text-col">
+          <span class="door-num">DOOR 05</span>
+          <h3 class="door-title">Defend your tax position</h3>
+          <p class="door-desc">FIRS and equivalent tax authorities can challenge your tax filing if it is not supported by compliant financial statements. Credible financials protect you from penalties, back-taxes, and audit risk. They also position you to claim legitimate deductions your accountant can only identify when the books are properly structured.</p>
+          <div class="door-who">WHO REQUIRES THIS: FIRS - State internal revenue services - Tax tribunals - External auditors</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4 - REVENUE CALCULATOR -->
+  <section style="background: var(--color-white); padding: 100px 24px;">
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;" class="calc-grid">
+      <div class="calc-text">
+        <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); margin-bottom: 12px; text-transform: uppercase; display: block;">FOR ACCOUNTANTS</span>
+        <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--color-dark); line-height: 1.2; margin-bottom: 20px;">The clients described above are worth ₦168M a year to your firm.</h2>
+        <p style="font-family: var(--font-sans); font-size: 16px; color: #64748b; line-height: 1.7; margin-bottom: 24px;">Every SME that cannot produce financial statements is a potential client your firm is currently turning away. Rocovit makes those engagements profitable. See exactly what the opportunity looks like for your practice size.</p>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <span style="color: var(--color-highlight);">âœ“</span>
+          <span style="font-family: var(--font-sans); font-size: 14px; color: var(--color-dark);">First engagement completely free - no bundle required</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <span style="color: var(--color-highlight);">âœ“</span>
+          <span style="font-family: var(--font-sans); font-size: 14px; color: var(--color-dark);">All seven compliance output formats included in every engagement</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <span style="color: var(--color-highlight);">âœ“</span>
+          <span style="font-family: var(--font-sans); font-size: 14px; color: var(--color-dark);">Prior year data pre-loads for returning clients automatically</span>
+        </div>
+      </div>
+
+      <div class="calc-card" style="background: var(--color-light); border: 1px solid var(--color-border); border-radius: 16px; padding: 32px;">
+        <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--color-dark); margin-bottom: 24px;">Calculate your SME revenue opportunity</h3>
+        
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-family: var(--font-sans); font-size: 13px; color: var(--color-dark); font-weight: 500; margin-bottom: 6px;">SME clients you currently turn away per month</label>
+          <input type="number" id="opp-clients" value="10" min="1" max="200" style="width: 100%; padding: 12px 16px; border: 1px solid var(--color-border); border-radius: 8px; font-family: var(--font-mono); font-size: 16px; color: var(--color-dark); outline: none;">
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-family: var(--font-sans); font-size: 13px; color: var(--color-dark); font-weight: 500; margin-bottom: 6px;">Average fee per engagement (₦)</label>
+          <input type="number" id="opp-fee" value="150000" min="1" style="width: 100%; padding: 12px 16px; border: 1px solid var(--color-border); border-radius: 8px; font-family: var(--font-mono); font-size: 16px; color: var(--color-dark); outline: none;">
+        </div>
+
+        <div style="height: 1px; background: var(--color-border); margin-bottom: 24px;"></div>
+
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 12px 0;">
+          <span style="font-family: var(--font-sans); font-size: 14px; color: #64748b;">Monthly revenue currently rejected</span>
+          <span id="opp-monthly" style="font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--color-dark);">₦0</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 12px 0;">
+          <span style="font-family: var(--font-sans); font-size: 14px; color: #64748b;">Annual revenue currently rejected</span>
+          <span id="opp-annual" style="font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--color-primary);">₦0</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-top: 2px solid var(--color-highlight); padding-top: 16px; margin-top: 4px;">
+          <span style="font-family: var(--font-sans); font-size: 14px; color: #64748b;">Annual revenue with Rocovit at 5X capacity</span>
+          <span id="opp-rocovit" style="font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--color-highlight);">₦0</span>
+        </div>
+
+        <p style="text-align: center; font-family: var(--font-sans); font-size: 12px; color: #94a3b8; margin-top: 12px;">Calculated at ₦150,000 average engagement fee and 5X capacity multiplier. Actual results vary.</p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 768px) {
+      .calc-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <!-- SECTION 5 - FIND A ROCOVIT ACCOUNTANT -->
+  <section style="background: var(--color-dark); padding: 100px 24px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); margin-bottom: 16px; text-transform: uppercase; display: block;">FOR SME OWNERS</span>
+      <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 40px; color: var(--color-white); line-height: 1.2; margin-bottom: 20px;" class="sme-headline">Your accountant can now give you every document you need.</h2>
+      <p style="font-family: var(--font-sans); font-size: 17px; color: #94a3b8; line-height: 1.7; max-width: 640px; margin: 0 auto 40px;">If your accountant uses Rocovit, a single engagement produces your tax compliance pack, bank loan pack, investor due diligence, audit working papers, visa financials, tender pack, and M&A readiness pack simultaneously. Ask your accountant about Rocovit. Or share this page with them.</p>
+      
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;">
+        <button class="share-btn" style="background: var(--color-highlight); color: white; font-family: var(--font-sans); font-weight: 600; font-size: 15px; padding: 14px 32px; border-radius: 8px; border: none; cursor: pointer;">Share with your accountant</button>
+        <button class="cta-demo" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); font-family: var(--font-sans); font-weight: 600; font-size: 15px; padding: 14px 32px; border-radius: 8px; cursor: pointer; transition: border-color 200ms;">Book a Demo</button>
+      </div>
+      
+      <p style="font-family: var(--font-sans); font-size: 13px; color: #64748b; margin-top: 20px;">Or ask your accountant to visit rocovit.com</p>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 768px) {
+      .sme-headline { font-size: 28px !important; }
+    }
+    .cta-demo:hover { border-color: white !important; }
+  </style>
+
+  <!-- SECTION 6 - FINAL CTA -->
+  <section style="background: var(--color-highlight); padding: 80px 24px; text-align: center;">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.7); margin-bottom: 16px; text-transform: uppercase; display: block;">GET STARTED</span>
+      <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 40px; color: var(--color-white); line-height: 1.2; margin-bottom: 16px;" class="final-headline">First engagement free. No credit card. No commitment.</h2>
+      <p style="font-family: var(--font-sans); font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 40px;">See what Rocovit unlocks for your practice in under 3 hours.</p>
+      <button class="cta-demo" style="background: white; color: var(--color-highlight); font-family: var(--font-sans); font-weight: 600; font-size: 16px; padding: 16px 48px; border-radius: 8px; border: none; cursor: pointer;">Book a Demo</button>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 768px) {
+      .final-headline { font-size: 28px !important; }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+
+      /* Fix hero padding below fixed nav */
+      .hero,
+      [class*="hero"],
+      [class*="page-hero"],
+      [class*="article-hero"],
+      [class*="blog-hero"],
+      [class*="legal-hero"],
+      [class*="policy-hero"] {
+        padding-top: 72px !important;
+      }
+      /* Typography */
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+      }
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Section spacing */
+      section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+
+
+      /* Footer */
+      .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+      }
+      .footer-legal {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+      }
+
+      /* Modal full screen */
+      #modal-overlay {
+        align-items: flex-end !important;
+      }
+      #modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 90vh !important;
+        border-radius: 16px 16px 0 0 !important;
+        padding: 32px 20px !important;
+        overflow-y: auto !important;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+
+      /* Buttons */
+      button.cta-demo,
+      a.cta-demo {
+        min-height: 48px !important;
+        font-size: 15px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+    @media (max-width: 768px) {
+      body {
+        padding-top: var(--nav-height-mobile) !important;
+      }
+      .hero {
+        min-height: calc(100vh - var(--nav-height-mobile));
+        padding: 40px 24px;
+      }
+      .mobile-drawer {
+        top: var(--nav-height-mobile) !important;
+      }
+      /* Fix hero padding below fixed nav */
+      .hero,
+      [class*="hero"],
+      [class*="page-hero"],
+      [class*="article-hero"],
+      [class*="blog-hero"],
+      [class*="legal-hero"],
+      [class*="policy-hero"] {
+        padding-top: 40px !important;
+      }
+      /* Hero two column to single column */
+      .hero-container,
+      [class*="hero-layout"],
+      [class*="hero-columns"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      .hero-text,
+      [class*="hero-left"],
+      [class*="hero-content"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-visual,
+      #hero-visual-placeholder,
+      [class*="hero-right"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Hero stat pills wrap */
+      [class*="stat-pills"],
+      [class*="hero-pills"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+
+      /* Revenue card numbers smaller on mobile */
+      .rev-number {
+        font-size: 22px !important;
+      }
+      .revenue-divider {
+        padding: 0 8px !important;
+      }
+
+      /* All three column grids to single column */
+      [class*="three-col"],
+      [class*="cards-grid"],
+      [class*="article-grid"],
+      [class*="blog-cards"],
+      [class*="output-cards"],
+      [class*="related-cards"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* All two column grids to single column */
+      [class*="two-col"],
+      [class*="alternating"],
+      [class*="split-layout"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      /* Cards full width */
+      [class*="card"],
+      [class*="-card"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      /* FLEX ROWS TO COLUMN */
+      [class*="trust-bar"],
+      [class*="sme-callout"],
+      [class*="profession-crisis"],
+      [class*="roi-container"],
+      [class*="calculator-container"],
+      [class*="footer-brand"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
+      .bundle-cards-row,
+      [class*="bundle-cards"],
+      [class*="pricing-cards"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .bundle-card,
+      [class*="bundle-card"],
+      [class*="pricing-card"] {
+        min-width: 260px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+
+      /* Swipe hint label */
+      .swipe-hint {
+        display: block !important;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: #94a3b8;
+        text-align: center;
+        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+      }
+
+      /* ARTICLE PAGES */
+      [class*="article-hero"],
+      .article-hero {
+        padding: 100px 20px 40px !important;
+      }
+      [class*="article-body"],
+      .article-body {
+        padding: 40px 20px !important;
+      }
+      [class*="stat-callout"],
+      .stat-callout {
+        padding: 16px !important;
+      }
+      [class*="stat-number"] {
+        font-size: 28px !important;
+      }
+      [class*="pull-quote"],
+      blockquote {
+        margin: 20px 0 !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+      }
+      [class*="related-articles"] {
+        padding: 40px 20px !important;
+      }
+      [class*="related-cards"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* BLOG INDEX PAGE */
+      [class*="featured-article"],
+      .featured-article {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      [class*="featured-visual"],
+      .featured-visual {
+        height: 180px !important;
+        min-height: 0 !important;
+      }
+      [class*="subscribe-form"],
+      #subscribe-form {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      #subscribe-form input {
+        width: 100% !important;
+      }
+      #subscribe-form button {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+
+      /* OPPORTUNITY PAGE - FIVE DOORS */
+      [class*="door-row"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      [class*="door-icon"] {
+        margin: 0 auto 16px !important;
+      }
+      [class*="door-text"] {
+        text-align: left !important;
+      }
+
+      /* ABOUT PAGE - FOUNDER AND STATS */
+      [class*="founder-card"],
+      [class*="founder-layout"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+      [class*="stats-grid"],
+      [class*="shortage-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* SECURITY PAGE */
+      [class*="security-grid"],
+      [class*="trust-grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      [class*="faq-item"] {
+        padding: 16px 0 !important;
+      }
+
+      /* HOW IT WORKS PAGE */
+      [class*="pipeline-steps"],
+      [class*="steps-container"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="step-arrow"],
+      [class*="connecting-arrow"] {
+        display: none !important;
+      }
+      [class*="step-card"] {
+        width: 100% !important;
+      }
+
+      /* OUTPUTS PAGE */
+      [class*="output-row"],
+      [class*="output-alternating"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="output-row"].even,
+      [class*="output-row"].odd {
+        flex-direction: column !important;
+      }
+      [class*="output-visual"] {
+        min-height: 160px !important;
+        height: 160px !important;
+      }
+
+      /* LEGAL PAGES */
+      [class*="legal-hero"],
+      .legal-hero {
+        padding: 80px 20px 40px !important;
+      }
+      [class*="legal-body"],
+      .legal-body {
+        padding: 40px 20px !important;
+      }
+      table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        font-size: 13px !important;
+        width: 100% !important;
+      }
+      th, td {
+        min-width: 100px !important;
+        padding: 10px 12px !important;
+      }
+
+      /* PROOF NUMBERS SECTION */
+      [class*="proof-numbers"],
+      [class*="stats-row"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      [class*="proof-divider"],
+      [class*="stat-divider"] {
+        display: none !important;
+      }
+      [class*="proof-number"],
+      [class*="stat-number-large"] {
+        font-size: 48px !important;
+      }
+
+      /* FINAL CTA SECTIONS */
+      [class*="final-cta"] button,
+      [class*="final-cta"] .cta-demo {
+        width: 100% !important;
+        max-width: 360px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
+    /* Sticky CTA Bar - hidden by default, mobile only */
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--color-dark);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 20px;
+      z-index: 998;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .sticky-cta-btn {
+      width: 100%;
+      background: var(--color-highlight);
+      color: white;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      min-height: 48px;
+    }
+    .sticky-cta-btn:hover {
+      background: #0b7a70;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar {
+        display: none;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-5 ===== */
+    @media (max-width: 768px) {
+      /* Hero stat pills - wrap and centre */
+      [class*="opportunity-hero"] [class*="pills"],
+      [class*="hero-pills"] {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+      }
+
+      /* Five doors - always stack on mobile */
+      [class*="door-row"],
+      [class*="door-layout"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* Even door rows - remove reverse direction */
+      [class*="door-row"]:nth-child(even) {
+        flex-direction: column !important;
+      }
+
+      /* Door icon centred */
+      [class*="door-icon"],
+      [class*="door-visual"] {
+        margin: 0 auto !important;
+        width: 72px !important;
+        height: 72px !important;
+      }
+
+      /* Door text left aligned */
+      [class*="door-text"],
+      [class*="door-content"] {
+        text-align: left !important;
+      }
+
+      /* Door who requires row - wrap */
+      [class*="who-requires"],
+      [class*="door-requires"] {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+      }
+
+      /* Revenue calculator - stack */
+      [class*="calculator-layout"],
+      [class*="calc-container"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+
+      /* Calculator card full width */
+      [class*="calc-card"],
+      [class*="calculator-card"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Calculator output rows */
+      [class*="calc-row"],
+      [class*="output-row"] {
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+      }
+
+      /* Share button full width on mobile */
+      [class*="share-btn"],
+      .share-btn {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+        display: block !important;
+        text-align: center !important;
+      }
+
+      /* Two buttons in find accountant section - stack */
+      [class*="find-accountant"] [class*="btn-row"],
+      [class*="cta-buttons"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+      }
+      [class*="find-accountant"] button,
+      [class*="cta-buttons"] button {
+        width: 100% !important;
+        max-width: 320px !important;
+      }
+    }
+  </style>
+
+  <!-- MASTER FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="footer-diamond"></span><span class="footer-wordmark">Rocovit</span></div>
+        <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon">in</a>
+          <a href="#" class="social-icon">ð•</a>
+          <a href="#" class="social-icon">âŠ•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">PRODUCT</p>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPANY</p>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="opportunity.html">SME Opportunity</a>
+        <a href="mailto:hello@rocovit.com">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPLIANCE</p>
+        <div class="compliance-badge"><span class="dot dot-green"></span><div><span class="badge-title">NDPR Compliant</span><span class="badge-sub">Nigeria Data Protection Regulation</span></div></div>
+        <div class="compliance-badge"><span class="dot dot-green"></span><div><span class="badge-title">POPIA Compliant</span><span class="badge-sub">South Africa</span></div></div>
+        <div class="compliance-badge"><span class="dot dot-green"></span><div><span class="badge-title">GDPR Compliant</span><span class="badge-sub">European Union</span></div></div>
+        <div class="compliance-badge"><span class="dot dot-blue"></span><div><span class="badge-title">SOC 2 - In Progress</span><span class="badge-sub">Certification underway</span></div></div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 Rocovit Limited. All rights reserved.</span>
+      <div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="cookie-policy.html">Cookie Policy</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // CURRENCY LOGIC
+    const savedCurrency = localStorage.getItem('rocovit_currency') || 'NGN';
+    const flags = {USD:'US',NGN:'NG',AED:'AE',KES:'KE',ZAR:'ZA',GBP:'GB'};
+    function updateNavPill(c){const p=document.querySelector('.currency-nav-pill');if(p)p.textContent=flags[c]+' '+c;}
+    updateNavPill(savedCurrency);
+
+    // CALCULATOR LOGIC
+    function calcOpportunity() {
+      const clients = parseFloat(document.getElementById('opp-clients').value) || 0;
+      const fee = parseFloat(document.getElementById('opp-fee').value) || 0;
+      const monthly = clients * fee;
+      const annual = monthly * 12;
+      const withRocovit = annual * 5;
+      function fmt(n) {
+        return '₦' + Math.round(n).toLocaleString();
+      }
+      document.getElementById('opp-monthly').textContent = fmt(monthly);
+      document.getElementById('opp-annual').textContent = fmt(annual);
+      document.getElementById('opp-rocovit').textContent = fmt(withRocovit);
+    }
+    document.getElementById('opp-clients')?.addEventListener('input', calcOpportunity);
+    document.getElementById('opp-fee')?.addEventListener('input', calcOpportunity);
+    calcOpportunity();
+
+    // SHARE BUTTON LOGIC
+    document.querySelector('.share-btn')?.addEventListener('click', function() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const original = this.textContent;
+        this.textContent = 'Link copied âœ“';
+        setTimeout(() => { this.textContent = original; }, 2000);
+      });
+    });
+
+    // MODAL LOGIC
+    const mo=document.createElement('div');mo.id='modal-overlay';mo.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:2000;opacity:0;pointer-events:none;transition:opacity 300ms ease;display:flex;align-items:center;justify-content:center;';mo.innerHTML=`<div id="modal-card" style="background:#fff;border-radius:16px;padding:48px;width:480px;max-width:calc(100vw - 48px);position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.3);"><button id="modal-close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;color:#94a3b8;cursor:pointer;">Ã—</button><div id="modal-form-content"><h2 style="font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:#0f172a;margin-bottom:8px;">Book a Demo</h2><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;margin-bottom:32px;">A member of the Rocovit team will be in touch within 24 hours.</p><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Full Name</label><input type="text" placeholder="Jane Mensah" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Email Address</label><input type="email" placeholder="jane@firm.com" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Company Name</label><input type="text" placeholder="Mensah & Associates" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">SME Clients Per Month</label><select style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;background:white;"><option value="">Select range</option><option>1-10 clients</option><option>11-25 clients</option><option>26-75 clients</option><option>76-200 clients</option><option>200+ clients</option></select></div><button id="modal-submit" style="width:100%;padding:14px;background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;border:none;border-radius:8px;cursor:pointer;margin-top:4px;">Request Demo</button></div><div id="modal-confirm" style="display:none;text-align:center;padding:20px 0;"><div style="width:64px;height:64px;border-radius:50%;background:#F0FDF4;border:2px solid #BBF7D0;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;">âœ“</div><h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;color:#0f172a;margin-bottom:8px;">You are confirmed.</h3><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;">A member of the Rocovit team will be in touch within 24 hours.</p></div></div>`;
+    document.body.appendChild(mo);
+    function openModal(){mo.style.opacity='1';mo.style.pointerEvents='all';document.body.style.overflow='hidden';}
+    function closeModal(){mo.style.opacity='0';mo.style.pointerEvents='none';document.body.style.overflow='';}
+    document.querySelectorAll('.cta-demo').forEach(b=>b.addEventListener('click',openModal));
+    document.getElementById('modal-close').addEventListener('click',closeModal);
+    mo.addEventListener('click',e=>{if(e.target===mo)closeModal();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+    document.getElementById('modal-submit').addEventListener('click',()=>{document.getElementById('modal-form-content').style.display='none';document.getElementById('modal-confirm').style.display='block';});
+
+    // Sticky CTA Bar - show after 300px scroll, hide near footer
+    (function() {
+      const bar = document.getElementById('sticky-cta-bar');
+      if (!bar) return;
+      const footer = document.querySelector('footer');
+      function updateStickyBar() {
+        if (window.innerWidth > 768) {
+          bar.style.display = 'none';
+          return;
+        }
+        const scrolled = window.scrollY > 300;
+        const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight + 80 : false;
+        bar.style.display = (scrolled && !footerVisible) ? 'block' : 'none';
+      }
+      window.addEventListener('scroll', updateStickyBar);
+      window.addEventListener('resize', updateStickyBar);
+      updateStickyBar();
+    })();
+
+    // Mobile drawer toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (hamburger && mobileDrawer) {
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileDrawer.classList.toggle('open');
+      });
+
+      // Close drawer when clicking outside
+      document.addEventListener('click', (e) => {
+        if (mobileDrawer.classList.contains('open') && 
+            !mobileDrawer.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+        }
+      });
+
+      // Close drawer when clicking a link
+      mobileDrawer.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+        });
+      });
+    }
+
+    // Modal Logic
+    </script>
+  <!-- Sticky Mobile CTA Bar -->
+  <div class="sticky-cta-bar" id="sticky-cta-bar">
+    <button class="cta-demo sticky-cta-btn">Book a Demo - First Engagement Free</button>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

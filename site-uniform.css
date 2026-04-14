@@ -1,0 +1,262 @@
+/* Shared consistency layer for all standalone pages */
+:root {
+  --uniform-font-display: "Syne", sans-serif;
+  --uniform-font-body: "DM Sans", sans-serif;
+  --uniform-text-base: 16px;
+  --uniform-text-small: 0.875rem;
+  --uniform-text-lead: 1.125rem;
+  --uniform-hero-min-height: 620px;
+  --uniform-hero-min-height-mobile: 470px;
+}
+
+html {
+  font-size: var(--uniform-text-base);
+}
+
+/* Enforce the how-it-works font stack across pages */
+*:not(svg):not(path):not(line):not(polyline):not(rect):not(circle) {
+  font-family: var(--uniform-font-body);
+}
+
+body,
+button,
+input,
+select,
+textarea,
+p,
+li,
+label,
+small {
+  font-family: var(--uniform-font-body) !important;
+}
+
+a,
+span,
+div {
+  font-family: var(--uniform-font-body) !important;
+}
+
+body,
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+small,
+.small {
+  font-size: var(--uniform-text-small);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-headline,
+.section-headline,
+.problem-headline,
+.solution-headline,
+.how-headline,
+.outputs-headline,
+.blog-headline,
+.cta-headline,
+.indemnity-headline,
+.proof-headline,
+.testimonials-headline,
+.crisis-headline,
+.time-headline,
+.modal-headline,
+.card-headline {
+  font-family: var(--uniform-font-display) !important;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow,
+.tier-name,
+.row-label,
+.rev-label,
+.total-label,
+.footer-col-header {
+  font-family: "DM Mono", monospace !important;
+}
+
+h1,
+.hero h1,
+.page-hero h1,
+.article-hero h1,
+.blog-hero h1,
+.legal-hero h1,
+.policy-hero h1,
+.security-hero h1,
+.banner h1,
+.hero-headline {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+}
+
+h4,
+h5,
+h6 {
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+}
+
+.hero p,
+.page-hero p,
+.article-hero p,
+.blog-hero p,
+.legal-hero p,
+.policy-hero p,
+.security-hero p,
+.banner p,
+.hero-sub,
+.hero-subheadline,
+.lead,
+.cta-subheadline,
+.compliance-sub {
+  font-size: var(--uniform-text-lead);
+  line-height: 1.7;
+}
+
+.hero,
+.page-hero,
+.article-hero,
+.blog-hero,
+.legal-hero,
+.policy-hero,
+.security-hero,
+.banner {
+  min-height: var(--uniform-hero-min-height);
+  padding-top: clamp(104px, 11vw, 152px);
+  padding-bottom: clamp(72px, 9vw, 120px);
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .page-hero,
+  .article-hero,
+  .blog-hero,
+  .legal-hero,
+  .policy-hero,
+  .security-hero,
+  .banner {
+    min-height: var(--uniform-hero-min-height-mobile);
+    padding-top: clamp(84px, 14vw, 112px);
+    padding-bottom: clamp(56px, 10vw, 88px);
+  }
+
+  body,
+  p,
+  li {
+    font-size: 0.97rem;
+  }
+
+  .hero p,
+  .page-hero p,
+  .article-hero p,
+  .blog-hero p,
+  .legal-hero p,
+  .policy-hero p,
+  .security-hero p,
+  .banner p,
+  .hero-sub,
+  .hero-subheadline,
+  .lead,
+  .cta-subheadline,
+  .compliance-sub {
+    font-size: 1rem;
+  }
+}
+
+/* Header consistency across standalone pages */
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 24px;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2px;
+}
+
+.logo-image {
+  display: block;
+  width: 128px;
+  height: auto;
+}
+
+.logo-diamond {
+  width: 10px;
+  height: 10px;
+  background: #0d9488;
+  transform: rotate(45deg);
+  border-radius: 1px;
+  display: inline-block;
+  margin-left: -1px;
+}
+
+.nav-links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0 !important;
+}
+
+.nav-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 !important;
+  padding-left: 0 !important;
+}
+
+.footer-diamond {
+  width: 10px;
+  height: 10px;
+  background: #0d9488;
+  transform: rotate(45deg);
+  border-radius: 1px;
+  display: inline-block;
+  margin-top: 6px;
+  margin-right: 2px;
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    width: 118px;
+  }
+
+  .logo-diamond {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Absolute global text uniformity: one font family baseline */
+html {
+  font-size: 16px !important;
+}
+
+body,
+body *:not(svg):not(path):not(line):not(polyline):not(rect):not(circle):not(g) {
+  font-family: "DM Sans", sans-serif !important;
+}

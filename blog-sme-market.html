@@ -1,0 +1,1435 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why accounting firms turn away SME clients | Rocovit Blog</title>
+  <style>
+/* ===== NAVIGATION MASTER ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  height: var(--nav-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  transition: 300ms ease;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.logo-symbol {
+  color: var(--color-highlight);
+  margin-left: 4px;
+  font-size: 18px;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-dark);
+  transition: 200ms;
+}
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.currency-nav-pill {
+  background: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-login {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 200ms;
+}
+.btn-login:hover {
+  background: rgba(37,99,235,0.05);
+}
+nav .cta-demo {
+  background: var(--color-highlight);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+nav .cta-demo:hover {
+  opacity: 0.9;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  transition: 0.3s ease;
+}
+.mobile-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer.open {
+  max-height: 500px;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.mobile-drawer a {
+  padding: 16px 24px;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 16px;
+  display: block;
+}
+.mobile-drawer a:hover {
+  color: var(--color-primary);
+  background: var(--color-light);
+}
+.mobile-drawer .drawer-cta {
+  padding: 20px 24px;
+  background: #f8fafc;
+}
+.mobile-drawer .drawer-cta .cta-demo {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--color-highlight);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 16px !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .btn-login {
+    display: none !important;
+  }
+  .currency-nav-pill {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+  }
+  nav .cta-demo {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    white-space: nowrap !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+  }
+  .nav-container {
+    padding: 0 !important;
+  }
+}
+/* ===== END NAVIGATION MASTER ===== */
+
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #0f172a;
+      --color-highlight: #0d9488;
+      --color-light: #f8fafc;
+      --color-white: #ffffff;
+      --color-border: #e2e8f0;
+      --font-display: "Syne", sans-serif;
+      --font-sans: "DM Sans", sans-serif;
+      --font-mono: "DM Mono", monospace;
+      --nav-height: 72px;
+      --nav-height-mobile: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-dark);
+      background-color: var(--color-white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+    }
+
+
+
+    /* ARTICLE HERO */
+    .article-hero {
+      background: var(--color-dark);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      padding: 60px 24px;
+    }
+
+    .hero-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .category-pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-highlight);
+      background: rgba(13, 148, 136, 0.08);
+      border: 1px solid rgba(13, 148, 136, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 44px;
+      color: var(--color-white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    /* ARTICLE BODY */
+    .article-body {
+      background: var(--color-white);
+      padding: 60px 24px;
+    }
+
+    .body-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .article-body p {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      color: #374151;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--color-dark);
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .pull-quote {
+      border-left: 4px solid var(--color-highlight);
+      padding: 16px 24px;
+      background: var(--color-light);
+      border-radius: 0 8px 8px 0;
+      margin: 32px 0;
+      font-family: var(--font-sans);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--color-dark);
+    }
+
+    .stat-callout {
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--color-primary);
+      display: block;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #64748b;
+      display: block;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    /* ARTICLE CTA */
+    .article-cta {
+      background: var(--color-highlight);
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .cta-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .article-cta h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--color-white);
+      margin-bottom: 16px;
+    }
+
+    .article-cta p {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 32px;
+    }
+
+    .btn-cta {
+      background: var(--color-white);
+      color: var(--color-highlight);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 40px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RELATED ARTICLES */
+    .related-articles {
+      background: var(--color-light);
+      padding: 60px 24px;
+    }
+
+    .related-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .related-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-highlight);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .related-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .card-category {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-highlight);
+      text-transform: uppercase;
+    }
+
+    .card-headline {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--color-dark);
+      line-height: 1.3;
+      margin-top: 8px;
+      display: block;
+    }
+
+    .card-read {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--color-primary);
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #080F1E;
+      padding: 80px 24px 40px;
+    }
+
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      gap: 48px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .footer-diamond {
+      color: #0d9488;
+      font-size: 18px;
+    }
+
+    .footer-wordmark {
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #2563eb;
+    }
+
+    .footer-tagline {
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 13px;
+      text-decoration: none;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .footer-col-header {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      color: #94a3b8;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .compliance-badge {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .dot-green { background: #16A34A; }
+    .dot-blue { background: #2563eb; }
+
+    .badge-title {
+      display: block;
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      color: #fff;
+    }
+
+    .badge-sub {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .footer-divider {
+      max-width: 1200px;
+      margin: 48px auto 24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom span, .footer-bottom a {
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      color: #64748b;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: #fff;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 780px) {
+      .article-hero h1 { font-size: 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+      nav .nav-centre-links {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-bar {
+        padding: 0 !important;
+        height: 56px !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .nav-container {
+        padding: 0 16px !important;
+        height: 56px !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+      .nav-links {
+        display: none !important;
+      }
+      .btn-login {
+        display: none !important;
+      }
+      .currency-pill {
+        display: none !important;
+      }
+      .hamburger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0 !important;
+      }
+      .btn-demo {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        white-space: nowrap !important;
+        height: 32px !important;
+        line-height: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .nav-right {
+        gap: 8px !important;
+        align-items: center !important;
+        height: 56px !important;
+        display: flex !important;
+      }
+      .logo {
+        display: flex !important;
+        align-items: center !important;
+        height: 56px !important;
+      }
+      /* Typography */
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+      }
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Section spacing */
+      section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }      /* Navigation */
+      .mobile-drawer a {
+        padding: 16px 24px;
+        text-decoration: none;
+        color: var(--color-dark);
+        font-family: var(--font-sans);
+        font-weight: 500;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 16px;
+      }
+
+      .drawer-cta {
+        padding: 16px;
+      }
+
+      .mobile-drawer .cta-demo {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+      }
+
+    /* Footer */
+      .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+      }
+      .footer-legal {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+      }
+
+      /* Modal full screen */
+      #modal-overlay {
+        align-items: flex-end !important;
+      }
+      #modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 90vh !important;
+        border-radius: 16px 16px 0 0 !important;
+        padding: 32px 20px !important;
+        overflow-y: auto !important;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+
+      /* Buttons */
+      button.cta-demo,
+      a.cta-demo {
+        min-height: 48px !important;
+        font-size: 15px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+    @media (max-width: 768px) {
+      body {
+        padding-top: var(--nav-height-mobile) !important;
+      }
+      .article-hero {
+        min-height: calc(100vh - var(--nav-height-mobile));
+        padding: 40px 24px;
+      }
+      .mobile-drawer {
+        top: var(--nav-height-mobile) !important;
+      }
+      /* Fix hero padding below fixed nav */
+      .hero,
+      [class*="hero"],
+      [class*="page-hero"],
+      [class*="article-hero"],
+      [class*="blog-hero"],
+      [class*="legal-hero"],
+      [class*="policy-hero"] {
+        padding-top: 40px !important;
+      }
+      /* Hero two column to single column */
+      .hero-container,
+      [class*="hero-layout"],
+      [class*="hero-columns"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      .hero-text,
+      [class*="hero-left"],
+      [class*="hero-content"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-visual,
+      #hero-visual-placeholder,
+      [class*="hero-right"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Hero stat pills wrap */
+      [class*="stat-pills"],
+      [class*="hero-pills"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+
+      /* Revenue card numbers smaller on mobile */
+      .rev-number {
+        font-size: 22px !important;
+      }
+      .revenue-divider {
+        padding: 0 8px !important;
+      }
+
+      /* All three column grids to single column */
+      [class*="three-col"],
+      [class*="cards-grid"],
+      [class*="article-grid"],
+      [class*="blog-cards"],
+      [class*="output-cards"],
+      [class*="related-cards"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* All two column grids to single column */
+      [class*="two-col"],
+      [class*="alternating"],
+      [class*="split-layout"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      /* Cards full width */
+      [class*="card"],
+      [class*="-card"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      /* FLEX ROWS TO COLUMN */
+      [class*="trust-bar"],
+      [class*="sme-callout"],
+      [class*="profession-crisis"],
+      [class*="roi-container"],
+      [class*="calculator-container"],
+      [class*="footer-brand"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
+      .bundle-cards-row,
+      [class*="bundle-cards"],
+      [class*="pricing-cards"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .bundle-card,
+      [class*="bundle-card"],
+      [class*="pricing-card"] {
+        min-width: 260px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+
+      /* Swipe hint label */
+      .swipe-hint {
+        display: block !important;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: #94a3b8;
+        text-align: center;
+        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+      }
+
+      /* ARTICLE PAGES */
+      [class*="article-hero"],
+      .article-hero {
+        padding: 100px 20px 40px !important;
+      }
+      [class*="article-body"],
+      .article-body {
+        padding: 40px 20px !important;
+      }
+      [class*="stat-callout"],
+      .stat-callout {
+        padding: 16px !important;
+      }
+      [class*="stat-number"] {
+        font-size: 28px !important;
+      }
+      [class*="pull-quote"],
+      blockquote {
+        margin: 20px 0 !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+      }
+      [class*="related-articles"] {
+        padding: 40px 20px !important;
+      }
+      [class*="related-cards"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* BLOG INDEX PAGE */
+      [class*="featured-article"],
+      .featured-article {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      [class*="featured-visual"],
+      .featured-visual {
+        height: 180px !important;
+        min-height: 0 !important;
+      }
+      [class*="subscribe-form"],
+      #subscribe-form {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      #subscribe-form input {
+        width: 100% !important;
+      }
+      #subscribe-form button {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+
+      /* OPPORTUNITY PAGE - FIVE DOORS */
+      [class*="door-row"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      [class*="door-icon"] {
+        margin: 0 auto 16px !important;
+      }
+      [class*="door-text"] {
+        text-align: left !important;
+      }
+
+      /* ABOUT PAGE - FOUNDER AND STATS */
+      [class*="founder-card"],
+      [class*="founder-layout"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+      [class*="stats-grid"],
+      [class*="shortage-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* SECURITY PAGE */
+      [class*="security-grid"],
+      [class*="trust-grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      [class*="faq-item"] {
+        padding: 16px 0 !important;
+      }
+
+      /* HOW IT WORKS PAGE */
+      [class*="pipeline-steps"],
+      [class*="steps-container"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="step-arrow"],
+      [class*="connecting-arrow"] {
+        display: none !important;
+      }
+      [class*="step-card"] {
+        width: 100% !important;
+      }
+
+      /* OUTPUTS PAGE */
+      [class*="output-row"],
+      [class*="output-alternating"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="output-row"].even,
+      [class*="output-row"].odd {
+        flex-direction: column !important;
+      }
+      [class*="output-visual"] {
+        min-height: 160px !important;
+        height: 160px !important;
+      }
+
+      /* LEGAL PAGES */
+      [class*="legal-hero"],
+      .legal-hero {
+        padding: 80px 20px 40px !important;
+      }
+      [class*="legal-body"],
+      .legal-body {
+        padding: 40px 20px !important;
+      }
+      table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        font-size: 13px !important;
+        width: 100% !important;
+      }
+      th, td {
+        min-width: 100px !important;
+        padding: 10px 12px !important;
+      }
+
+      /* PROOF NUMBERS SECTION */
+      [class*="proof-numbers"],
+      [class*="stats-row"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      [class*="proof-divider"],
+      [class*="stat-divider"] {
+        display: none !important;
+      }
+      [class*="proof-number"],
+      [class*="stat-number-large"] {
+        font-size: 48px !important;
+      }
+
+      /* FINAL CTA SECTIONS */
+      [class*="final-cta"] button,
+      [class*="final-cta"] .cta-demo {
+        width: 100% !important;
+        max-width: 360px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
+    /* Sticky CTA Bar - hidden by default, mobile only */
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--color-dark);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 20px;
+      z-index: 998;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .sticky-cta-btn {
+      width: 100%;
+      background: var(--color-highlight);
+      color: white;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      min-height: 48px;
+    }
+    .sticky-cta-btn:hover {
+      background: #0b7a70;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar {
+        display: none;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-4 ===== */
+    @media (max-width: 768px) {
+      /* Article hero */
+      [class*="article-hero"],
+      .article-hero {
+        padding: 100px 20px 40px !important;
+        min-height: 0 !important;
+      }
+
+      /* Article headline size */
+      [class*="article-hero"] h1,
+      .article-hero h1 {
+        font-size: 26px !important;
+        line-height: 1.2 !important;
+      }
+
+      /* Article body */
+      [class*="article-body"],
+      .article-body {
+        padding: 40px 20px !important;
+      }
+
+      /* Article body text */
+      [class*="article-body"] p,
+      .article-body p {
+        font-size: 16px !important;
+        line-height: 1.75 !important;
+      }
+
+      /* H2 headings in article */
+      [class*="article-body"] h2,
+      .article-body h2 {
+        font-size: 22px !important;
+        margin-top: 36px !important;
+      }
+
+      /* Stat callouts */
+      [class*="stat-callout"],
+      .stat-callout {
+        padding: 16px !important;
+        margin: 20px 0 !important;
+      }
+      [class*="stat-callout"] [class*="number"],
+      .stat-callout .stat-number {
+        font-size: 36px !important;
+      }
+
+      /* Pull quotes */
+      [class*="pull-quote"],
+      blockquote {
+        margin: 20px 0 !important;
+        padding: 14px 16px !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+      }
+
+      /* Article CTA section */
+      [class*="article-cta"],
+      .article-cta {
+        padding: 48px 20px !important;
+      }
+      [class*="article-cta"] h2,
+      .article-cta h2 {
+        font-size: 24px !important;
+      }
+      [class*="article-cta"] .cta-demo {
+        width: 100% !important;
+        max-width: 320px !important;
+      }
+
+      /* Related articles section */
+      [class*="related-articles"],
+      .related-articles {
+        padding: 40px 20px !important;
+      }
+
+      /* Related cards - stack vertically */
+      [class*="related-cards"],
+      .related-cards {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* Each related card full width */
+      [class*="related-card"],
+      .related-cards a {
+        width: 100% !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="site-uniform.css"></head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="outputs.html">Outputs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+<button class="btn-login">Login</button>
+      <button class="cta-demo">Book a Demo</button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="how-it-works.html">How It Works</a>
+  <a href="outputs.html">Outputs</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="security.html">Security</a>
+  <a href="about.html">About Us</a>
+  <div class="drawer-cta">
+    <button class="cta-demo">Book a Demo</button>
+  </div>
+</div>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="hero-container">
+      <span class="category-pill">MARKET OPPORTUNITY</span>
+      <h1>Why accounting firms turn away SME clients - and what it costs both sides</h1>
+      <div class="article-meta">8 MIN READ - MARCH 2026</div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <section class="article-body">
+    <div class="body-container">
+      <h2>The rejection is not personal. It is economic.</h2>
+      <p>Every day across Nigeria, Kenya, South Africa, and the UAE, accounting firms turn away SME clients. Not because those clients are difficult. Not because the work is beyond the firm's capability. Because serving an SME manually takes 10 to 15 days of fragmented, judgment-heavy work - and at the fees SMEs can afford, that time does not pay.</p>
+      <p>This is an economics problem. The manual preparation workflow makes SMEs structurally unprofitable for most accounting firms. And when accounting firms cannot profitably serve SMEs, those businesses lose access to the financial statements they need for everything else.</p>
+      
+      <div class="stat-callout">
+        <span class="stat-number">65M</span>
+        <span class="stat-label">formal SMEs across emerging markets currently unserved by accounting firms</span>
+      </div>
+
+      <h2>What SMEs lose when accountants turn them away</h2>
+      <p>Financial statements are not just a compliance document. They are the proof that opens every door a growing business needs to walk through.</p>
+      <p>Without credible financial statements an SME cannot access a bank loan. Cannot respond to a tender. Cannot raise equity investment. Cannot apply for a visa financial pack. Cannot defend their tax position in an audit. Cannot demonstrate financial credibility to a supplier, partner, or acquirer.</p>
+      
+      <div class="pull-quote">
+        "This is a credibility gap, not a credit gap. The money exists. The investors exist. The contracts exist. What is missing is the proof."
+      </div>
+
+      <div class="stat-callout">
+        <span class="stat-number">$5.7T</span>
+        <span class="stat-label">in financing, contracts, and investment locked away from SMEs annually - World Bank</span>
+      </div>
+
+      <h2>What accounting firms lose when they say no</h2>
+      <p>The firms turning away SME clients are not doing it out of indifference. They are doing it because the economics do not work. A 15-day engagement billed at ₦150,000 is not profitable when the accountant could spend the same time on a larger client at five times the fee.</p>
+      <p>But that calculation changes completely when the 15-day process becomes a 3-hour process. The same ₦150,000 engagement that was unprofitable across two weeks becomes highly profitable across a single morning. The SME market does not need to be cheap to serve. It needs to be fast to serve.</p>
+
+      <div class="stat-callout">
+        <span class="stat-number">₦168M</span>
+        <span class="stat-label">estimated annual revenue an accounting firm leaves on the table by turning away SME clients</span>
+      </div>
+
+      <h2>The market is already there. The workflow is the only barrier.</h2>
+      <p>Rocovit exists because the demand side of this equation is not the problem. 65 million SMEs need financial statements. New tax reforms in Nigeria are making that need urgent. FIRS compliance requirements are expanding. Penalties for non-compliance are increasing.</p>
+      <p>The supply side - the accounting firms - have the skills and the relationships. What they have lacked is a workflow that makes SME engagements economically viable. Rocovit is that workflow.</p>
+      <p>Audit firms using Rocovit report client capacity up 5X. Errors down 75%. Engagements that previously took 10 days now take under 3 hours. The SME market has not changed. The economics of serving it have.</p>
+    </div>
+  </section>
+
+  <!-- ARTICLE CTA -->
+  <section class="article-cta">
+    <div class="cta-container">
+      <h2>Start serving the clients this article is about.</h2>
+      <p>First engagement free. Every output included. No credit card required.</p>
+      <button class="btn-cta cta-demo">Book a Demo</button>
+    </div>
+  </section>
+
+  <!-- RELATED ARTICLES -->
+  <section class="related-articles">
+    <div class="related-container">
+      <span class="related-label">CONTINUE READING</span>
+      <div class="related-grid">
+        <a href="blog-tax-reforms.html" class="related-card">
+          <span class="card-category">TAX REFORM</span>
+          <span class="card-headline">How Nigeria's new tax reforms are creating demand accountants cannot meet manually</span>
+          <span class="card-read">Read â†’</span>
+        </a>
+        <a href="blog-5x-capacity.html" class="related-card">
+          <span class="card-category">PRACTICE GROWTH</span>
+          <span class="card-headline">How to serve 5X more clients without hiring a single new accountant</span>
+          <span class="card-read">Read â†’</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MASTER FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="footer-diamond"></span><span class="footer-wordmark">Rocovit</span></div>
+        <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon">in</a>
+          <a href="#" class="social-icon">ð•</a>
+          <a href="#" class="social-icon">âŠ•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">PRODUCT</p>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPANY</p>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="opportunity.html">SME Opportunity</a>
+        <a href="mailto:hello@rocovit.com">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-header">COMPLIANCE</p>
+        <div class="compliance-badge"><span class="dot dot-green"></span><div><span class="badge-title">NDPR Compliant</span><span class="badge-sub">Nigeria Data Protection Regulation</span></div></div>
+        <div class="compliance-badge"><span class="dot dot-green"></span><div><span class="badge-title">POPIA Compliant</span><span class="badge-sub">South Africa</span></div></div>
+        <div class="compliance-badge"><span class="dot dot-green"></span><div><span class="badge-title">GDPR Compliant</span><span class="badge-sub">European Union</span></div></div>
+        <div class="compliance-badge"><span class="dot dot-blue"></span><div><span class="badge-title">SOC 2 - In Progress</span><span class="badge-sub">Certification underway</span></div></div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 Rocovit Limited. All rights reserved.</span>
+      <div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="cookie-policy.html">Cookie Policy</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // CURRENCY LOGIC
+    const savedCurrency = localStorage.getItem('rocovit_currency') || 'NGN';
+    const flags = {USD:'US',NGN:'NG',AED:'AE',KES:'KE',ZAR:'ZA',GBP:'GB'};
+    function updateNavPill(c){const p=document.querySelector('.currency-nav-pill');if(p)p.textContent=flags[c]+' '+c;}
+    updateNavPill(savedCurrency);
+
+    // MODAL LOGIC
+    const mo=document.createElement('div');mo.id='modal-overlay';mo.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:2000;opacity:0;pointer-events:none;transition:opacity 300ms ease;display:flex;align-items:center;justify-content:center;';mo.innerHTML=`<div id="modal-card" style="background:#fff;border-radius:16px;padding:48px;width:480px;max-width:calc(100vw - 48px);position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.3);"><button id="modal-close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;color:#94a3b8;cursor:pointer;">Ã—</button><div id="modal-form-content"><h2 style="font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:#0f172a;margin-bottom:8px;">Book a Demo</h2><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;margin-bottom:32px;">A member of the Rocovit team will be in touch within 24 hours.</p><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Full Name</label><input type="text" placeholder="Jane Mensah" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Email Address</label><input type="email" placeholder="jane@firm.com" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Company Name</label><input type="text" placeholder="Mensah & Associates" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;"></div><div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">SME Clients Per Month</label><select style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;box-sizing:border-box;outline:none;background:white;"><option value="">Select range</option><option>1-10 clients</option><option>11-25 clients</option><option>26-75 clients</option><option>76-200 clients</option><option>200+ clients</option></select></div><button id="modal-submit" style="width:100%;padding:14px;background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;border:none;border-radius:8px;cursor:pointer;margin-top:4px;">Request Demo</button></div><div id="modal-confirm" style="display:none;text-align:center;padding:20px 0;"><div style="width:64px;height:64px;border-radius:50%;background:#F0FDF4;border:2px solid #BBF7D0;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;">âœ“</div><h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;color:#0f172a;margin-bottom:8px;">You are confirmed.</h3><p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;">A member of the Rocovit team will be in touch within 24 hours.</p></div></div>`;
+    document.body.appendChild(mo);
+    function openModal(){mo.style.opacity='1';mo.style.pointerEvents='all';document.body.style.overflow='hidden';}
+    function closeModal(){mo.style.opacity='0';mo.style.pointerEvents='none';document.body.style.overflow='';}
+    document.querySelectorAll('.cta-demo').forEach(b=>b.addEventListener('click',openModal));
+    document.getElementById('modal-close').addEventListener('click',closeModal);
+    mo.addEventListener('click',e=>{if(e.target===mo)closeModal();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+    document.getElementById('modal-submit').addEventListener('click',()=>{document.getElementById('modal-form-content').style.display='none';document.getElementById('modal-confirm').style.display='block';});
+
+    // Sticky CTA Bar - show after 300px scroll, hide near footer
+    (function() {
+      const bar = document.getElementById('sticky-cta-bar');
+      if (!bar) return;
+      const footer = document.querySelector('footer');
+      function updateStickyBar() {
+        if (window.innerWidth > 768) {
+          bar.style.display = 'none';
+          return;
+        }
+        const scrolled = window.scrollY > 300;
+        const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight + 80 : false;
+        bar.style.display = (scrolled && !footerVisible) ? 'block' : 'none';
+      }
+      window.addEventListener('scroll', updateStickyBar);
+      window.addEventListener('resize', updateStickyBar);
+      updateStickyBar();
+    })();
+
+    // Mobile drawer toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (hamburger && mobileDrawer) {
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileDrawer.classList.toggle('open');
+      });
+
+      // Close drawer when clicking outside
+      document.addEventListener('click', (e) => {
+        if (mobileDrawer.classList.contains('open') && 
+            !mobileDrawer.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+        }
+      });
+
+      // Close drawer when clicking a link
+      mobileDrawer.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+        });
+      });
+    }
+
+    // Modal Logic
+    </script>
+  <!-- Sticky Mobile CTA Bar -->
+  <div class="sticky-cta-bar" id="sticky-cta-bar">
+    <button class="cta-demo sticky-cta-btn">Book a Demo - First Engagement Free</button>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

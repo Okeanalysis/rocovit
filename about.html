@@ -1,0 +1,1790 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Rocovit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+/* ===== NAVIGATION MASTER ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  height: var(--nav-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  transition: 300ms ease;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.logo-symbol {
+  color: var(--color-highlight);
+  margin-left: 4px;
+  font-size: 18px;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-dark);
+  transition: 200ms;
+}
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.currency-nav-pill {
+  background: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-login {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 200ms;
+}
+.btn-login:hover {
+  background: rgba(37,99,235,0.05);
+}
+nav .cta-demo {
+  background: var(--color-highlight);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+nav .cta-demo:hover {
+  opacity: 0.9;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  transition: 0.3s ease;
+}
+.mobile-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer.open {
+  max-height: 500px;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.mobile-drawer a {
+  padding: 16px 24px;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 16px;
+  display: block;
+}
+.mobile-drawer a:hover {
+  color: var(--color-primary);
+  background: var(--color-light);
+}
+.mobile-drawer .drawer-cta {
+  padding: 20px 24px;
+  background: #f8fafc;
+}
+.mobile-drawer .drawer-cta .cta-demo {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--color-highlight);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 16px !important;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .btn-login {
+    display: none !important;
+  }
+  .currency-nav-pill {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+  }
+  nav .cta-demo {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    white-space: nowrap !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+  }
+  .nav-container {
+    padding: 0 !important;
+  }
+}
+/* ===== END NAVIGATION MASTER ===== */
+
+        :root {
+            --color-primary: #2563eb;
+            --color-dark: #0f172a;
+            --color-highlight: #0d9488;
+            --color-light: #f8fafc;
+            --color-white: #ffffff;
+            --color-border: #e2e8f0;
+            --font-display: "Syne", sans-serif;
+            --font-sans: "DM Sans", sans-serif;
+            --font-mono: "DM Mono", monospace;
+            --nav-height: 72px;
+            --nav-height-mobile: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-white);
+            color: var(--color-dark);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            padding-top: var(--nav-height);
+        }
+
+
+
+        /* Section 1 - Hero */
+        .hero {
+            background: var(--color-dark);
+            min-height: calc(100vh - var(--nav-height));
+            display: flex;
+            align-items: center;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            color: var(--color-highlight);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 52px;
+            color: var(--color-white);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            color: #94a3b8;
+            line-height: 1.6;
+            max-width: 640px;
+            margin: 0 auto 48px;
+        }
+
+        .stat-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .pill {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        .pill-blue {
+            background: rgba(37,99,235,0.15);
+            border: 1px solid rgba(37,99,235,0.3);
+            color: var(--color-primary);
+        }
+
+        .pill-teal {
+            background: rgba(13,148,136,0.15);
+            border: 1px solid rgba(13,148,136,0.3);
+            color: var(--color-highlight);
+        }
+
+        /* Section 2 - Founding Story */
+        .founding-story {
+            background: var(--color-white);
+            padding: 100px 24px;
+        }
+
+        .story-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .founding-story h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--color-dark);
+            margin-bottom: 32px;
+        }
+
+        .founding-story p {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            color: #4B5563;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .pull-quote {
+            background: var(--color-light);
+            border-left: 4px solid var(--color-highlight);
+            border-radius: 0 8px 8px 0;
+            padding: 24px 32px;
+            margin: 40px 0;
+        }
+
+        .pull-quote blockquote {
+            font-family: var(--font-sans);
+            font-style: italic;
+            font-size: 20px;
+            color: var(--color-dark);
+            line-height: 1.6;
+        }
+
+        /* Section 3 - Accounting Shortage */
+        .shortage {
+            background: var(--color-dark);
+            padding: 100px 24px;
+        }
+
+        .shortage-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 48px;
+        }
+
+        .shortage-text h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--color-white);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .shortage-text p {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .stat-card .number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--color-white);
+            line-height: 1;
+            display: block;
+        }
+
+        .stat-card .label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--color-highlight);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 6px 0;
+            display: block;
+        }
+
+        .stat-card .source {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Section 4 - Mission and Vision */
+        .mission-vision {
+            background: var(--color-light);
+            padding: 100px 24px;
+        }
+
+        .mission-vision-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 48px;
+            align-items: stretch;
+        }
+
+        .mission-card, .vision-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 48px;
+            flex: 1;
+        }
+
+        .mission-card {
+            border-top: 4px solid var(--color-primary);
+        }
+
+        .vision-card {
+            border-top: 4px solid var(--color-highlight);
+        }
+
+        .mission-card h3, .vision-card h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--color-dark);
+            margin-bottom: 20px;
+        }
+
+        .mission-card p, .vision-card p {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Section 5 - Traction */
+        .traction {
+            background: var(--color-dark);
+            padding: 80px 24px;
+        }
+
+        .traction-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .traction h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--color-white);
+            margin-bottom: 48px;
+        }
+
+        .traction-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .traction-stat {
+            flex: 1;
+        }
+
+        .traction-stat .number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 56px;
+            color: var(--color-white);
+            line-height: 1;
+            display: block;
+        }
+
+        .traction-stat .label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 8px 0 6px;
+            display: block;
+        }
+
+        .traction-stat .description {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.4;
+            max-width: 180px;
+        }
+
+        .traction-grid .divider {
+            width: 1px;
+            height: 60px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* Section 6 - Why Emerging Markets */
+        .emerging-markets {
+            background: var(--color-white);
+            padding: 100px 24px;
+        }
+
+        .emerging-container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .emerging-markets h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--color-dark);
+            margin-bottom: 32px;
+        }
+
+        .emerging-markets p {
+            font-family: var(--font-sans);
+            font-size: 17px;
+            color: #4B5563;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .market-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .market-pill {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--color-dark);
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 16px 24px;
+        }
+
+        /* Section 7 - Founder */
+        .founder {
+            background: var(--color-light);
+            padding: 100px 24px;
+        }
+
+        .founder-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .founder h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--color-dark);
+            margin-bottom: 16px;
+        }
+
+        .founder-subheadline {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            color: #64748b;
+            margin: 0 auto 60px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .founder-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-highlight));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 32px;
+            color: white;
+        }
+
+        .founder-card h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--color-dark);
+            margin-bottom: 4px;
+        }
+
+        .founder-card .title {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--color-highlight);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .founder-card .bio {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.6;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .tag-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag-pill {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--color-dark);
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .team-note {
+            text-align: center;
+            margin-top: 48px;
+            font-family: var(--font-sans);
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .team-note a {
+            color: var(--color-highlight);
+            text-decoration: underline;
+        }
+
+        /* Section 8 - Built Alongside Firms */
+        .built-alongside {
+            background: var(--color-white);
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .built-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .built-alongside h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--color-dark);
+            margin-bottom: 20px;
+        }
+
+        .built-body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.6;
+            max-width: 640px;
+            margin: 0 auto 48px;
+        }
+
+        .built-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .built-card {
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .built-number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        .built-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 6px 0 8px;
+            display: block;
+        }
+
+        .built-desc {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* Section 9 - Final CTA */
+        .final-cta {
+            background: var(--color-dark);
+            padding: 100px 24px;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 40px;
+            color: var(--color-white);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .cta-subheadline {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .final-cta .cta-demo {
+            background: var(--color-highlight);
+            color: white;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 48px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 200ms ease;
+        }
+
+        .final-cta .cta-demo:hover {
+            background: #0b7a70;
+        }
+
+        .cta-note {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 20px;
+        }
+
+        footer{background:#080F1E;padding:80px 24px 40px}
+        .footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:48px}
+        .footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+        .footer-diamond{color:#0d9488;font-size:18px}
+        .footer-wordmark{font-family:"Syne",sans-serif;font-weight:700;font-size:20px;color:#2563eb}
+        .footer-tagline{font-family:"DM Sans",sans-serif;font-size:14px;color:#64748b;margin-bottom:24px;line-height:1.5}
+        .footer-socials{display:flex;gap:8px}
+        .social-icon{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;text-decoration:none;font-family:"DM Sans",sans-serif}
+        .social-icon:hover{background:rgba(255,255,255,0.12)}
+        .footer-col-header{font-family:"DM Mono",monospace;font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px}
+        .footer-col a{display:block;font-family:"DM Sans",sans-serif;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:12px}
+        .footer-col a:hover{color:#ffffff}
+        .compliance-badge{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;margin-bottom:8px}
+        .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px}
+        .dot-green{background:#16A34A}
+        .dot-blue{background:#2563eb}
+        .badge-title{display:block;font-family:"DM Mono",monospace;font-size:11px;color:#ffffff}
+        .badge-sub{display:block;font-family:"DM Sans",sans-serif;font-size:11px;color:#64748b;margin-top:2px}
+        .footer-divider{max-width:1200px;margin:48px auto 24px;height:1px;background:rgba(255,255,255,0.06)}
+        .footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        .footer-bottom span,.footer-bottom a{font-family:"DM Sans",sans-serif;font-size:13px;color:#64748b;text-decoration:none}
+        .footer-bottom a:hover{color:#ffffff}
+        .footer-legal{display:flex;gap:24px}
+        @media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}
+        @media(max-width:640px){.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .shortage-container {
+                gap: 32px;
+            }
+            .traction-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+            .traction-grid .divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .hero {
+                padding: 120px 24px 80px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .stat-pills {
+                flex-direction: column;
+                align-items: center;
+            }
+            .pill {
+                width: 100%;
+                max-width: 300px;
+            }
+            .founding-story p {
+                font-size: 16px;
+            }
+            .shortage-container {
+                grid-template-columns: 1fr;
+            }
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .mission-vision-container {
+                flex-direction: column;
+            }
+            .traction-grid {
+                grid-template-columns: 1fr;
+            }
+            .traction-stat .description {
+                max-width: none;
+            }
+            .market-pills {
+                flex-direction: column;
+            }
+            .founder-card {
+                padding: 24px;
+            }
+            .built-grid {
+                grid-template-columns: 1fr;
+            }
+            .final-cta h2 {
+                font-size: 28px;
+            }
+            .final-cta .cta-demo {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: var(--nav-height-mobile) !important;
+      }
+      .hero {
+        min-height: calc(100vh - var(--nav-height-mobile));
+        padding: 40px 24px;
+      }
+      .mobile-drawer {
+        top: var(--nav-height-mobile) !important;
+      }
+      /* Fix hero padding below fixed nav */
+      .hero,
+      [class*="hero"],
+      [class*="page-hero"],
+      [class*="article-hero"],
+      [class*="blog-hero"],
+      [class*="legal-hero"],
+      [class*="policy-hero"] {
+        padding-top: 40px !important;
+      }
+
+      /* Typography */
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+      }
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      /* Section spacing */
+      section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+
+
+      /* Footer */
+      .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+      }
+      .footer-legal {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+      }
+
+      /* Modal full screen */
+      #modal-overlay {
+        align-items: flex-end !important;
+      }
+      #modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 90vh !important;
+        border-radius: 16px 16px 0 0 !important;
+        padding: 32px 20px !important;
+        overflow-y: auto !important;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+
+      /* Buttons */
+      button.cta-demo,
+      a.cta-demo {
+        min-height: 48px !important;
+        font-size: 15px !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+    @media (max-width: 768px) {
+      /* Hero two column to single column */
+      .hero-container,
+      [class*="hero-layout"],
+      [class*="hero-columns"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      .hero-text,
+      [class*="hero-left"],
+      [class*="hero-content"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-visual,
+      #hero-visual-placeholder,
+      [class*="hero-right"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Hero stat pills wrap */
+      [class*="stat-pills"],
+      [class*="hero-pills"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+
+      /* Revenue card numbers smaller on mobile */
+      .rev-number {
+        font-size: 22px !important;
+      }
+      .revenue-divider {
+        padding: 0 8px !important;
+      }
+
+      /* All three column grids to single column */
+      [class*="three-col"],
+      [class*="cards-grid"],
+      [class*="article-grid"],
+      [class*="blog-cards"],
+      [class*="output-cards"],
+      [class*="related-cards"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* All two column grids to single column */
+      [class*="two-col"],
+      [class*="alternating"],
+      [class*="split-layout"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      /* Cards full width */
+      [class*="card"],
+      [class*="-card"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      /* FLEX ROWS TO COLUMN */
+      [class*="trust-bar"],
+      [class*="sme-callout"],
+      [class*="profession-crisis"],
+      [class*="roi-container"],
+      [class*="calculator-container"],
+      [class*="footer-brand"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
+      .bundle-cards-row,
+      [class*="bundle-cards"],
+      [class*="pricing-cards"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .bundle-card,
+      [class*="bundle-card"],
+      [class*="pricing-card"] {
+        min-width: 260px !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+      }
+
+      /* Swipe hint label */
+      .swipe-hint {
+        display: block !important;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: #94a3b8;
+        text-align: center;
+        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+      }
+
+      /* ARTICLE PAGES */
+      [class*="article-hero"],
+      .article-hero {
+        padding: 100px 20px 40px !important;
+      }
+      [class*="article-body"],
+      .article-body {
+        padding: 40px 20px !important;
+      }
+      [class*="stat-callout"],
+      .stat-callout {
+        padding: 16px !important;
+      }
+      [class*="stat-number"] {
+        font-size: 28px !important;
+      }
+      [class*="pull-quote"],
+      blockquote {
+        margin: 20px 0 !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+      }
+      [class*="related-articles"] {
+        padding: 40px 20px !important;
+      }
+      [class*="related-cards"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* BLOG INDEX PAGE */
+      [class*="featured-article"],
+      .featured-article {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      [class*="featured-visual"],
+      .featured-visual {
+        height: 180px !important;
+        min-height: 0 !important;
+      }
+      [class*="subscribe-form"],
+      #subscribe-form {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      #subscribe-form input {
+        width: 100% !important;
+      }
+      #subscribe-form button {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+
+      /* OPPORTUNITY PAGE - FIVE DOORS */
+      [class*="door-row"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      [class*="door-icon"] {
+        margin: 0 auto 16px !important;
+      }
+      [class*="door-text"] {
+        text-align: left !important;
+      }
+
+      /* ABOUT PAGE - FOUNDER AND STATS */
+      [class*="founder-card"],
+      [class*="founder-layout"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+      [class*="stats-grid"],
+      [class*="shortage-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* SECURITY PAGE */
+      [class*="security-grid"],
+      [class*="trust-grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      [class*="faq-item"] {
+        padding: 16px 0 !important;
+      }
+
+      /* HOW IT WORKS PAGE */
+      [class*="pipeline-steps"],
+      [class*="steps-container"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      [class*="step-arrow"],
+      [class*="connecting-arrow"] {
+        display: none !important;
+      }
+
+      /* OUTPUTS PAGE */
+      [class*="output-row"] {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      [class*="output-visual"] {
+        width: 100% !important;
+      }
+
+      /* LEGAL PAGES */
+      .legal-container {
+        padding: 60px 20px !important;
+      }
+      .legal-content h1 {
+        font-size: 32px !important;
+      }
+
+      /* FINAL CTA */
+      [class*="final-cta"],
+      .final-cta-section {
+        padding: 60px 20px !important;
+        text-align: center !important;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
+    /* Sticky CTA Bar - hidden by default, mobile only */
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--color-dark);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 20px;
+      z-index: 998;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .sticky-cta-btn {
+      width: 100%;
+      background: var(--color-highlight);
+      color: white;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      min-height: 48px;
+    }
+    .sticky-cta-btn:hover {
+      background: #0b7a70;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar {
+        display: none;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    /* ===== MOBILE ENHANCEMENTS - M-5 ===== */
+    @media (max-width: 768px) {
+      /* Founder card - stack photo above text */
+      [class*="founder-card"],
+      [class*="founder-layout"],
+      [class*="founder-section"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+      [class*="founder-photo"],
+      [class*="founder-image"] {
+        margin: 0 auto !important;
+        width: 120px !important;
+        height: 120px !important;
+      }
+      [class*="founder-text"],
+      [class*="founder-bio"] {
+        text-align: left !important;
+      }
+
+      /* Accounting shortage stat cards - two column grid */
+      [class*="shortage-grid"],
+      [class*="stats-grid"],
+      [class*="shortage-cards"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+      [class*="shortage-card"],
+      [class*="stat-card"] {
+        padding: 16px !important;
+      }
+      [class*="shortage-number"],
+      [class*="stat-number"] {
+        font-size: 28px !important;
+      }
+
+      /* Vision and mission two column - stack */
+      [class*="vision-layout"],
+      [class*="mission-layout"],
+      [class*="about-two-col"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+
+      /* Big four AI bets row - stack */
+      [class*="bigfour-grid"],
+      [class*="ai-bets-grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* About hero */
+      [class*="about-hero"],
+      [class*="page-hero"] {
+        padding: 100px 20px 48px !important;
+      }
+
+      /* Timeline or milestones */
+      [class*="timeline"],
+      [class*="milestones"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+
+      /* Team section if present */
+      [class*="team-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+      }
+    }
+    </style>
+  <link rel="stylesheet" href="site-uniform.css"></head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="outputs.html">Outputs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-actions">
+<button class="btn-login">Login</button>
+      <button class="cta-demo">Book a Demo</button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="how-it-works.html">How It Works</a>
+  <a href="outputs.html">Outputs</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="security.html">Security</a>
+  <a href="about.html">About Us</a>
+  <div class="drawer-cta">
+    <button class="cta-demo">Book a Demo</button>
+  </div>
+</div>
+
+    <!-- Section 1 - Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">OUR STORY</span>
+            <h1 class="hero-headline">Built to unlock a market most accountants have been forced to reject.</h1>
+            <p class="hero-subheadline">SMEs across emerging markets need financial statements. The accountants who could serve them turn them away because it is not profitable. Rocovit changes the economics - permanently.</p>
+            
+            <div class="stat-pills">
+                <div class="pill pill-blue">65M unserved SMEs</div>
+                <div class="pill pill-teal">$168K revenue unlocked per accountant</div>
+                <div class="pill pill-blue">$5.7T financing gap</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 - Founding Story -->
+    <section class="founding-story">
+        <div class="story-content">
+            <span class="eyebrow">THE ORIGIN</span>
+            <h2>A tax notice. Seven days. One question.</h2>
+            
+            <p>Rocovit was born from a personal crisis. A tax notice gave me 7 days to fix my books, but every accountant I called wanted weeks and a premium to reprioritise me. I could not understand why hours of work should take weeks - so I started asking questions.</p>
+            
+            <p>What I found was not an efficiency problem. It was an economics problem. Accountants were turning away SME clients not because they lacked skill - but because the manual preparation process made those clients unprofitable to serve. The market existed. The workflow made it inaccessible.</p>
+            
+            <div class="pull-quote">
+                <blockquote>"The pain is growing. We are positioned to absorb it."</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 - The Accounting Shortage -->
+    <section class="shortage">
+        <div class="shortage-container">
+            <div class="shortage-text">
+                <span class="eyebrow">THE BIGGER PICTURE</span>
+                <h2>The market is not shrinking. The profession is.</h2>
+                
+                <p>Demand for financial statements is growing. New tax reforms, tighter compliance requirements, and expanding SME financing programmes are creating more work than the profession can absorb. But the profession is contracting - not growing.</p>
+                
+                <p>More than 300,000 accountants have left the profession since 2020. 75% of current CPAs are approaching retirement. CPA exam candidates have dropped over 30% since 2016. The Big Four are not replacing them with more accountants. Deloitte committed $3 billion to AI. KPMG committed $4.2 billion. EY committed $1 billion. PwC cut junior hiring by a third and employs over 3,700 engineers.</p>
+                
+                <p>The bet is not that AI replaces accountants. The bet is that AI is the only way the remaining accountants can serve the market that needs them. Rocovit is that bet for emerging markets - where the SME opportunity is largest and the accountant capacity gap is most acute.</p>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="number">300,000+</span>
+                    <span class="label">ACCOUNTANTS GONE</span>
+                    <span class="source">Left the profession since 2020 - Bureau of Labor Statistics</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">75%</span>
+                    <span class="label">NEARING RETIREMENT</span>
+                    <span class="source">Current CPAs approaching retirement age - AICPA</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">30%+</span>
+                    <span class="label">CPA EXAM DECLINE</span>
+                    <span class="source">Drop in exam candidates since 2016 - Wall Street Journal</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">20%</span>
+                    <span class="label">GRADUATE DROP</span>
+                    <span class="source">Fewer accounting graduates since 2010 - AICPA and CIMA</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">120,000+</span>
+                    <span class="label">ANNUAL OPENINGS</span>
+                    <span class="source">New positions needed every year through 2034 - BLS</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">$8.2B</span>
+                    <span class="label">BIG FOUR AI BET</span>
+                    <span class="source">Deloitte $3B + KPMG $4.2B + EY $1B - verified 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 - Mission and Vision -->
+    <section class="mission-vision">
+        <div class="mission-vision-container">
+            <div class="mission-card">
+                <span class="eyebrow" style="color: var(--color-primary);">OUR MISSION</span>
+                <h3>Make it profitable for accountants to serve the SMEs they currently turn away.</h3>
+                <p>Manual preparation makes SME engagements unprofitable. Rocovit changes the economics. Any accounting firm can now build a profitable SME practice without adding headcount - and when accountants can serve them, these businesses gain access to the financial proof they need to borrow, grow, and stay compliant.</p>
+            </div>
+            <div class="vision-card">
+                <span class="eyebrow" style="color: var(--color-highlight);">OUR VISION</span>
+                <h3>Global infrastructure for SME financial credibility.</h3>
+                <p>To become the global infrastructure that turns any SME's raw financial data into every document they need to borrow, raise capital, file taxes, win tenders, and grow - regardless of where they are or how messy their books are. A Lagos trader and a London corporation face the same financial credibility requirements. Today only one of them can meet them affordably. Rocovit changes that.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5 - Traction -->
+    <section class="traction">
+        <div class="traction-container">
+            <span class="eyebrow" style="text-align: center;">TRACTION</span>
+            <h2 style="text-align: center;">Already live. Already working.</h2>
+            
+            <div class="traction-grid">
+                <div class="traction-stat">
+                    <span class="number">18+</span>
+                    <span class="label">ENGAGEMENTS LIVE</span>
+                    <p class="description">Completed with accounting and audit firms in Nigeria</p>
+                </div>
+                <div class="divider"></div>
+                <div class="traction-stat">
+                    <span class="number">3</span>
+                    <span class="label">AUDIT FIRMS</span>
+                    <p class="description">Actively shaping the product and pricing model</p>
+                </div>
+                <div class="divider"></div>
+                <div class="traction-stat">
+                    <span class="number">75%</span>
+                    <span class="label">ERROR REDUCTION</span>
+                    <p class="description">Reported by audit firms using Rocovit</p>
+                </div>
+                <div class="divider"></div>
+                <div class="traction-stat">
+                    <span class="number">2 yrs</span>
+                    <span class="label">IN DEVELOPMENT</span>
+                    <p class="description">Built iteratively with real accounting firm feedback</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6 - Why Emerging Markets -->
+    <section class="emerging-markets">
+        <div class="emerging-container">
+            <span class="eyebrow">WHY NOW. WHY HERE.</span>
+            <h2>The opportunity is largest where the gap is deepest.</h2>
+            
+            <p>Emerging markets contain millions of formal SMEs sitting outside the formal financial system - not because they are bad businesses, but because they cannot produce the documents that lenders, regulators, and partners require. This is a credibility gap, not a credit gap. And it represents a market accountants are currently walking away from.</p>
+            
+            <p>Nigeria is our launch market. New tax reforms - including the expansion of the Federal Inland Revenue Service's compliance mandate and the introduction of stricter AFS requirements - are creating a wave of compliance demand that accountants currently lack the capacity to meet. Rocovit gives them that capacity without adding headcount.</p>
+            
+            <p>From Nigeria we expand across markets where IFRS for SMEs is the standard - UAE, Kenya, South Africa, Singapore, and beyond. The same engine. No rebuild per jurisdiction. This is the compounding advantage of building on a global standard from day one.</p>
+
+        </div>
+    </section>
+
+    <!-- Section 7 - The Founder -->
+    <section class="founder">
+        <div class="founder-container">
+            <span class="eyebrow" style="text-align: center;">THE TEAM</span>
+            <h2 style="text-align: center;">Built by people who lived the problem.</h2>
+            <p class="founder-subheadline">Rocovit is built by a founder who experienced firsthand what it costs an SME to not have credible financial statements - and shaped by the accountants who use it in practice.</p>
+
+            <div class="founder-card">
+                <div class="avatar">E</div>
+                <h3>Ejovwoke</h3>
+                <span class="title">FOUNDER & CEO</span>
+                <p class="bio">A tax notice gave me 7 days to fix my books. Every accountant wanted weeks and a premium to reprioritise me. I could not understand why hours of work took weeks - so I built Rocovit. Serial founder with $10M ARR across fintech, agritech, and consulting. Rocovit is the product I needed and could not find.</p>
+                
+                <div class="tag-pills">
+                    <div class="tag-pill">Serial Founder</div>
+                    <div class="tag-pill">$10M ARR Track Record</div>
+                    <div class="tag-pill">Fintech - Agritech - Consulting</div>
+                </div>
+            </div>
+
+            <p class="team-note">Rocovit is actively growing its team. If you are an accountant, engineer, or operator who believes in this mission - <a href="mailto:team@rocovit.com">get in touch</a></p>
+        </div>
+    </section>
+
+    <!-- Section 8 - Built Alongside Firms -->
+    <section class="built-alongside">
+        <div class="built-container">
+            <span class="eyebrow">SHAPED WITH</span>
+            <h2>Built alongside accounting and audit firms.</h2>
+            <p class="built-body">Rocovit has been shaped from day one by accounting and audit firms who use it in practice. Their workflows define every step of the engine. Their feedback drives every product decision.</p>
+
+        </div>
+    </section>
+
+    <!-- Section 9 - Final CTA -->
+    <section class="final-cta">
+        <div class="cta-container">
+            <span class="eyebrow">JOIN US</span>
+            <h2>First engagement free. No credit card. No commitment.</h2>
+            <p class="cta-subheadline">See what Rocovit does for your practice in under 3 hours.</p>
+            <button class="cta-demo">Book a Demo</button>
+            <p class="cta-note">Join accounting firms already using Rocovit across Nigeria, UAE, Kenya and beyond.</p>
+        </div>
+    </section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="footer-diamond"></span>
+        <span class="footer-wordmark">Rocovit</span>
+      </div>
+      <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-icon" aria-label="Twitter">ð•</a>
+        <a href="#" class="social-icon" aria-label="Website">âŠ•</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-header">PRODUCT</p>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="outputs.html">Outputs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-header">COMPANY</p>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="opportunity.html">SME Opportunity</a>
+      <a href="mailto:hello@rocovit.com">Contact</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-header">COMPLIANCE</p>
+      <div class="compliance-badge">
+        <span class="dot dot-green"></span>
+        <div>
+          <span class="badge-title">NDPR Compliant</span>
+          <span class="badge-sub">Nigeria Data Protection Regulation</span>
+        </div>
+      </div>
+      <div class="compliance-badge">
+        <span class="dot dot-green"></span>
+        <div>
+          <span class="badge-title">POPIA Compliant</span>
+          <span class="badge-sub">South Africa</span>
+        </div>
+      </div>
+      <div class="compliance-badge">
+        <span class="dot dot-green"></span>
+        <div>
+          <span class="badge-title">GDPR Compliant</span>
+          <span class="badge-sub">European Union</span>
+        </div>
+      </div>
+      <div class="compliance-badge">
+        <span class="dot dot-blue"></span>
+        <div>
+          <span class="badge-title">SOC 2 - In Progress</span>
+          <span class="badge-sub">Certification underway</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <span>© 2026 Rocovit Limited. All rights reserved.</span>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile drawer toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+
+        if (hamburger && mobileDrawer) {
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileDrawer.classList.toggle('open');
+            });
+
+            // Close drawer when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mobileDrawer.classList.contains('open') && 
+                    !mobileDrawer.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    mobileDrawer.classList.remove('open');
+                }
+            });
+
+            // Close drawer when clicking a link
+            mobileDrawer.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('open');
+                });
+            });
+        }
+
+        const modalOverlay = document.createElement('div');
+        modalOverlay.id = 'modal-overlay';
+        modalOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.8);z-index:2000;opacity:0;pointer-events:none;transition:opacity 300ms ease;display:flex;align-items:center;justify-content:center;';
+
+        modalOverlay.innerHTML = `
+        <div id="modal-card" style="background:#ffffff;border-radius:16px;padding:48px;width:480px;max-width:calc(100vw - 48px);position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.3);">
+          <button id="modal-close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;color:#94a3b8;cursor:pointer;font-family:'DM Sans',sans-serif;">Ã—</button>
+          <div id="modal-form-content">
+            <h2 style="font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:#0f172a;margin-bottom:8px;">Book a Demo</h2>
+            <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;margin-bottom:32px;">A member of the Rocovit team will be in touch within 24 hours.</p>
+            <div style="margin-bottom:20px;">
+              <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Full Name</label>
+              <input type="text" placeholder="Jane Mensah" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;">
+            </div>
+            <div style="margin-bottom:20px;">
+              <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Email Address</label>
+              <input type="email" placeholder="jane@firm.com" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;">
+            </div>
+            <div style="margin-bottom:20px;">
+              <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">Company Name</label>
+              <input type="text" placeholder="Mensah & Associates" style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;">
+            </div>
+            <div style="margin-bottom:20px;">
+              <label style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0f172a;margin-bottom:6px;">SME Clients Per Month</label>
+              <select style="width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:#0f172a;box-sizing:border-box;outline:none;background:white;">
+                <option value="">Select range</option>
+                <option>1-10 clients</option>
+                <option>11-25 clients</option>
+                <option>26-75 clients</option>
+                <option>76-200 clients</option>
+                <option>200+ clients</option>
+              </select>
+            </div>
+            <button id="modal-submit" style="width:100%;padding:14px;background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;border:none;border-radius:8px;cursor:pointer;margin-top:4px;">Request Demo</button>
+          </div>
+          <div id="modal-confirm" style="display:none;text-align:center;padding:20px 0;">
+            <div style="width:64px;height:64px;border-radius:50%;background:#F0FDF4;border:2px solid #BBF7D0;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px;">âœ“</div>
+            <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:24px;color:#0f172a;margin-bottom:8px;">You are confirmed.</h3>
+            <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#64748b;">A member of the Rocovit team will be in touch within 24 hours.</p>
+          </div>
+        </div>`;
+
+        document.body.appendChild(modalOverlay);
+
+        function openModal(){modalOverlay.style.opacity='1';modalOverlay.style.pointerEvents='all';document.body.style.overflow='hidden';}
+        function closeModal(){modalOverlay.style.opacity='0';modalOverlay.style.pointerEvents='none';document.body.style.overflow='';}
+
+        document.querySelectorAll('.cta-demo').forEach(btn=>btn.addEventListener('click',openModal));
+        document.getElementById('modal-close').addEventListener('click',closeModal);
+        modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal();});
+        document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+        document.getElementById('modal-submit').addEventListener('click',()=>{
+          document.getElementById('modal-form-content').style.display='none';
+          document.getElementById('modal-confirm').style.display='block';
+        });
+
+        // Sticky CTA Bar - show after 300px scroll, hide near footer
+        (function() {
+          const bar = document.getElementById('sticky-cta-bar');
+          if (!bar) return;
+          const footer = document.querySelector('footer');
+          function updateStickyBar() {
+            if (window.innerWidth > 768) {
+              bar.style.display = 'none';
+              return;
+            }
+            const scrolled = window.scrollY > 300;
+            const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight + 80 : false;
+            bar.style.display = (scrolled && !footerVisible) ? 'block' : 'none';
+          }
+          window.addEventListener('scroll', updateStickyBar);
+          window.addEventListener('resize', updateStickyBar);
+          updateStickyBar();
+        })();
+
+        // Close mobile drawer when any link inside it is clicked
+        (function() {
+          document.querySelectorAll('.mobile-drawer a').forEach(function(link) {
+            link.addEventListener('click', function() {
+              const drawer = document.querySelector('.mobile-drawer');
+              if (drawer) drawer.classList.remove('open');
+            });
+          });
+        })();
+    </script>
+    <!-- Sticky Mobile CTA Bar -->
+    <div class="sticky-cta-bar" id="sticky-cta-bar">
+      <button class="cta-demo sticky-cta-btn">Book a Demo - First Engagement Free</button>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
