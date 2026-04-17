@@ -1,238 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing | Rocovit</title>
+  <link rel="stylesheet" href="site-uniform.css">
   <style>
-/* ===== NAVIGATION MASTER ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  z-index: 1000;
-  height: var(--nav-height);
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  transition: 300ms ease;
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--color-primary);
-}
-.logo-symbol {
-  color: var(--color-highlight);
-  margin-left: 4px;
-  font-size: 18px;
-}
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-.nav-links a {
-  text-decoration: none;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  color: var(--color-dark);
-  transition: 200ms;
-}
-.nav-links a:hover {
-  color: var(--color-primary);
-}
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.currency-nav-pill {
-  background: var(--color-light);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 4px 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.btn-login {
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
-  background: transparent;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 200ms;
-}
-.btn-login:hover {
-  background: rgba(37,99,235,0.05);
-}
-nav .cta-demo {
-  background: var(--color-highlight);
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: 200ms;
-}
-nav .cta-demo:hover {
-  opacity: 0.9;
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  z-index: 1001;
-  padding: 0;
-}
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-dark);
-  transition: 0.3s ease;
-}
-.mobile-drawer {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background: var(--color-white);
-  z-index: 1000;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-  display: flex;
-  flex-direction: column;
-}
-.mobile-drawer.open {
-  max-height: 500px;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.mobile-drawer a {
-  padding: 16px 24px;
-  text-decoration: none;
-  color: var(--color-dark);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 16px;
-  display: block;
-}
-.mobile-drawer a:hover {
-  color: var(--color-primary);
-  background: var(--color-light);
-}
-.mobile-drawer .drawer-cta {
-  padding: 20px 24px;
-  background: #f8fafc;
-}
-.mobile-drawer .drawer-cta .cta-demo {
-  width: 100%;
-  padding: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  background: var(--color-highlight);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: var(--font-sans);
-}
-@media (max-width: 768px) {
-  nav {
-    padding: 16px !important;
-  }
-  .nav-links {
-    display: none !important;
-  }
-  .btn-login {
-    display: none !important;
-  }
-  .currency-nav-pill {
-    display: none !important;
-  }
-  .hamburger {
-    display: flex !important;
-  }
-  .nav-actions {
-    gap: 8px !important;
-  }
-  nav .cta-demo {
-    font-size: 11px !important;
-    padding: 6px 10px !important;
-    white-space: nowrap !important;
-    height: auto !important;
-    line-height: 1.4 !important;
-  }
-  .nav-container {
-    padding: 0 !important;
-  }
-}
-/* ===== END NAVIGATION MASTER ===== */
-
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap');
-
-    :root {
-      --color-primary: #2563eb;
-      --color-dark: #0f172a;
-      --color-highlight: #0d9488;
-      --color-light: #f8fafc;
-      --color-white: #ffffff;
-      --color-border: #e2e8f0;
-      --font-display: "Syne", sans-serif;
-      --font-sans: "DM Sans", sans-serif;
-      --font-mono: "DM Mono", monospace;
-      --nav-height: 72px;
-      --nav-height-mobile: 64px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      color: var(--color-dark);
-      background-color: var(--color-white);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      padding-top: var(--nav-height);
-    }
 
 
 
@@ -262,11 +36,7 @@ nav .cta-demo:hover {
     }
 
     .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 56px;
       color: var(--color-white);
-      line-height: 1.1;
       margin-bottom: 24px;
     }
 
@@ -492,6 +262,7 @@ nav .cta-demo:hover {
       border-radius: 3px;
       position: relative;
     }
+
     .icon-calendar::before {
       content: '';
       position: absolute;
@@ -501,6 +272,7 @@ nav .cta-demo:hover {
       height: 4px;
       background: currentColor;
     }
+
     .icon-calendar::after {
       content: '';
       position: absolute;
@@ -518,6 +290,7 @@ nav .cta-demo:hover {
       border-radius: 2px;
       position: relative;
     }
+
     .icon-doc::after {
       content: '';
       position: absolute;
@@ -536,6 +309,7 @@ nav .cta-demo:hover {
       border-top-color: transparent;
       position: relative;
     }
+
     .icon-refresh::after {
       content: '';
       position: absolute;
@@ -629,11 +403,11 @@ nav .cta-demo:hover {
 
     .pricing-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
     }
 
     .pricing-card.studio {
-      box-shadow: 0 20px 60px rgba(37,99,235,0.15);
+      box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
       border: 2px solid var(--color-primary);
     }
 
@@ -792,6 +566,7 @@ nav .cta-demo:hover {
       .pricing-grid {
         overflow-x: visible;
       }
+
       .pricing-card {
         flex: 1;
         min-width: 0;
@@ -823,755 +598,424 @@ nav .cta-demo:hover {
       .hero h1 {
         font-size: 36px;
       }
+
       .roi-container {
         grid-template-columns: 1fr;
       }
+
       .how-grid {
         grid-template-columns: 1fr;
       }
     }
+
     /* INCLUSIONS SECTION */
     .inclusions {
-        background: var(--color-white);
-        padding: 100px 24px;
+      background: var(--color-white);
+      padding: 100px 24px;
     }
+
     .inclusions-container {
-        max-width: 1100px;
-        margin: 0 auto;
+      max-width: 1100px;
+      margin: 0 auto;
     }
+
     .inclusions-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
     }
+
     .inclusion-card {
-        padding: 24px;
-        border: 1px solid var(--color-border);
-        border-radius: 12px;
-        transition: transform 0.2s ease;
+      padding: 24px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      transition: transform 0.2s ease;
     }
+
     .inclusion-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
+
     .inclusion-icon {
-        width: 48px;
-        height: 48px;
-        background: rgba(37,99,235,0.05);
-        color: var(--color-primary);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
+      width: 48px;
+      height: 48px;
+      background: rgba(37, 99, 235, 0.05);
+      color: var(--color-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
     }
+
     .inclusion-title {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 18px;
-        color: var(--color-dark);
-        margin-bottom: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-dark);
+      margin-bottom: 12px;
     }
+
     .inclusion-body {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #64748b;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #64748b;
     }
 
     /* FAQ SECTION */
     .faq {
-        background: var(--color-light);
-        padding: 100px 24px;
-    }
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .faq-list {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-    .faq-item {
-        background: var(--color-white);
-        border: 1px solid var(--color-border);
-        border-radius: 12px;
-        overflow: hidden;
-    }
-    .faq-question {
-        padding: 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        font-weight: 600;
-        color: var(--color-dark);
-        font-family: var(--font-display);
-    }
-    .faq-answer {
-        padding: 0 24px 24px;
-        color: #64748b;
-        font-size: 15px;
-        line-height: 1.6;
-        display: none;
-    }
-    .faq-item.active .faq-answer {
-        display: block;
-    }
-    .faq-icon {
-        font-family: var(--font-mono);
-        color: var(--color-highlight);
-        font-size: 20px;
-        transition: transform 0.3s ease;
-    }
-    .faq-item.active .faq-icon {
-        transform: rotate(45deg);
+      background: var(--color-light);
+      padding: 100px 24px;
     }
 
-    /* MASTER FOOTER STYLES */
-    footer {
-      background: #080F1E;
-      padding: 80px 24px 40px;
-    }
-    .footer-top {
-      max-width: 1200px;
+    .faq-container {
+      max-width: 800px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 2fr;
-      gap: 48px;
     }
-    .footer-logo {
+
+    .faq-list {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
+      flex-direction: column;
+      gap: 16px;
     }
-    .footer-diamond {
-      color: #0d9488;
-      font-size: 18px;
+
+    .faq-item {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
     }
-    .footer-wordmark {
-      font-family: "Syne", sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      color: #2563eb;
-    }
-    .footer-tagline {
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      color: #64748b;
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
-    .footer-socials {
-      display: flex;
-      gap: 8px;
-    }
-    .social-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #94a3b8;
-      font-size: 13px;
-      text-decoration: none;
-      font-family: "DM Sans", sans-serif;
-    }
-    .social-icon:hover { background: rgba(255,255,255,0.12); }
-    .footer-col-header {
-      font-family: "DM Mono", monospace;
-      font-size: 10px;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 20px;
-    }
-    .footer-col a {
-      display: block;
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      color: #94a3b8;
-      text-decoration: none;
-      margin-bottom: 12px;
-    }
-    .footer-col a:hover { color: #ffffff; }
-    .compliance-badge {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      padding: 10px 14px;
-      margin-bottom: 8px;
-    }
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-    .dot-green { background: #16A34A; }
-    .dot-blue { background: #2563eb; }
-    .badge-title {
-      display: block;
-      font-family: "DM Mono", monospace;
-      font-size: 11px;
-      color: #ffffff;
-    }
-    .badge-sub {
-      display: block;
-      font-family: "DM Sans", sans-serif;
-      font-size: 10px;
-      color: #64748b;
-    }
-    .footer-divider {
-      height: 1px;
-      background: rgba(255,255,255,0.06);
-      max-width: 1200px;
-      margin: 40px auto;
-    }
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
+
+    .faq-question {
+      padding: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: "DM Sans", sans-serif;
-      font-size: 12px;
-      color: #475569;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-dark);
+      font-family: var(--font-display);
     }
-    .footer-legal {
-      display: flex;
-      gap: 24px;
+
+    .faq-answer {
+      padding: 0 24px 24px;
+      color: #64748b;
+      font-size: 15px;
+      line-height: 1.6;
+      display: none;
     }
-    .footer-legal a {
-      color: #475569;
-      text-decoration: none;
+
+    .faq-item.active .faq-answer {
+      display: block;
     }
-    .footer-legal a:hover { color: #94a3b8; }
+
+    .faq-icon {
+      font-family: var(--font-mono);
+      color: var(--color-highlight);
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
 
     /* MODAL STYLES */
     .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(8px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
-    .modal-overlay.active {
-        opacity: 1;
-        pointer-events: auto;
-    }
-    .modal-card {
-        background: var(--color-white);
-        width: 100%;
-        max-width: 480px;
-        border-radius: 24px;
-        padding: 48px;
-        position: relative;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-    }
-    .modal-overlay.active .modal-card {
-        transform: translateY(0);
-    }
-    .close-modal {
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        cursor: pointer;
-        color: #94a3b8;
-        transition: color 0.2s;
-    }
-    .close-modal:hover { color: var(--color-dark); }
-    .modal-title {
-        font-family: var(--font-display);
-        font-size: 32px;
-        font-weight: 700;
-        color: var(--color-dark);
-        margin-bottom: 12px;
-    }
-    .modal-sub {
-        font-size: 16px;
-        color: #64748b;
-        margin-bottom: 32px;
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
-    .form-label {
-        display: block;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        color: #64748b;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 8px;
-    }
-    .form-input {
-        width: 100%;
-        padding: 12px 16px;
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        font-family: var(--font-sans);
-        font-size: 15px;
-        transition: border-color 0.2s;
-    }
-    .form-input:focus {
-        outline: none;
-        border-color: var(--color-primary);
-    }
-    .btn-demo {
-        background: var(--color-primary);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-    .btn-demo:hover { background: #1d4ed8; }
-    .success-icon {
-        width: 64px;
-        height: 64px;
-        background: #F0FDF4;
-        color: #16A34A;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        margin: 0 auto 24px;
-    }
-
-    @media (max-width: 1024px) {
-        .inclusions-grid { grid-template-columns: repeat(2, 1fr); }
-        .footer-top { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-        .inclusions-grid { grid-template-columns: 1fr; }
-        .footer-top { grid-template-columns: 1fr; gap: 32px; }
-        .modal-card { padding: 32px; margin: 20px; }
-    }
-    /* INCLUSIONS SECTION */
-    .inclusions {
-        background: var(--color-white);
-        padding: 100px 24px;
-    }
-    .inclusions-container {
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-    .inclusions-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
-    }
-    .inclusion-card {
-        padding: 24px;
-        border: 1px solid var(--color-border);
-        border-radius: 12px;
-        transition: transform 0.2s ease;
-    }
-    .inclusion-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-    }
-    .inclusion-icon {
-        width: 48px;
-        height: 48px;
-        background: rgba(37,99,235,0.05);
-        color: var(--color-primary);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    .inclusion-title {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 18px;
-        color: var(--color-dark);
-        margin-bottom: 12px;
-    }
-    .inclusion-body {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #64748b;
-    }
-
-    /* FAQ SECTION */
-    .faq {
-        background: var(--color-light);
-        padding: 100px 24px;
-    }
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .faq-list {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-    .faq-item {
-        background: var(--color-white);
-        border: 1px solid var(--color-border);
-        border-radius: 12px;
-        overflow: hidden;
-    }
-    .faq-question {
-        padding: 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        font-weight: 600;
-        color: var(--color-dark);
-        font-family: var(--font-display);
-    }
-    .faq-answer {
-        padding: 0 24px 24px;
-        color: #64748b;
-        font-size: 15px;
-        line-height: 1.6;
-        display: none;
-    }
-    .faq-item.active .faq-answer {
-        display: block;
-    }
-    .faq-icon {
-        font-family: var(--font-mono);
-        color: var(--color-highlight);
-        font-size: 20px;
-        transition: transform 0.3s ease;
-    }
-    .faq-item.active .faq-icon {
-        transform: rotate(45deg);
-    }
-
-    /* MASTER FOOTER STYLES */
-    footer {
-      background: #080F1E;
-      padding: 80px 24px 40px;
-    }
-    .footer-top {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 2fr;
-      gap: 48px;
-    }
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .footer-diamond {
-      color: #0d9488;
-      font-size: 18px;
-    }
-    .footer-wordmark {
-      font-family: "Syne", sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      color: #2563eb;
-    }
-    .footer-tagline {
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      color: #64748b;
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
-    .footer-socials {
-      display: flex;
-      gap: 8px;
-    }
-    .social-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #94a3b8;
-      font-size: 13px;
-      text-decoration: none;
-      font-family: "DM Sans", sans-serif;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
     }
-    .social-icon:hover { background: rgba(255,255,255,0.12); }
-    .footer-col-header {
-      font-family: "DM Mono", monospace;
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--color-white);
+      width: 100%;
+      max-width: 480px;
+      border-radius: 24px;
+      padding: 48px;
+      position: relative;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      cursor: pointer;
+      color: #94a3b8;
+      transition: color 0.2s;
+    }
+
+    .close-modal:hover {
+      color: var(--color-dark);
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+    }
+
+    .modal-sub {
+      font-size: 16px;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
       font-size: 10px;
       color: #64748b;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 20px;
-    }
-    .footer-col a {
-      display: block;
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      color: #94a3b8;
-      text-decoration: none;
-      margin-bottom: 12px;
-    }
-    .footer-col a:hover { color: #ffffff; }
-    .compliance-badge {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      padding: 10px 14px;
+      letter-spacing: 0.1em;
       margin-bottom: 8px;
     }
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-    .dot-green { background: #16A34A; }
-    .dot-blue { background: #2563eb; }
-    .badge-title {
-      display: block;
-      font-family: "DM Mono", monospace;
-      font-size: 11px;
-      color: #ffffff;
-    }
-    .badge-sub {
-      display: block;
-      font-family: "DM Sans", sans-serif;
-      font-size: 10px;
-      color: #64748b;
-    }
-    .footer-divider {
-      height: 1px;
-      background: rgba(255,255,255,0.06);
-      max-width: 1200px;
-      margin: 40px auto;
-    }
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: "DM Sans", sans-serif;
-      font-size: 12px;
-      color: #475569;
-    }
-    .footer-legal {
-      display: flex;
-      gap: 24px;
-    }
-    .footer-legal a {
-      color: #475569;
-      text-decoration: none;
-    }
-    .footer-legal a:hover { color: #94a3b8; }
 
-    /* MODAL STYLES */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(8px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
-    .modal-overlay.active {
-        opacity: 1;
-        pointer-events: auto;
-    }
-    .modal-card {
-        background: var(--color-white);
-        width: 100%;
-        max-width: 480px;
-        border-radius: 24px;
-        padding: 48px;
-        position: relative;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-    }
-    .modal-overlay.active .modal-card {
-        transform: translateY(0);
-    }
-    .close-modal {
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        cursor: pointer;
-        color: #94a3b8;
-        transition: color 0.2s;
-    }
-    .close-modal:hover { color: var(--color-dark); }
-    .modal-title {
-        font-family: var(--font-display);
-        font-size: 32px;
-        font-weight: 700;
-        color: var(--color-dark);
-        margin-bottom: 12px;
-    }
-    .modal-sub {
-        font-size: 16px;
-        color: #64748b;
-        margin-bottom: 32px;
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
-    .form-label {
-        display: block;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        color: #64748b;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 8px;
-    }
     .form-input {
-        width: 100%;
-        padding: 12px 16px;
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        font-family: var(--font-sans);
-        font-size: 15px;
-        transition: border-color 0.2s;
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      transition: border-color 0.2s;
     }
+
     .form-input:focus {
-        outline: none;
-        border-color: var(--color-primary);
+      outline: none;
+      border-color: var(--color-primary);
     }
+
     .btn-demo {
-        background: var(--color-primary);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background 0.2s;
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
     }
-    .btn-demo:hover { background: #1d4ed8; }
+
+    .btn-demo:hover {
+      background: #1d4ed8;
+    }
+
     .success-icon {
-        width: 64px;
-        height: 64px;
-        background: #F0FDF4;
-        color: #16A34A;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        margin: 0 auto 24px;
+      width: 64px;
+      height: 64px;
+      background: #F0FDF4;
+      color: #16A34A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 24px;
     }
 
     @media (max-width: 1024px) {
-        .inclusions-grid { grid-template-columns: repeat(2, 1fr); }
-        .footer-top { grid-template-columns: 1fr 1fr; }
+      .inclusions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 768px) {
-        .inclusions-grid { grid-template-columns: 1fr; }
-        .footer-top { grid-template-columns: 1fr; gap: 32px; }
-        .modal-card { padding: 32px; margin: 20px; }
+      .inclusions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-card {
+        padding: 32px;
+        margin: 20px;
+      }
+    }
+
+    /* MODAL STYLES */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--color-white);
+      width: 100%;
+      max-width: 480px;
+      border-radius: 24px;
+      padding: 48px;
+      position: relative;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      cursor: pointer;
+      color: #94a3b8;
+      transition: color 0.2s;
+    }
+
+    .close-modal:hover {
+      color: var(--color-dark);
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+    }
+
+    .modal-sub {
+      font-size: 16px;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+
+    .btn-demo {
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-demo:hover {
+      background: #1d4ed8;
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: #F0FDF4;
+      color: #16A34A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .inclusions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .inclusions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-card {
+        padding: 32px;
+        margin: 20px;
+      }
     }
 
     /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    html, body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-    img, video, iframe {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Mobile Drawer */
-    .mobile-drawer {
-      position: fixed;
-      top: var(--nav-height-mobile);
-      left: 0;
-      width: 100%;
-      background: white;
-      z-index: 1099;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 400ms ease;
-      box-shadow: none;
-      border-bottom: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mobile-drawer.open {
-      max-height: 100vh;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      border-bottom: 1px solid var(--color-border);
-    }
 
     @media (max-width: 1024px) {
       section {
         padding-left: 20px !important;
         padding-right: 20px !important;
       }
-      .footer-top {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 32px !important;
-      }
-      nav .nav-centre-links {
-        display: none !important;
-      }
     }
 
     @media (max-width: 768px) {
-      body {
-        padding-top: var(--nav-height-mobile) !important;
-      }
       .hero {
         min-height: calc(100vh - var(--nav-height-mobile));
         padding: 40px 24px;
       }
+
       /* Fix hero padding below fixed nav */
       .hero,
       [class*="hero"],
@@ -1582,67 +1026,22 @@ nav .cta-demo:hover {
       [class*="policy-hero"] {
         padding-top: 40px !important;
       }
-      nav {
-        padding: 0 !important;
-        height: var(--nav-height-mobile) !important;
-        display: flex !important;
-        align-items: center !important;
-      }
-      .nav-container {
-        padding: 0 16px !important;
-        height: var(--nav-height-mobile) !important;
-        align-items: center !important;
-        width: 100% !important;
-      }
-      .nav-links {
-        display: none !important;
-      }
-      .btn-login {
-        display: none !important;
-      }
-      .currency-pill {
-        display: none !important;
-      }
-      .hamburger {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 36px !important;
-        height: 36px !important;
-        padding: 0 !important;
-      }
-      .btn-demo {
-        font-size: 11px !important;
-        padding: 6px 10px !important;
-        white-space: nowrap !important;
-        height: 32px !important;
-        line-height: 1 !important;
-        display: flex !important;
-        align-items: center !important;
-      }
-      .nav-right {
-        gap: 8px !important;
-        align-items: center !important;
-        height: 56px !important;
-        display: flex !important;
-      }
-      .logo {
-        display: flex !important;
-        align-items: center !important;
-        height: 56px !important;
-      }
+
       /* Typography */
       h1 {
         font-size: 28px !important;
         line-height: 1.15 !important;
       }
+
       h2 {
         font-size: 24px !important;
         line-height: 1.2 !important;
       }
+
       h3 {
         font-size: 18px !important;
       }
+
       p {
         font-size: 15px !important;
         line-height: 1.7 !important;
@@ -1656,31 +1055,15 @@ nav .cta-demo:hover {
         padding-right: 20px !important;
       }
 
-
       .drawer-cta {
         padding: 16px;
-      }
-
-      /* Footer */
-      .footer-top {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
-      .footer-bottom {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 12px !important;
-      }
-      .footer-legal {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 16px !important;
       }
 
       /* Modal full screen */
       #modal-overlay {
         align-items: flex-end !important;
       }
+
       #modal-card {
         width: 100% !important;
         max-width: 100% !important;
@@ -1689,7 +1072,10 @@ nav .cta-demo:hover {
         padding: 32px 20px !important;
         overflow-y: auto !important;
       }
-      input, select, textarea {
+
+      input,
+      select,
+      textarea {
         font-size: 16px !important;
       }
 
@@ -1703,6 +1089,7 @@ nav .cta-demo:hover {
 
     /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
     @media (max-width: 768px) {
+
       /* Hero two column to single column */
       .hero-container,
       [class*="hero-layout"],
@@ -1710,12 +1097,14 @@ nav .cta-demo:hover {
         flex-direction: column !important;
         gap: 32px !important;
       }
+
       .hero-text,
       [class*="hero-left"],
       [class*="hero-content"] {
         width: 100% !important;
         max-width: 100% !important;
       }
+
       .hero-visual,
       #hero-visual-placeholder,
       [class*="hero-right"] {
@@ -1734,6 +1123,7 @@ nav .cta-demo:hover {
       .rev-number {
         font-size: 22px !important;
       }
+
       .revenue-divider {
         padding: 0 8px !important;
       }
@@ -1786,6 +1176,7 @@ nav .cta-demo:hover {
         padding-bottom: 20px !important;
         -webkit-overflow-scrolling: touch !important;
       }
+
       .bundle-card,
       [class*="bundle-card"],
       [class*="pricing-card"] {
@@ -1810,26 +1201,32 @@ nav .cta-demo:hover {
       .article-hero {
         padding: 100px 20px 40px !important;
       }
+
       [class*="article-body"],
       .article-body {
         padding: 40px 20px !important;
       }
+
       [class*="stat-callout"],
       .stat-callout {
         padding: 16px !important;
       }
+
       [class*="stat-number"] {
         font-size: 28px !important;
       }
+
       [class*="pull-quote"],
       blockquote {
         margin: 20px 0 !important;
         padding: 12px 16px !important;
         font-size: 16px !important;
       }
+
       [class*="related-articles"] {
         padding: 40px 20px !important;
       }
+
       [class*="related-cards"] {
         flex-direction: column !important;
         gap: 16px !important;
@@ -1841,19 +1238,23 @@ nav .cta-demo:hover {
         grid-template-columns: 1fr !important;
         gap: 24px !important;
       }
+
       [class*="featured-visual"],
       .featured-visual {
         height: 180px !important;
         min-height: 0 !important;
       }
+
       [class*="subscribe-form"],
       #subscribe-form {
         flex-direction: column !important;
         gap: 8px !important;
       }
+
       #subscribe-form input {
         width: 100% !important;
       }
+
       #subscribe-form button {
         width: 100% !important;
         margin-left: 0 !important;
@@ -1865,9 +1266,11 @@ nav .cta-demo:hover {
         gap: 20px !important;
         text-align: center !important;
       }
+
       [class*="door-icon"] {
         margin: 0 auto 16px !important;
       }
+
       [class*="door-text"] {
         text-align: left !important;
       }
@@ -1879,6 +1282,7 @@ nav .cta-demo:hover {
         gap: 24px !important;
         text-align: center !important;
       }
+
       [class*="stats-grid"],
       [class*="shortage-grid"] {
         grid-template-columns: 1fr 1fr !important;
@@ -1891,6 +1295,7 @@ nav .cta-demo:hover {
         grid-template-columns: 1fr !important;
         gap: 16px !important;
       }
+
       [class*="faq-item"] {
         padding: 16px 0 !important;
       }
@@ -1901,10 +1306,12 @@ nav .cta-demo:hover {
         flex-direction: column !important;
         gap: 24px !important;
       }
+
       [class*="step-arrow"],
       [class*="connecting-arrow"] {
         display: none !important;
       }
+
       [class*="step-card"] {
         width: 100% !important;
       }
@@ -1915,10 +1322,12 @@ nav .cta-demo:hover {
         flex-direction: column !important;
         gap: 24px !important;
       }
+
       [class*="output-row"].even,
       [class*="output-row"].odd {
         flex-direction: column !important;
       }
+
       [class*="output-visual"] {
         min-height: 160px !important;
         height: 160px !important;
@@ -1929,10 +1338,12 @@ nav .cta-demo:hover {
       .legal-hero {
         padding: 80px 20px 40px !important;
       }
+
       [class*="legal-body"],
       .legal-body {
         padding: 40px 20px !important;
       }
+
       table {
         display: block !important;
         overflow-x: auto !important;
@@ -1940,7 +1351,9 @@ nav .cta-demo:hover {
         font-size: 13px !important;
         width: 100% !important;
       }
-      th, td {
+
+      th,
+      td {
         min-width: 100px !important;
         padding: 10px 12px !important;
       }
@@ -1951,10 +1364,12 @@ nav .cta-demo:hover {
         flex-direction: column !important;
         gap: 32px !important;
       }
+
       [class*="proof-divider"],
       [class*="stat-divider"] {
         display: none !important;
       }
+
       [class*="proof-number"],
       [class*="stat-number-large"] {
         font-size: 48px !important;
@@ -1977,12 +1392,13 @@ nav .cta-demo:hover {
       left: 0;
       width: 100%;
       background: var(--color-dark);
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding: 12px 20px;
       z-index: 998;
-      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.2);
       box-sizing: border-box;
     }
+
     .sticky-cta-btn {
       width: 100%;
       background: var(--color-highlight);
@@ -1996,13 +1412,16 @@ nav .cta-demo:hover {
       cursor: pointer;
       min-height: 48px;
     }
+
     .sticky-cta-btn:hover {
       background: #0b7a70;
     }
+
     @media (max-width: 768px) {
       .sticky-cta-bar {
         display: none;
       }
+
       body {
         padding-bottom: 80px;
       }
@@ -2010,6 +1429,7 @@ nav .cta-demo:hover {
 
     /* ===== MOBILE ENHANCEMENTS - M-3 ===== */
     @media (max-width: 768px) {
+
       /* Bundle cards row becomes horizontal scroll */
       [class*="bundle-cards"],
       [class*="pricing-cards"],
@@ -2023,6 +1443,7 @@ nav .cta-demo:hover {
         -webkit-overflow-scrolling: touch !important;
         scrollbar-width: none !important;
       }
+
       [class*="bundle-cards"]::-webkit-scrollbar,
       [class*="pricing-cards"]::-webkit-scrollbar {
         display: none !important;
@@ -2132,11 +1553,13 @@ nav .cta-demo:hover {
         padding-right: 32px !important;
         line-height: 1.4 !important;
       }
+
       [class*="faq-answer"],
       [class*="faq-body"] {
         font-size: 14px !important;
         line-height: 1.6 !important;
       }
+
       [class*="faq-item"] {
         padding: 20px 0 !important;
       }
@@ -2161,51 +1584,54 @@ nav .cta-demo:hover {
         display: block !important;
       }
     }
-    </style>
-  <link rel="stylesheet" href="site-uniform.css"></head>
+  </style>
+</head>
+
 <body>
 
-<nav>
-  <div class="nav-container">
-    <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
-    <div class="nav-links">
-      <a href="how-it-works.html">How It Works</a>
-      <a href="outputs.html">Outputs</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="security.html">Security</a>
-      <a href="about.html">About Us</a>
-    </div>
-    <div class="nav-actions">
-<button class="btn-login">Login</button>
-      <button class="cta-demo">Book a Demo</button>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo"> <img src="logo.svg" alt="Rocovit" class="logo-image"> <span
+          class="logo-diamond" aria-hidden="true"></span> </a>
+      <div class="nav-links">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-login">Login</button>
+        <button class="cta-demo">Book a Demo</button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Mobile Drawer -->
-<div class="mobile-drawer" id="mobileDrawer">
-  <a href="how-it-works.html">How It Works</a>
-  <a href="outputs.html">Outputs</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="security.html">Security</a>
-  <a href="about.html">About Us</a>
-  <div class="drawer-cta">
-    <button class="cta-demo">Book a Demo</button>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="how-it-works.html">How It Works</a>
+    <a href="outputs.html">Outputs</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="security.html">Security</a>
+    <a href="about.html">About Us</a>
+    <div class="drawer-cta">
+      <button class="cta-demo">Book a Demo</button>
+    </div>
   </div>
-</div>
 
   <!-- SECTION 1 - HERO -->
   <section class="hero">
     <div class="hero-content">
       <span class="eyebrow">PRICING</span>
       <h1>Buy a bundle. Unlock a market.</h1>
-      <p>Rocovit is priced per preparation - not per seat, not per month. Buy a bundle of preps, use them across a validity window, and keep every naira of revenue you unlock.</p>
-      
+      <p>Rocovit is priced per preparation - not per seat, not per month. Buy a bundle of preps, use them across a
+        validity window, and keep every naira of revenue you unlock.</p>
+
       <div class="value-pills">
         <div class="value-pill">No monthly subscription</div>
         <div class="value-pill">Pay per preparation</div>
@@ -2221,19 +1647,30 @@ nav .cta-demo:hover {
         <span class="eyebrow">THE RETURN</span>
         <h2>Every bundle pays for itself in under three engagements.</h2>
         <p class="body">
-          The average SME engagement in Nigeria generates ₦150,000 in fees. A Starter bundle costs ₦190,000. Complete two engagements and the bundle has paid for itself. Complete all ten and you have unlocked ₦1,500,000 in client revenue - from clients most firms currently turn away.
+          The average SME engagement in Nigeria generates ₦150,000 in fees. A Starter bundle costs ₦190,000. Complete
+          two engagements and the bundle has paid for itself. Complete all ten and you have unlocked ₦1,500,000 in
+          client revenue - from clients most firms currently turn away.
         </p>
         <div class="proof-rows">
           <div class="proof-row">
-            <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+            </svg>
             All seven compliance output formats included in every bundle
           </div>
           <div class="proof-row">
-            <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+            </svg>
             Prior year data pre-loads the next engagement automatically
           </div>
           <div class="proof-row">
-            <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            <svg class="checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+            </svg>
             No per-seat fees - your whole team works from one bundle
           </div>
         </div>
@@ -2281,7 +1718,8 @@ nav .cta-demo:hover {
             <span class="icon-prep">1</span>
           </div>
           <h4>Buy a prep bundle</h4>
-          <p>Choose the number of SME preparations that fits your current practice. Bundles range from 10 to 200+ preps. You only pay for what you plan to use.</p>
+          <p>Choose the number of SME preparations that fits your current practice. Bundles range from 10 to 200+ preps.
+            You only pay for what you plan to use.</p>
         </div>
         <!-- Card 2 -->
         <div class="how-card">
@@ -2289,7 +1727,8 @@ nav .cta-demo:hover {
             <div class="icon-calendar"></div>
           </div>
           <h4>Use preps across your validity window</h4>
-          <p>Every bundle comes with a validity window - 60 to 180 days. Use your preps at your own pace across that window. No pressure to rush engagements.</p>
+          <p>Every bundle comes with a validity window - 60 to 180 days. Use your preps at your own pace across that
+            window. No pressure to rush engagements.</p>
         </div>
         <!-- Card 3 -->
         <div class="how-card">
@@ -2297,7 +1736,8 @@ nav .cta-demo:hover {
             <div class="icon-doc"></div>
           </div>
           <h4>All seven outputs included</h4>
-          <p>Every preparation produces all seven compliance output formats automatically. Tax pack, bank loan pack, investor pack, audit papers, visa financials, tender pack, and M&A pack.</p>
+          <p>Every preparation produces all seven compliance output formats automatically. Tax pack, bank loan pack,
+            investor pack, audit papers, visa financials, tender pack, and M&A pack.</p>
         </div>
         <!-- Card 4 -->
         <div class="how-card">
@@ -2305,7 +1745,8 @@ nav .cta-demo:hover {
             <div class="icon-refresh"></div>
           </div>
           <h4>Prior year data pre-loads</h4>
-          <p>Returning clients are faster. Prior year financial data pre-loads automatically into the next engagement - compounding your efficiency with every renewal.</p>
+          <p>Returning clients are faster. Prior year financial data pre-loads automatically into the next engagement -
+            compounding your efficiency with every renewal.</p>
         </div>
       </div>
     </div>
@@ -2319,7 +1760,7 @@ nav .cta-demo:hover {
       <p>Volume discounts reward firms that commit to serving their SME market at scale.</p>
     </div>
 
-    <div class="currency-switcher">
+    <!-- <div class="currency-switcher">
       <div class="switcher-pill">
         <button class="currency-btn" data-currency="USD">US USD</button>
         <button class="currency-btn" data-currency="NGN">NG NGN</button>
@@ -2329,18 +1770,20 @@ nav .cta-demo:hover {
         <button class="currency-btn" data-currency="GBP">GB GBP</button>
       </div>
       <p class="currency-note">Prices shown in selected currency using fixed rates. Final pricing confirmed at signup.</p>
-    </div>
+    </div> -->
 
-    <p class="swipe-hint" style="display:none;font-family:'DM Mono',monospace;font-size:10px;color:#94a3b8;text-align:center;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">← Swipe to compare bundles →</p>
+    <p class="swipe-hint"
+      style="display:none;font-family:'DM Mono',monospace;font-size:10px;color:#94a3b8;text-align:center;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">
+      ← Swipe to compare bundles →</p>
     <div class="pricing-grid">
       <!-- STARTER -->
       <div class="pricing-card">
         <span class="tier-name">STARTER</span>
         <span class="price-unit" data-usd="11.875">$11.875</span>
         <span class="price-sub">per preparation</span>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="card-row">
           <span class="row-label">PREPS INCLUDED</span>
           <span class="row-value">10 preparations</span>
@@ -2349,22 +1792,22 @@ nav .cta-demo:hover {
           <span class="row-label">VALIDITY</span>
           <span class="row-value">60 days</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="revenue-block">
           <span class="rev-label">REVENUE POTENTIAL</span>
           <span class="price-revenue" data-usd="4687.5">$4,687.5</span>
           <span class="rev-assumption currency-assumption">at $150 avg fee - 5X capacity</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="total-block">
           <span class="total-label">BUNDLE TOTAL</span>
           <span class="price-total" data-usd="118.75">$118.75</span>
         </div>
-        
+
         <button class="cta-demo outlined">Book a Demo</button>
       </div>
 
@@ -2373,9 +1816,9 @@ nav .cta-demo:hover {
         <span class="tier-name">GROWTH</span>
         <span class="price-unit" data-usd="10.625">$10.625</span>
         <span class="price-sub">per preparation</span>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="card-row">
           <span class="row-label">PREPS INCLUDED</span>
           <span class="row-value">25 preparations</span>
@@ -2384,22 +1827,22 @@ nav .cta-demo:hover {
           <span class="row-label">VALIDITY</span>
           <span class="row-value">90 days</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="revenue-block">
           <span class="rev-label">REVENUE POTENTIAL</span>
           <span class="price-revenue" data-usd="11718.75">$11,718.75</span>
           <span class="rev-assumption currency-assumption">at $150 avg fee - 5X capacity</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="total-block">
           <span class="total-label">BUNDLE TOTAL</span>
           <span class="price-total" data-usd="265.625">$265.625</span>
         </div>
-        
+
         <button class="cta-demo outlined">Book a Demo</button>
       </div>
 
@@ -2409,9 +1852,9 @@ nav .cta-demo:hover {
         <span class="tier-name">STUDIO</span>
         <span class="price-unit" data-usd="9.375">$9.375</span>
         <span class="price-sub">per preparation</span>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="card-row">
           <span class="row-label">PREPS INCLUDED</span>
           <span class="row-value">50 preparations</span>
@@ -2420,22 +1863,22 @@ nav .cta-demo:hover {
           <span class="row-label">VALIDITY</span>
           <span class="row-value">120 days</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="revenue-block">
           <span class="rev-label">REVENUE POTENTIAL</span>
           <span class="price-revenue" data-usd="23437.5">$23,437.5</span>
           <span class="rev-assumption currency-assumption">at $150 avg fee - 5X capacity</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="total-block">
           <span class="total-label">BUNDLE TOTAL</span>
           <span class="price-total" data-usd="468.75">$468.75</span>
         </div>
-        
+
         <button class="cta-demo filled">Book a Demo</button>
       </div>
 
@@ -2444,9 +1887,9 @@ nav .cta-demo:hover {
         <span class="tier-name">PRO</span>
         <span class="price-unit" data-usd="8.4375">$8.4375</span>
         <span class="price-sub">per preparation</span>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="card-row">
           <span class="row-label">PREPS INCLUDED</span>
           <span class="row-value">100 preparations</span>
@@ -2455,22 +1898,22 @@ nav .cta-demo:hover {
           <span class="row-label">VALIDITY</span>
           <span class="row-value">180 days</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="revenue-block">
           <span class="rev-label">REVENUE POTENTIAL</span>
           <span class="price-revenue" data-usd="46875">$46,875</span>
           <span class="rev-assumption currency-assumption">at $150 avg fee - 5X capacity</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="total-block">
           <span class="total-label">BUNDLE TOTAL</span>
           <span class="price-total" data-usd="843.75">$843.75</span>
         </div>
-        
+
         <button class="cta-demo outlined">Book a Demo</button>
       </div>
 
@@ -2479,9 +1922,9 @@ nav .cta-demo:hover {
         <span class="tier-name">ENTERPRISE</span>
         <span class="price-unit">Custom</span>
         <span class="price-sub">per preparation</span>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="card-row">
           <span class="row-label">PREPS INCLUDED</span>
           <span class="row-value">200+ preparations</span>
@@ -2490,152 +1933,212 @@ nav .cta-demo:hover {
           <span class="row-label">VALIDITY</span>
           <span class="row-value">Custom</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="revenue-block">
           <span class="rev-label">REVENUE POTENTIAL</span>
           <span class="price-revenue enterprise-revenue">₦150,000,000+</span>
           <span class="rev-assumption currency-assumption">at $150 avg fee - 5X capacity</span>
         </div>
-        
+
         <div class="card-divider"></div>
-        
+
         <div class="total-block">
           <span class="total-label">BUNDLE TOTAL</span>
           <span class="price-total">Negotiated</span>
         </div>
-        
+
         <button class="cta-demo dark-outlined">Contact Sales</button>
       </div>
     </div>
-    
+
     <p class="pricing-footer-note">First engagement free. No credit card required.</p>
   </section>
 
-    <!-- SECTION 5 - WHAT IS INCLUDED -->
-    <section class="inclusions">
-        <div class="inclusions-container">
-            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
-                <span class="eyebrow" style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); text-transform: uppercase;">EVERYTHING YOU NEED</span>
-                <h2 class="section-headline" style="font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--color-dark); margin-top: 12px;">One engine. Total coverage.</h2>
-            </div>
-
-            <div class="inclusions-grid">
-                <div class="inclusion-card">
-                    <div class="inclusion-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    </div>
-                    <h3 class="inclusion-title">Automated Bookkeeping</h3>
-                    <p class="inclusion-body">Convert raw bank statements and ledger exports into clean, categorised trial balances in minutes.</p>
-                </div>
-                <div class="inclusion-card">
-                    <div class="inclusion-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                    </div>
-                    <h3 class="inclusion-title">Tax Computation</h3>
-                    <p class="inclusion-body">Automatic generation of CIT, VAT, and Education Tax schedules based on local regulatory requirements.</p>
-                </div>
-                <div class="inclusion-card">
-                    <div class="inclusion-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    </div>
-                    <h3 class="inclusion-title">Audit-Ready Workpapers</h3>
-                    <p class="inclusion-body">Standardised lead schedules and workpapers that meet international auditing standards (ISA) out of the box.</p>
-                </div>
-                <div class="inclusion-card">
-                    <div class="inclusion-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                    </div>
-                    <h3 class="inclusion-title">Multi-Currency Support</h3>
-                    <p class="inclusion-body">Prepare accounts in NGN, USD, GBP, AED, KES, or ZAR with automatic exchange rate handling.</p>
-                </div>
-                <div class="inclusion-card">
-                    <div class="inclusion-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                    </div>
-                    <h3 class="inclusion-title">Firm-Wide Dashboard</h3>
-                    <p class="inclusion-body">Track all client engagements, deadlines, and revenue potential from a single centralised command centre.</p>
-                </div>
-                <div class="inclusion-card">
-                    <div class="inclusion-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </div>
-                    <h3 class="inclusion-title">Client Portal</h3>
-                    <p class="inclusion-body">Securely share outputs and collect documents from clients without messy email threads.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6 - PRICING FAQ -->
-    <section class="faq">
-        <div class="faq-container">
-            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
-                <span class="eyebrow" style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); text-transform: uppercase;">COMMON QUESTIONS</span>
-                <h2 class="section-headline" style="font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--color-dark); margin-top: 12px;">Pricing & Bundles</h2>
-            </div>
-
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do preps work?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Each "prep" is one complete financial preparation for one SME client. This includes bookkeeping automation, tax computation, and full workpaper generation for a specific financial period.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What if I run out of preps?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        You can purchase a new bundle at any time. Your validity period will reset to the new bundle's duration, and any remaining preps from your previous bundle will be added to your new balance.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do preps expire?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, preps must be used within the validity period of your bundle (60, 90, or 180 days). This ensures we can maintain high-performance processing power for all active firms.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I switch bundles?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, you can upgrade to a larger bundle at any time to unlock lower unit prices and longer validity periods. The change takes effect immediately.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is there a setup fee?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        No. Rocovit is a pay-as-you-go platform designed to scale with your firm. There are no setup fees, implementation costs, or hidden maintenance charges.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 7 - FINAL CTA -->
-    <section style="background:#0f172a;padding:100px 24px;">
-      <div style="max-width:700px;margin:0 auto;text-align:center;">
-        <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#0d9488;text-transform:uppercase;margin-bottom:16px;">GET STARTED</p>
-        <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:40px;color:#ffffff;line-height:1.2;margin-bottom:16px;">First engagement free. No credit card. No commitment.</h2>
-        <p style="font-family:'DM Sans',sans-serif;font-size:18px;color:#94a3b8;margin-bottom:40px;line-height:1.6;">See what Rocovit unlocks for your practice in under 3 hours.</p>
-        <button class="cta-demo" style="background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;padding:16px 48px;border-radius:8px;border:none;cursor:pointer;">Book a Demo</button>
-        <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:#64748b;margin-top:20px;">Join accounting firms already unlocking the SME market across Nigeria, UAE, Kenya and beyond.</p>
+  <!-- SECTION 5 - WHAT IS INCLUDED -->
+  <section class="inclusions">
+    <div class="inclusions-container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="eyebrow"
+          style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); text-transform: uppercase;">EVERYTHING
+          YOU NEED</span>
+        <h2 class="section-headline"
+          style="font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--color-dark); margin-top: 12px;">
+          One engine. Total coverage.</h2>
       </div>
-    </section>
+
+      <div class="inclusions-grid">
+        <div class="inclusion-card">
+          <div class="inclusion-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="inclusion-title">Automated Bookkeeping</h3>
+          <p class="inclusion-body">Convert raw bank statements and ledger exports into clean, categorised trial
+            balances in minutes.</p>
+        </div>
+        <div class="inclusion-card">
+          <div class="inclusion-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="inclusion-title">Tax Computation</h3>
+          <p class="inclusion-body">Automatic generation of CIT, VAT, and Education Tax schedules based on local
+            regulatory requirements.</p>
+        </div>
+        <div class="inclusion-card">
+          <div class="inclusion-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 class="inclusion-title">Audit-Ready Workpapers</h3>
+          <p class="inclusion-body">Standardised lead schedules and workpapers that meet international auditing
+            standards (ISA) out of the box.</p>
+        </div>
+        <div class="inclusion-card">
+          <div class="inclusion-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="inclusion-title">Multi-Currency Support</h3>
+          <p class="inclusion-body">Prepare accounts in NGN, USD, GBP, AED, KES, or ZAR with automatic exchange rate
+            handling.</p>
+        </div>
+        <div class="inclusion-card">
+          <div class="inclusion-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <h3 class="inclusion-title">Firm-Wide Dashboard</h3>
+          <p class="inclusion-body">Track all client engagements, deadlines, and revenue potential from a single
+            centralised command centre.</p>
+        </div>
+        <div class="inclusion-card">
+          <div class="inclusion-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="inclusion-title">Client Portal</h3>
+          <p class="inclusion-body">Securely share outputs and collect documents from clients without messy email
+            threads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 - PRICING FAQ -->
+  <section class="faq">
+    <div class="faq-container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="eyebrow"
+          style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); text-transform: uppercase;">COMMON
+          QUESTIONS</span>
+        <h2 class="section-headline"
+          style="font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--color-dark); margin-top: 12px;">
+          Pricing & Bundles</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do preps work?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Each "prep" is one complete financial preparation for one SME client. This includes bookkeeping automation,
+            tax computation, and full workpaper generation for a specific financial period.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What if I run out of preps?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            You can purchase a new bundle at any time. Your validity period will reset to the new bundle's duration, and
+            any remaining preps from your previous bundle will be added to your new balance.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do preps expire?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes, preps must be used within the validity period of your bundle (60, 90, or 180 days). This ensures we can
+            maintain high-performance processing power for all active firms.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I switch bundles?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes, you can upgrade to a larger bundle at any time to unlock lower unit prices and longer validity periods.
+            The change takes effect immediately.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is there a setup fee?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            No. Rocovit is a pay-as-you-go platform designed to scale with your firm. There are no setup fees,
+            implementation costs, or hidden maintenance charges.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 - FINAL CTA -->
+  <section style="background:#0f172a;padding:100px 24px;">
+    <div style="max-width:700px;margin:0 auto;text-align:center;">
+      <p
+        style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#0d9488;text-transform:uppercase;margin-bottom:16px;">
+        GET STARTED</p>
+      <h2
+        style="font-family:'Syne',sans-serif;font-weight:800;font-size:40px;color:#ffffff;line-height:1.2;margin-bottom:16px;">
+        First engagement free. No credit card. No commitment.</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:18px;color:#94a3b8;margin-bottom:40px;line-height:1.6;">See
+        what Rocovit unlocks for your practice in under 3 hours.</p>
+      <button class="cta-demo"
+        style="background:#0d9488;color:white;font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;padding:16px 48px;border-radius:8px;border:none;cursor:pointer;">Book
+        a Demo</button>
+      <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:#64748b;margin-top:20px;">Join accounting firms
+        already unlocking the SME market across Nigeria, UAE, Kenya and beyond.</p>
+    </div>
+  </section>
 
   <!-- MASTER FOOTER -->
   <footer>
@@ -2697,48 +2200,53 @@ nav .cta-demo:hover {
 
   <!-- BOOK A DEMO MODAL -->
   <div class="modal-overlay" id="demoModal">
-      <div class="modal-card">
-          <div class="close-modal" id="closeModal">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          </div>
-          
-          <div id="modalFormContent">
-              <h2 class="modal-title">Book a Demo</h2>
-              <p class="modal-sub">See how Rocovit can transform your practice.</p>
-              
-              <form id="demoForm">
-                  <div class="form-group">
-                      <label class="form-label">Full Name</label>
-                      <input type="text" class="form-input" placeholder="John Doe" required>
-                  </div>
-                  <div class="form-group">
-                      <label class="form-label">Email Address</label>
-                      <input type="email" class="form-input" placeholder="john@firm.com" required>
-                  </div>
-                  <div class="form-group">
-                      <label class="form-label">Company Name</label>
-                      <input type="text" class="form-input" placeholder="Doe & Associates" required>
-                  </div>
-                  <div class="form-group">
-                      <label class="form-label">SME Clients Per Month</label>
-                      <select class="form-input" required>
-                          <option value="">Select range</option>
-                          <option value="1-10">1-10</option>
-                          <option value="11-50">11-50</option>
-                          <option value="51-200">51-200</option>
-                          <option value="200+">200+</option>
-                      </select>
-                  </div>
-                  <button type="submit" class="btn btn-demo" style="width: 100%; padding: 14px; margin-top: 10px;">Request Demo</button>
-              </form>
-          </div>
-
-          <div id="modalSuccessContent" style="display: none; text-align: center;">
-              <div class="success-icon">✓</div>
-              <h2 class="modal-title">You are confirmed.</h2>
-              <p class="modal-sub">Our team will reach out within 24 hours to schedule your walkthrough.</p>
-          </div>
+    <div class="modal-card">
+      <div class="close-modal" id="closeModal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </div>
+
+      <div id="modalFormContent">
+        <h2 class="modal-title">Book a Demo</h2>
+        <p class="modal-sub">See how Rocovit can transform your practice.</p>
+
+        <form id="demoForm">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="john@firm.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company Name</label>
+            <input type="text" class="form-input" placeholder="Doe & Associates" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">SME Clients Per Month</label>
+            <select class="form-input" required>
+              <option value="">Select range</option>
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="200+">200+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-demo" style="width: 100%; padding: 14px; margin-top: 10px;">Request
+            Demo</button>
+        </form>
+      </div>
+
+      <div id="modalSuccessContent" style="display: none; text-align: center;">
+        <div class="success-icon">✓</div>
+        <h2 class="modal-title">You are confirmed.</h2>
+        <p class="modal-sub">Our team will reach out within 24 hours to schedule your walkthrough.</p>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -2753,77 +2261,77 @@ nav .cta-demo:hover {
     });
 
     // Currency Switcher Logic
-    const rates = { USD: 1, NGN: 1600, AED: 3.67, KES: 129, ZAR: 18.5, GBP: 0.79 };
-    const symbols = { USD: '$', NGN: '₦', AED: 'AED ', KES: 'KSh ', ZAR: 'R', GBP: '£' };
-    const enterpriseRevenues = {
-      NGN: "₦150,000,000+",
-      USD: "$93,750+",
-      GBP: "£74,062+",
-      AED: "AED 344,531+",
-      KES: "KSh 12,093,750+",
-      ZAR: "R1,687,500+"
-    };
-    let activeCurrency = 'NGN';
+    // const rates = { USD: 1, NGN: 1600, AED: 3.67, KES: 129, ZAR: 18.5, GBP: 0.79 };
+    // const symbols = { USD: '$', NGN: '₦', AED: 'AED ', KES: 'KSh ', ZAR: 'R', GBP: '£' };
+    // const enterpriseRevenues = {
+    //   NGN: "₦150,000,000+",
+    //   USD: "$93,750+",
+    //   GBP: "£74,062+",
+    //   AED: "AED 344,531+",
+    //   KES: "KSh 12,093,750+",
+    //   ZAR: "R1,687,500+"
+    // };
+    // let activeCurrency = 'NGN';
 
-    function formatPrice(usdValue, currency) {
-      let converted = usdValue * rates[currency];
-      const symbol = symbols[currency];
-      
-      if (currency === 'NGN') {
-        converted = Math.round(converted / 1000) * 1000;
-      }
+    // function formatPrice(usdValue, currency) {
+    //   let converted = usdValue * rates[currency];
+    //   const symbol = symbols[currency];
 
-      if (converted >= 1000000) return symbol + (converted / 1000000).toFixed(1) + 'M';
-      if (converted >= 1000) return symbol + Math.round(converted).toLocaleString();
-      return symbol + converted.toFixed(0);
-    }
+    //   if (currency === 'NGN') {
+    //     converted = Math.round(converted / 1000) * 1000;
+    //   }
 
-    function updatePrices(currency) {
-      activeCurrency = currency;
-      document.querySelectorAll('.price-unit[data-usd]').forEach(el => {
-        el.textContent = formatPrice(parseFloat(el.dataset.usd), currency);
-      });
-      document.querySelectorAll('.price-revenue[data-usd]').forEach(el => {
-        el.textContent = formatPrice(parseFloat(el.dataset.usd), currency);
-      });
-      document.querySelectorAll('.price-total[data-usd]').forEach(el => {
-        el.textContent = formatPrice(parseFloat(el.dataset.usd), currency);
-      });
-      document.querySelectorAll('.enterprise-revenue').forEach(el => {
-        el.textContent = enterpriseRevenues[currency];
-      });
-      document.querySelectorAll('.currency-assumption').forEach(el => {
-        el.textContent = 'at ' + symbols[currency] + '150 avg fee - 5X capacity';
-      });
-      document.querySelectorAll('.currency-btn').forEach(btn => {
-        btn.style.background = btn.dataset.currency === currency ? 'var(--color-primary)' : 'transparent';
-        btn.style.color = btn.dataset.currency === currency ? 'white' : 'var(--color-dark)';
-      });
-    }
+    //   if (converted >= 1000000) return symbol + (converted / 1000000).toFixed(1) + 'M';
+    //   if (converted >= 1000) return symbol + Math.round(converted).toLocaleString();
+    //   return symbol + converted.toFixed(0);
+    // }
 
-    document.querySelectorAll('.currency-btn').forEach(btn => {
-      btn.addEventListener('click', () => updatePrices(btn.dataset.currency));
-    });
+    // function updatePrices(currency) {
+    //   activeCurrency = currency;
+    //   document.querySelectorAll('.price-unit[data-usd]').forEach(el => {
+    //     el.textContent = formatPrice(parseFloat(el.dataset.usd), currency);
+    //   });
+    //   document.querySelectorAll('.price-revenue[data-usd]').forEach(el => {
+    //     el.textContent = formatPrice(parseFloat(el.dataset.usd), currency);
+    //   });
+    //   document.querySelectorAll('.price-total[data-usd]').forEach(el => {
+    //     el.textContent = formatPrice(parseFloat(el.dataset.usd), currency);
+    //   });
+    //   document.querySelectorAll('.enterprise-revenue').forEach(el => {
+    //     el.textContent = enterpriseRevenues[currency];
+    //   });
+    //   document.querySelectorAll('.currency-assumption').forEach(el => {
+    //     el.textContent = 'at ' + symbols[currency] + '150 avg fee - 5X capacity';
+    //   });
+    //   document.querySelectorAll('.currency-btn').forEach(btn => {
+    //     btn.style.background = btn.dataset.currency === currency ? 'var(--color-primary)' : 'transparent';
+    //     btn.style.color = btn.dataset.currency === currency ? 'white' : 'var(--color-dark)';
+    //   });
+    // }
+
+    // document.querySelectorAll('.currency-btn').forEach(btn => {
+    //   btn.addEventListener('click', () => updatePrices(btn.dataset.currency));
+    // });
 
     // Initialize with NGN
     updatePrices('NGN');
 
     // FAQ Accordion Logic
     document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const item = question.parentElement;
-            const isActive = item.classList.contains('active');
-            
-            // Close all other items
-            document.querySelectorAll('.faq-item').forEach(otherItem => {
-                otherItem.classList.remove('active');
-            });
-            
-            // Toggle current item
-            if (!isActive) {
-                item.classList.add('active');
-            }
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          otherItem.classList.remove('active');
         });
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
     });
 
     // Mobile drawer toggle
@@ -2838,9 +2346,9 @@ nav .cta-demo:hover {
 
       // Close drawer when clicking outside
       document.addEventListener('click', (e) => {
-        if (mobileDrawer.classList.contains('open') && 
-            !mobileDrawer.contains(e.target) && 
-            !hamburger.contains(e.target)) {
+        if (mobileDrawer.classList.contains('open') &&
+          !mobileDrawer.contains(e.target) &&
+          !hamburger.contains(e.target)) {
           mobileDrawer.classList.remove('open');
         }
       });
@@ -2861,49 +2369,49 @@ nav .cta-demo:hover {
     const successContent = document.getElementById('modalSuccessContent');
 
     function openModal() {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-        // Reset form after transition
-        setTimeout(() => {
-            formContent.style.display = 'block';
-            successContent.style.display = 'none';
-            demoForm.reset();
-        }, 300);
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      // Reset form after transition
+      setTimeout(() => {
+        formContent.style.display = 'block';
+        successContent.style.display = 'none';
+        demoForm.reset();
+      }, 300);
     }
 
     document.querySelectorAll('.cta-demo').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
     });
 
     closeModalBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+      if (e.target === modal) closeModal();
     });
 
     window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
 
     demoForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        formContent.style.display = 'none';
-        successContent.style.display = 'block';
+      e.preventDefault();
+      formContent.style.display = 'none';
+      successContent.style.display = 'block';
     });
 
     // Hide swipe hint on pricing scroll
-    (function() {
+    (function () {
       const pricingGrid = document.querySelector('.pricing-grid');
       const swipeHint = document.querySelector('.swipe-hint');
       if (pricingGrid && swipeHint) {
-        pricingGrid.addEventListener('scroll', function() {
+        pricingGrid.addEventListener('scroll', function () {
           swipeHint.style.opacity = '0';
           setTimeout(() => { swipeHint.style.display = 'none'; }, 300);
         }, { once: true });
@@ -2911,7 +2419,7 @@ nav .cta-demo:hover {
     })();
 
     // Sticky CTA Bar - show after 300px scroll, hide near footer
-    (function() {
+    (function () {
       const bar = document.getElementById('sticky-cta-bar');
       if (!bar) return;
       const footer = document.querySelector('footer');
@@ -2930,9 +2438,9 @@ nav .cta-demo:hover {
     })();
 
     // Close mobile drawer when any link inside it is clicked
-    (function() {
-      document.querySelectorAll('.mobile-drawer a').forEach(function(link) {
-        link.addEventListener('click', function() {
+    (function () {
+      document.querySelectorAll('.mobile-drawer a').forEach(function (link) {
+        link.addEventListener('click', function () {
           const drawer = document.querySelector('.mobile-drawer');
           if (drawer) drawer.classList.remove('open');
         });
@@ -2940,14 +2448,14 @@ nav .cta-demo:hover {
     })();
 
     // Hide swipe hint after first scroll on bundle cards
-    (function() {
+    (function () {
       const hint = document.querySelector('.swipe-hint');
       const cards = document.querySelector('[class*="bundle-cards"],[class*="pricing-cards"],[class*="tiers-row"]');
       if (!hint || !cards) return;
-      cards.addEventListener('scroll', function() {
+      cards.addEventListener('scroll', function () {
         hint.style.transition = 'opacity 300ms ease';
         hint.style.opacity = '0';
-        setTimeout(function() { hint.style.display = 'none'; }, 300);
+        setTimeout(function () { hint.style.display = 'none'; }, 300);
       }, { once: true });
     })();
   </script>
@@ -2956,11 +2464,5 @@ nav .cta-demo:hover {
     <button class="cta-demo sticky-cta-btn">Book a Demo - First Engagement Free</button>
   </div>
 </body>
+
 </html>
-
-
-
-
-
-
-
