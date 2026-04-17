@@ -1,242 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How It Works - Rocovit</title>
+    <link rel="stylesheet" href="site-uniform.css">
     <style>
-/* ===== NAVIGATION MASTER ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  z-index: 1000;
-  height: var(--nav-height);
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  transition: 300ms ease;
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--color-dark);
-}
-.logo-symbol {
-  color: var(--color-highlight);
-  margin-left: 4px;
-  font-size: 18px;
-}
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-.nav-links a {
-  text-decoration: none;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-dark);
-  transition: 200ms;
-}
-.nav-links a:hover {
-  color: var(--color-primary);
-}
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.currency-nav-pill {
-  background: var(--color-light);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 4px 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.btn-login {
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
-  background: transparent;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 200ms;
-}
-.btn-login:hover {
-  background: rgba(37,99,235,0.05);
-}
-nav .cta-demo {
-  background: var(--color-highlight);
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: 200ms;
-}
-nav .cta-demo:hover {
-  opacity: 0.9;
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  z-index: 1001;
-  padding: 0;
-}
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-dark);
-  transition: 0.3s ease;
-}
-.mobile-drawer {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background: var(--color-white);
-  z-index: 1000;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-  display: flex;
-  flex-direction: column;
-}
-.mobile-drawer.open {
-  max-height: 500px;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.mobile-drawer a {
-  padding: 16px 24px;
-  text-decoration: none;
-  color: var(--color-dark);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 16px;
-  display: block;
-}
-.mobile-drawer a:hover {
-  color: var(--color-primary);
-  background: var(--color-light);
-}
-.mobile-drawer .drawer-cta {
-  padding: 20px 24px;
-  background: #f8fafc;
-}
-.mobile-drawer .drawer-cta .cta-demo {
-  width: 100%;
-  padding: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  background: var(--color-highlight);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: var(--font-sans);
-}
-@media (max-width: 768px) {
-  nav {
-    padding: 16px !important;
-  }
-  .nav-links {
-    display: none !important;
-  }
-  .btn-login {
-    display: none !important;
-  }
-  .currency-nav-pill {
-    display: none !important;
-  }
-  .hamburger {
-    display: flex !important;
-  }
-  .nav-actions {
-    gap: 8px !important;
-  }
-  nav .cta-demo {
-    font-size: 11px !important;
-    padding: 6px 10px !important;
-    white-space: nowrap !important;
-    height: auto !important;
-    line-height: 1.4 !important;
-  }
-  .nav-container {
-    padding: 0 !important;
-  }
-}
-/* ===== END NAVIGATION MASTER ===== */
-
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap');
-
-        :root {
-            --color-primary: #2563eb;
-            --color-dark: #0f172a;
-            --color-highlight: #0d9488;
-            --color-light: #f8fafc;
-            --color-white: #ffffff;
-            --color-border: #e2e8f0;
-            --font-display: "Syne", sans-serif;
-            --font-sans: "DM Sans", sans-serif;
-            --font-mono: "DM Mono", monospace;
-            --nav-height: 72px;
-            --nav-height-mobile: 64px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            color: var(--color-dark);
-            background-color: var(--color-white);
-            line-height: 1.5;
-            overflow-x: hidden;
-            padding-top: var(--nav-height);
-        }
-
-
-
         /* Hero Section */
         .hero {
             background-color: var(--color-dark);
@@ -289,8 +59,8 @@ nav .cta-demo:hover {
         .step-pill {
             font-family: var(--font-mono);
             font-size: 11px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             color: #94a3b8;
             padding: 6px 16px;
             border-radius: 20px;
@@ -368,8 +138,8 @@ nav .cta-demo:hover {
 
         .time-card {
             flex: 1;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 36px;
         }
@@ -379,7 +149,7 @@ nav .cta-demo:hover {
             justify-content: space-between;
             align-items: center;
             padding: 14px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .step-name {
@@ -599,6 +369,7 @@ nav .cta-demo:hover {
             gap: 12px;
             width: 140px;
         }
+
         .illus-line {
             height: 6px;
             background: #e2e8f0;
@@ -606,6 +377,7 @@ nav .cta-demo:hover {
             position: relative;
             overflow: hidden;
         }
+
         .illus-fill {
             position: absolute;
             top: 0;
@@ -615,6 +387,7 @@ nav .cta-demo:hover {
             width: 0;
             animation: fillLine 3s infinite;
         }
+
         .illus-cursor {
             position: absolute;
             top: -2px;
@@ -624,14 +397,38 @@ nav .cta-demo:hover {
             background: var(--color-primary);
             animation: moveCursor 3s infinite;
         }
+
         @keyframes fillLine {
-            0%, 20% { width: 0; }
-            80%, 100% { width: 100%; }
+
+            0%,
+            20% {
+                width: 0;
+            }
+
+            80%,
+            100% {
+                width: 100%;
+            }
         }
+
         @keyframes moveCursor {
-            0%, 20% { left: 0; opacity: 1; }
-            80% { left: 100%; opacity: 1; }
-            81%, 100% { left: 100%; opacity: 0; }
+
+            0%,
+            20% {
+                left: 0;
+                opacity: 1;
+            }
+
+            80% {
+                left: 100%;
+                opacity: 1;
+            }
+
+            81%,
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
         }
 
         /* Step 2: Data Setup */
@@ -640,6 +437,7 @@ nav .cta-demo:hover {
             height: 80px;
             position: relative;
         }
+
         .source-dot {
             width: 12px;
             height: 12px;
@@ -648,10 +446,23 @@ nav .cta-demo:hover {
             position: absolute;
             left: 10px;
         }
-        .source-dot:nth-child(1) { top: 10px; }
-        .source-dot:nth-child(2) { top: 30px; }
-        .source-dot:nth-child(3) { top: 50px; }
-        .source-dot:nth-child(4) { top: 70px; }
+
+        .source-dot:nth-child(1) {
+            top: 10px;
+        }
+
+        .source-dot:nth-child(2) {
+            top: 30px;
+        }
+
+        .source-dot:nth-child(3) {
+            top: 50px;
+        }
+
+        .source-dot:nth-child(4) {
+            top: 70px;
+        }
+
         .central-hub {
             width: 40px;
             height: 40px;
@@ -669,6 +480,7 @@ nav .cta-demo:hover {
             font-size: 8px;
             font-weight: 700;
         }
+
         .flow-line {
             position: absolute;
             left: 22px;
@@ -677,10 +489,27 @@ nav .cta-demo:hover {
             width: 140px;
             transform-origin: left center;
         }
-        .flow-line:nth-child(5) { top: 16px; transform: rotate(12deg); }
-        .flow-line:nth-child(6) { top: 36px; transform: rotate(4deg); }
-        .flow-line:nth-child(7) { top: 56px; transform: rotate(-4deg); }
-        .flow-line:nth-child(8) { top: 76px; transform: rotate(-12deg); }
+
+        .flow-line:nth-child(5) {
+            top: 16px;
+            transform: rotate(12deg);
+        }
+
+        .flow-line:nth-child(6) {
+            top: 36px;
+            transform: rotate(4deg);
+        }
+
+        .flow-line:nth-child(7) {
+            top: 56px;
+            transform: rotate(-4deg);
+        }
+
+        .flow-line:nth-child(8) {
+            top: 76px;
+            transform: rotate(-12deg);
+        }
+
         .travel-dot {
             width: 4px;
             height: 4px;
@@ -691,10 +520,22 @@ nav .cta-demo:hover {
             left: 0;
             animation: travel 2s infinite linear;
         }
+
         @keyframes travel {
-            0% { left: 0; opacity: 0; }
-            10%, 90% { opacity: 1; }
-            100% { left: 100%; opacity: 0; }
+            0% {
+                left: 0;
+                opacity: 0;
+            }
+
+            10%,
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
         }
 
         /* Step 3: GL Allocation */
@@ -704,27 +545,31 @@ nav .cta-demo:hover {
             flex-direction: column;
             gap: 10px;
         }
+
         .illus-row {
             display: flex;
             align-items: center;
             gap: 8px;
         }
+
         .illus-text-bar {
             height: 4px;
             background: #e2e8f0;
             border-radius: 2px;
             flex: 1;
         }
+
         .illus-tag {
             font-family: var(--font-mono);
             font-size: 8px;
             padding: 2px 6px;
-            background: rgba(124,58,237,0.1);
+            background: rgba(124, 58, 237, 0.1);
             color: #7C3AED;
             border-radius: 4px;
             opacity: 0;
             animation: fadeInTag 3s infinite;
         }
+
         .illus-conf-bar {
             width: 40px;
             height: 4px;
@@ -732,19 +577,40 @@ nav .cta-demo:hover {
             border-radius: 2px;
             overflow: hidden;
         }
+
         .illus-conf-fill {
             height: 100%;
             background: var(--color-highlight);
             width: 0;
             animation: fillConf 3s infinite;
         }
+
         @keyframes fadeInTag {
-            0%, 30% { opacity: 0; transform: translateX(-5px); }
-            50%, 100% { opacity: 1; transform: translateX(0); }
+
+            0%,
+            30% {
+                opacity: 0;
+                transform: translateX(-5px);
+            }
+
+            50%,
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
         @keyframes fillConf {
-            0%, 40% { width: 0; }
-            70%, 100% { width: 85%; }
+
+            0%,
+            40% {
+                width: 0;
+            }
+
+            70%,
+            100% {
+                width: 85%;
+            }
         }
 
         /* Step 4: Financial Preview */
@@ -754,6 +620,7 @@ nav .cta-demo:hover {
             flex-direction: column;
             gap: 12px;
         }
+
         .preview-row {
             height: 8px;
             background: #e2e8f0;
@@ -761,8 +628,15 @@ nav .cta-demo:hover {
             width: 100%;
             position: relative;
         }
-        .preview-row:nth-child(2) { width: 80%; }
-        .preview-row:nth-child(3) { width: 60%; }
+
+        .preview-row:nth-child(2) {
+            width: 80%;
+        }
+
+        .preview-row:nth-child(3) {
+            width: 60%;
+        }
+
         .anomaly-flag {
             position: absolute;
             right: -20px;
@@ -774,10 +648,22 @@ nav .cta-demo:hover {
             border-radius: 50%;
             animation: pulseRed 1.5s infinite;
         }
+
         @keyframes pulseRed {
-            0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
-            70% { transform: translateY(-50%) scale(1.2); box-shadow: 0 0 0 6px rgba(239,68,68,0); }
-            100% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+            0% {
+                transform: translateY(-50%) scale(1);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+            }
+
+            70% {
+                transform: translateY(-50%) scale(1.2);
+                box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+            }
+
+            100% {
+                transform: translateY(-50%) scale(1);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
         }
 
         /* Step 5: Financial Statements */
@@ -793,12 +679,17 @@ nav .cta-demo:hover {
             flex-direction: column;
             gap: 6px;
         }
+
         .doc-line {
             height: 2px;
             background: #f1f5f9;
             width: 100%;
         }
-        .doc-line:nth-child(odd) { width: 70%; }
+
+        .doc-line:nth-child(odd) {
+            width: 70%;
+        }
+
         .sweep-line {
             position: absolute;
             top: 0;
@@ -808,11 +699,25 @@ nav .cta-demo:hover {
             background: var(--color-highlight);
             animation: sweep 2.5s infinite linear;
         }
+
         @keyframes sweep {
-            0% { top: 0; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
         }
 
         /* Step 6: Tax Preparation */
@@ -821,18 +726,24 @@ nav .cta-demo:hover {
             align-items: center;
             gap: 20px;
         }
+
         .bridge-side {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
+
         .bridge-bar {
             width: 30px;
             height: 6px;
             background: #e2e8f0;
             border-radius: 3px;
         }
-        .bridge-bar.active { background: var(--color-primary); }
+
+        .bridge-bar.active {
+            background: var(--color-primary);
+        }
+
         .tax-counter {
             font-family: var(--font-mono);
             font-size: 18px;
@@ -841,17 +752,37 @@ nav .cta-demo:hover {
             width: 80px;
             text-align: center;
         }
+
         .tax-counter::after {
             content: "0";
             animation: countUp 4s infinite;
         }
+
         @keyframes countUp {
-            0% { content: "0"; }
-            10% { content: "1,240"; }
-            20% { content: "3,580"; }
-            30% { content: "5,920"; }
-            40% { content: "8,150"; }
-            50%, 100% { content: "12,480"; }
+            0% {
+                content: "0";
+            }
+
+            10% {
+                content: "1,240";
+            }
+
+            20% {
+                content: "3,580";
+            }
+
+            30% {
+                content: "5,920";
+            }
+
+            40% {
+                content: "8,150";
+            }
+
+            50%,
+            100% {
+                content: "12,480";
+            }
         }
 
         /* Step 7: AFS Pack */
@@ -860,6 +791,7 @@ nav .cta-demo:hover {
             height: 60px;
             position: relative;
         }
+
         .pack-card {
             width: 40px;
             height: 50px;
@@ -872,41 +804,105 @@ nav .cta-demo:hover {
             transition: all 0.5s ease;
             animation: fanOut 4s infinite;
         }
-        .pack-card:nth-child(1) { animation-delay: 0s; }
-        .pack-card:nth-child(2) { animation-delay: 0.1s; }
-        .pack-card:nth-child(3) { animation-delay: 0.2s; }
-        .pack-card:nth-child(4) { animation-delay: 0.3s; }
-        .pack-card:nth-child(5) { animation-delay: 0.4s; }
-        .pack-card:nth-child(6) { animation-delay: 0.5s; }
-        .pack-card:nth-child(7) { animation-delay: 0.6s; }
-        @keyframes fanOut {
-            0%, 20% { transform: rotate(0) translateX(0); }
-            50%, 80% { transform: rotate(var(--rot)) translateX(var(--trans)); }
-            100% { transform: rotate(0) translateX(0); }
+
+        .pack-card:nth-child(1) {
+            animation-delay: 0s;
         }
-        .pack-card:nth-child(1) { --rot: -30deg; --trans: -40px; }
-        .pack-card:nth-child(2) { --rot: -20deg; --trans: -25px; }
-        .pack-card:nth-child(3) { --rot: -10deg; --trans: -10px; }
-        .pack-card:nth-child(4) { --rot: 0deg; --trans: 0px; }
-        .pack-card:nth-child(5) { --rot: 10deg; --trans: 10px; }
-        .pack-card:nth-child(6) { --rot: 20deg; --trans: 25px; }
-        .pack-card:nth-child(7) { --rot: 30deg; --trans: 40px; }
+
+        .pack-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .pack-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .pack-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .pack-card:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .pack-card:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        .pack-card:nth-child(7) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fanOut {
+
+            0%,
+            20% {
+                transform: rotate(0) translateX(0);
+            }
+
+            50%,
+            80% {
+                transform: rotate(var(--rot)) translateX(var(--trans));
+            }
+
+            100% {
+                transform: rotate(0) translateX(0);
+            }
+        }
+
+        .pack-card:nth-child(1) {
+            --rot: -30deg;
+            --trans: -40px;
+        }
+
+        .pack-card:nth-child(2) {
+            --rot: -20deg;
+            --trans: -25px;
+        }
+
+        .pack-card:nth-child(3) {
+            --rot: -10deg;
+            --trans: -10px;
+        }
+
+        .pack-card:nth-child(4) {
+            --rot: 0deg;
+            --trans: 0px;
+        }
+
+        .pack-card:nth-child(5) {
+            --rot: 10deg;
+            --trans: 10px;
+        }
+
+        .pack-card:nth-child(6) {
+            --rot: 20deg;
+            --trans: 25px;
+        }
+
+        .pack-card:nth-child(7) {
+            --rot: 30deg;
+            --trans: 40px;
+        }
 
         /* Closing Sections Styles */
         .different-section {
             background-color: var(--color-white);
             padding: 100px 24px;
         }
+
         .different-container {
             max-width: 1100px;
             margin: 0 auto;
         }
+
         .different-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
             margin-top: 60px;
         }
+
         .diff-card {
             background: var(--color-light);
             border: 1px solid var(--color-border);
@@ -914,12 +910,14 @@ nav .cta-demo:hover {
             padding: 40px;
             border-top: 4px solid var(--color-primary);
         }
+
         .diff-title {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 20px;
             margin-bottom: 16px;
         }
+
         .diff-text {
             font-size: 15px;
             color: #64748b;
@@ -931,10 +929,12 @@ nav .cta-demo:hover {
             padding: 120px 24px;
             text-align: center;
         }
+
         .testimonial-container {
             max-width: 800px;
             margin: 0 auto;
         }
+
         .quote-mark {
             font-family: var(--font-display);
             font-size: 120px;
@@ -944,6 +944,7 @@ nav .cta-demo:hover {
             margin-bottom: 40px;
             display: block;
         }
+
         .testimonial-text {
             font-family: var(--font-display);
             font-weight: 600;
@@ -952,6 +953,7 @@ nav .cta-demo:hover {
             line-height: 1.3;
             margin-bottom: 32px;
         }
+
         .testimonial-author {
             font-family: var(--font-mono);
             font-size: 13px;
@@ -965,10 +967,12 @@ nav .cta-demo:hover {
             padding: 100px 24px;
             text-align: center;
         }
+
         .cta-container {
             max-width: 700px;
             margin: 0 auto;
         }
+
         .cta-headline {
             font-family: var(--font-display);
             font-weight: 700;
@@ -976,150 +980,17 @@ nav .cta-demo:hover {
             color: var(--color-white);
             margin-bottom: 20px;
         }
+
         .cta-subheadline {
             font-size: 18px;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 40px;
         }
+
         .cta-footer-text {
             font-size: 13px;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             margin-top: 24px;
-        }
-
-        /* Master Footer Styles */
-        footer {
-          background: #080F1E;
-          padding: 80px 24px 40px;
-        }
-        .footer-top {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 2fr 1fr 1fr 2fr;
-          gap: 48px;
-        }
-        .footer-logo {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          margin-bottom: 12px;
-        }
-        .footer-diamond {
-          color: #0d9488;
-          font-size: 18px;
-        }
-        .footer-wordmark {
-          font-family: "Syne", sans-serif;
-          font-weight: 700;
-          font-size: 20px;
-          color: #2563eb;
-        }
-        .footer-tagline {
-          font-family: "DM Sans", sans-serif;
-          font-size: 14px;
-          color: #64748b;
-          margin-bottom: 24px;
-          line-height: 1.5;
-        }
-        .footer-socials {
-          display: flex;
-          gap: 8px;
-        }
-        .social-icon {
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #94a3b8;
-          font-size: 13px;
-          text-decoration: none;
-          font-family: "DM Sans", sans-serif;
-        }
-        .social-icon:hover { background: rgba(255,255,255,0.12); }
-        .footer-col-header {
-          font-family: "DM Mono", monospace;
-          font-size: 10px;
-          color: #64748b;
-          text-transform: uppercase;
-          letter-spacing: 0.15em;
-          margin-bottom: 20px;
-        }
-        .footer-col a {
-          display: block;
-          font-family: "DM Sans", sans-serif;
-          font-size: 14px;
-          color: #94a3b8;
-          text-decoration: none;
-          margin-bottom: 12px;
-        }
-        .footer-col a:hover { color: #ffffff; }
-        .compliance-badge {
-          display: flex;
-          align-items: flex-start;
-          gap: 10px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 8px;
-          padding: 10px 14px;
-          margin-bottom: 8px;
-        }
-        .dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          flex-shrink: 0;
-          margin-top: 3px;
-        }
-        .dot-green { background: #16A34A; }
-        .dot-blue { background: #2563eb; }
-        .badge-title {
-          display: block;
-          font-family: "DM Mono", monospace;
-          font-size: 11px;
-          color: #ffffff;
-        }
-        .badge-sub {
-          display: block;
-          font-family: "DM Sans", sans-serif;
-          font-size: 11px;
-          color: #64748b;
-          margin-top: 2px;
-        }
-        .footer-divider {
-          max-width: 1200px;
-          margin: 48px auto 24px;
-          height: 1px;
-          background: rgba(255,255,255,0.06);
-        }
-        .footer-bottom {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 16px;
-        }
-        .footer-bottom span,
-        .footer-bottom a {
-          font-family: "DM Sans", sans-serif;
-          font-size: 13px;
-          color: #64748b;
-          text-decoration: none;
-        }
-        .footer-bottom a:hover { color: #ffffff; }
-        .footer-legal { display: flex; gap: 24px; }
-        @media (max-width: 1024px) {
-          .footer-top { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 640px) {
-          .footer-top { grid-template-columns: 1fr; }
-          .footer-bottom { flex-direction: column; text-align: center; }
         }
 
         /* Modal */
@@ -1129,7 +1000,7 @@ nav .cta-demo:hover {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15,23,42,0.8);
+            background: rgba(15, 23, 42, 0.8);
             z-index: 2000;
             opacity: 0;
             pointer-events: none;
@@ -1151,7 +1022,7 @@ nav .cta-demo:hover {
             padding: 48px;
             width: 480px;
             max-width: calc(100vw - 48px);
-            box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
         }
 
         .modal-close {
@@ -1188,7 +1059,8 @@ nav .cta-demo:hover {
             margin-bottom: 16px;
         }
 
-        .form-input, .form-select {
+        .form-input,
+        .form-select {
             width: 100%;
             padding: 12px 16px;
             border: 1px solid var(--color-border);
@@ -1199,9 +1071,10 @@ nav .cta-demo:hover {
             transition: all 0.2s;
         }
 
-        .form-input:focus, .form-select:focus {
+        .form-input:focus,
+        .form-select:focus {
             border-color: var(--color-primary);
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .btn-submit {
@@ -1253,9 +1126,13 @@ nav .cta-demo:hover {
                 flex-direction: column;
                 gap: 48px;
             }
-            .time-content, .time-body, .proof-line {
+
+            .time-content,
+            .time-body,
+            .proof-line {
                 max-width: 100%;
             }
+
             .time-card {
                 width: 100%;
             }
@@ -1266,493 +1143,520 @@ nav .cta-demo:hover {
             .hero-headline {
                 font-size: 36px;
             }
+
             .hero {
                 padding-top: 120px;
             }
         }
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
+        /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    html, body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-    img, video, iframe {
-      max-width: 100%;
-      height: auto;
-    }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
-    @media (max-width: 1024px) {
-      section {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-      .footer-top {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 32px !important;
-      }
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
 
-    }
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
 
-    @media (max-width: 768px) {
-      /* Fix hero padding below fixed nav */
-      .hero,
-      [class*="hero"],
-      [class*="page-hero"],
-      [class*="article-hero"],
-      [class*="blog-hero"],
-      [class*="legal-hero"],
-      [class*="policy-hero"] {
-        padding-top: 72px !important;
-      }
-      /* Typography */
-      h1 {
-        font-size: 28px !important;
-        line-height: 1.15 !important;
-      }
-      h2 {
-        font-size: 24px !important;
-        line-height: 1.2 !important;
-      }
-      h3 {
-        font-size: 18px !important;
-      }
-      p {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-      }
+        @media (max-width: 1024px) {
+            section {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+        }
 
-      /* Section spacing */
-      section {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
+        @media (max-width: 768px) {
 
-      /* Footer */
-      .footer-top {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
-      .footer-bottom {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 12px !important;
-      }
-      .footer-legal {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 16px !important;
-      }
+            /* Fix hero padding below fixed nav */
+            .hero,
+            [class*="hero"],
+            [class*="page-hero"],
+            [class*="article-hero"],
+            [class*="blog-hero"],
+            [class*="legal-hero"],
+            [class*="policy-hero"] {
+                padding-top: 72px !important;
+            }
 
-      /* Modal full screen */
-      #modal-overlay {
-        align-items: flex-end !important;
-      }
-      #modal-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-height: 90vh !important;
-        border-radius: 16px 16px 0 0 !important;
-        padding: 32px 20px !important;
-        overflow-y: auto !important;
-      }
-      input, select, textarea {
-        font-size: 16px !important;
-      }
+            /* Typography */
+            h1 {
+                font-size: 28px !important;
+                line-height: 1.15 !important;
+            }
 
-      /* Buttons */
-      button.cta-demo,
-      a.cta-demo {
-        min-height: 48px !important;
-        font-size: 15px !important;
-      }
-    }
+            h2 {
+                font-size: 24px !important;
+                line-height: 1.2 !important;
+            }
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
-    @media (max-width: 768px) {
-      /* Hero two column to single column */
-      .hero-container,
-      [class*="hero-layout"],
-      [class*="hero-columns"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-      .hero-text,
-      [class*="hero-left"],
-      [class*="hero-content"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .hero-visual,
-      #hero-visual-placeholder,
-      [class*="hero-right"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
+            h3 {
+                font-size: 18px !important;
+            }
 
-      /* Hero stat pills wrap */
-      [class*="stat-pills"],
-      [class*="hero-pills"] {
-        flex-wrap: wrap !important;
-        gap: 8px !important;
-      }
+            p {
+                font-size: 15px !important;
+                line-height: 1.7 !important;
+            }
 
-      /* Revenue card numbers smaller on mobile */
-      .rev-number {
-        font-size: 22px !important;
-      }
-      .revenue-divider {
-        padding: 0 8px !important;
-      }
+            /* Section spacing */
+            section {
+                padding-top: 60px !important;
+                padding-bottom: 60px !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
 
-      /* All three column grids to single column */
-      [class*="three-col"],
-      [class*="cards-grid"],
-      [class*="article-grid"],
-      [class*="blog-cards"],
-      [class*="output-cards"],
-      [class*="related-cards"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
+            /* Modal full screen */
+            #modal-overlay {
+                align-items: flex-end !important;
+            }
 
-      /* All two column grids to single column */
-      [class*="two-col"],
-      [class*="alternating"],
-      [class*="split-layout"] {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
+            #modal-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: 90vh !important;
+                border-radius: 16px 16px 0 0 !important;
+                padding: 32px 20px !important;
+                overflow-y: auto !important;
+            }
 
-      /* Cards full width */
-      [class*="card"],
-      [class*="-card"] {
-        width: 100% !important;
-        min-width: 0 !important;
-      }
+            input,
+            select,
+            textarea {
+                font-size: 16px !important;
+            }
 
-      /* FLEX ROWS TO COLUMN */
-      [class*="trust-bar"],
-      [class*="sme-callout"],
-      [class*="profession-crisis"],
-      [class*="roi-container"],
-      [class*="calculator-container"],
-      [class*="footer-brand"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-      }
+            /* Buttons */
+            button.cta-demo,
+            a.cta-demo {
+                min-height: 48px !important;
+                font-size: 15px !important;
+            }
+        }
 
-      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
-      .bundle-cards-row,
-      [class*="bundle-cards"],
-      [class*="pricing-cards"] {
-        display: flex !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        gap: 16px !important;
-        padding-bottom: 20px !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-      .bundle-card,
-      [class*="bundle-card"],
-      [class*="pricing-card"] {
-        min-width: 260px !important;
-        flex-shrink: 0 !important;
-        scroll-snap-align: start !important;
-      }
+        /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+        @media (max-width: 768px) {
 
-      /* Swipe hint label */
-      .swipe-hint {
-        display: block !important;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        color: #94a3b8;
-        text-align: center;
-        margin-bottom: 12px;
-        letter-spacing: 0.1em;
-      }
+            /* Hero two column to single column */
+            .hero-container,
+            [class*="hero-layout"],
+            [class*="hero-columns"] {
+                flex-direction: column !important;
+                gap: 32px !important;
+            }
 
-      /* ARTICLE PAGES */
-      [class*="article-hero"],
-      .article-hero {
-        padding: 100px 20px 40px !important;
-      }
-      [class*="article-body"],
-      .article-body {
-        padding: 40px 20px !important;
-      }
-      [class*="stat-callout"],
-      .stat-callout {
-        padding: 16px !important;
-      }
-      [class*="stat-number"] {
-        font-size: 28px !important;
-      }
-      [class*="pull-quote"],
-      blockquote {
-        margin: 20px 0 !important;
-        padding: 12px 16px !important;
-        font-size: 16px !important;
-      }
-      [class*="related-articles"] {
-        padding: 40px 20px !important;
-      }
-      [class*="related-cards"] {
-        flex-direction: column !important;
-        gap: 16px !important;
-      }
+            .hero-text,
+            [class*="hero-left"],
+            [class*="hero-content"] {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
 
-      /* BLOG INDEX PAGE */
-      [class*="featured-article"],
-      .featured-article {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-      [class*="featured-visual"],
-      .featured-visual {
-        height: 180px !important;
-        min-height: 0 !important;
-      }
-      [class*="subscribe-form"],
-      #subscribe-form {
-        flex-direction: column !important;
-        gap: 8px !important;
-      }
-      #subscribe-form input {
-        width: 100% !important;
-      }
-      #subscribe-form button {
-        width: 100% !important;
-        margin-left: 0 !important;
-      }
+            .hero-visual,
+            #hero-visual-placeholder,
+            [class*="hero-right"] {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
 
-      /* OPPORTUNITY PAGE - FIVE DOORS */
-      [class*="door-row"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-        text-align: center !important;
-      }
-      [class*="door-icon"] {
-        margin: 0 auto 16px !important;
-      }
-      [class*="door-text"] {
-        text-align: left !important;
-      }
+            /* Hero stat pills wrap */
+            [class*="stat-pills"],
+            [class*="hero-pills"] {
+                flex-wrap: wrap !important;
+                gap: 8px !important;
+            }
 
-      /* ABOUT PAGE - FOUNDER AND STATS */
-      [class*="founder-card"],
-      [class*="founder-layout"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-        text-align: center !important;
-      }
-      [class*="stats-grid"],
-      [class*="shortage-grid"] {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-      }
+            /* Revenue card numbers smaller on mobile */
+            .rev-number {
+                font-size: 22px !important;
+            }
 
-      /* SECURITY PAGE */
-      [class*="security-grid"],
-      [class*="trust-grid"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-      [class*="faq-item"] {
-        padding: 16px 0 !important;
-      }
+            .revenue-divider {
+                padding: 0 8px !important;
+            }
 
-      /* HOW IT WORKS PAGE */
-      [class*="pipeline-steps"],
-      [class*="steps-container"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-      }
-      [class*="step-arrow"],
-      [class*="connecting-arrow"] {
-        display: none !important;
-      }
+            /* All three column grids to single column */
+            [class*="three-col"],
+            [class*="cards-grid"],
+            [class*="article-grid"],
+            [class*="blog-cards"],
+            [class*="output-cards"],
+            [class*="related-cards"] {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
 
-      /* OUTPUTS PAGE */
-      [class*="output-row"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-      [class*="output-visual"] {
-        width: 100% !important;
-      }
+            /* All two column grids to single column */
+            [class*="two-col"],
+            [class*="alternating"],
+            [class*="split-layout"] {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
 
-      /* LEGAL PAGES */
-      .legal-container {
-        padding: 60px 20px !important;
-      }
-      .legal-content h1 {
-        font-size: 32px !important;
-      }
+            /* Cards full width */
+            [class*="card"],
+            [class*="-card"] {
+                width: 100% !important;
+                min-width: 0 !important;
+            }
 
-      /* FINAL CTA */
-      [class*="final-cta"],
-      .final-cta-section {
-        padding: 60px 20px !important;
-        text-align: center !important;
-      }
-    }
+            /* FLEX ROWS TO COLUMN */
+            [class*="trust-bar"],
+            [class*="sme-callout"],
+            [class*="profession-crisis"],
+            [class*="roi-container"],
+            [class*="calculator-container"],
+            [class*="footer-brand"] {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
-    /* Sticky CTA Bar - hidden by default, mobile only */
-    .sticky-cta-bar {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: var(--color-dark);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 12px 20px;
-      z-index: 998;
-      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
-      box-sizing: border-box;
-    }
-    .sticky-cta-btn {
-      width: 100%;
-      background: var(--color-highlight);
-      color: white;
-      font-family: var(--font-sans);
-      font-weight: 600;
-      font-size: 15px;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      min-height: 48px;
-    }
-    .sticky-cta-btn:hover {
-      background: #0b7a70;
-    }
-    @media (max-width: 768px) {
-      .sticky-cta-bar {
-        display: none;
-      }
-      body {
-        padding-bottom: 80px;
-      }
-    }
+            /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
+            .bundle-cards-row,
+            [class*="bundle-cards"],
+            [class*="pricing-cards"] {
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 16px !important;
+                padding-bottom: 20px !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
 
-    /* ===== MOBILE ENHANCEMENTS - M-2 ===== */
-    @media (max-width: 768px) {
-      /* Seven step pipeline - vertical stack */
-      [class*="pipeline"],
-      [class*="steps-row"],
-      [class*="steps-container"] {
-        flex-direction: column !important;
-        gap: 0 !important;
-      }
+            .bundle-card,
+            [class*="bundle-card"],
+            [class*="pricing-card"] {
+                min-width: 260px !important;
+                flex-shrink: 0 !important;
+                scroll-snap-align: start !important;
+            }
 
-      /* Step cards full width */
-      [class*="step-card"],
-      [class*="pipeline-step"] {
-        width: 100% !important;
-        min-width: 0 !important;
-        border-radius: 12px !important;
-        margin-bottom: 0 !important;
-      }
+            /* Swipe hint label */
+            .swipe-hint {
+                display: block !important;
+                font-family: var(--font-mono);
+                font-size: 10px;
+                color: #94a3b8;
+                text-align: center;
+                margin-bottom: 12px;
+                letter-spacing: 0.1em;
+            }
 
-      /* Hide horizontal arrows between steps */
-      [class*="step-arrow"],
-      [class*="arrow-connector"],
-      [class*="connecting-arrow"] {
-        display: none !important;
-      }
+            /* ARTICLE PAGES */
+            [class*="article-hero"],
+            .article-hero {
+                padding: 100px 20px 40px !important;
+            }
 
-      /* Add vertical connector line between steps */
-      [class*="step-card"]:not(:last-child)::after,
-      [class*="pipeline-step"]:not(:last-child)::after {
-        content: '';
-        display: block;
-        width: 2px;
-        height: 24px;
-        background: var(--color-highlight);
-        opacity: 0.3;
-        margin: 0 auto;
-      }
+            [class*="article-body"],
+            .article-body {
+                padding: 40px 20px !important;
+            }
 
-      /* Data sources grid - two column on mobile */
-      [class*="data-sources"],
-      [class*="sources-grid"] {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-      }
+            [class*="stat-callout"],
+            .stat-callout {
+                padding: 16px !important;
+            }
 
-      /* Output formats grid - two column on mobile */
-      [class*="outputs-grid"],
-      [class*="output-formats"] {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-      }
+            [class*="stat-number"] {
+                font-size: 28px !important;
+            }
 
-      /* Hero padding adjust */
-      [class*="how-hero"],
-      [class*="page-hero"] {
-        padding: 100px 20px 48px !important;
-      }
+            [class*="pull-quote"],
+            blockquote {
+                margin: 20px 0 !important;
+                padding: 12px 16px !important;
+                font-size: 16px !important;
+            }
 
-      /* Three step cards on homepage how it works */
-      [class*="how-cards"],
-      [class*="three-steps"] {
-        flex-direction: column !important;
-        gap: 16px !important;
-      }
-    }
+            [class*="related-articles"] {
+                padding: 40px 20px !important;
+            }
+
+            [class*="related-cards"] {
+                flex-direction: column !important;
+                gap: 16px !important;
+            }
+
+            /* BLOG INDEX PAGE */
+            [class*="featured-article"],
+            .featured-article {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+
+            [class*="featured-visual"],
+            .featured-visual {
+                height: 180px !important;
+                min-height: 0 !important;
+            }
+
+            [class*="subscribe-form"],
+            #subscribe-form {
+                flex-direction: column !important;
+                gap: 8px !important;
+            }
+
+            #subscribe-form input {
+                width: 100% !important;
+            }
+
+            #subscribe-form button {
+                width: 100% !important;
+                margin-left: 0 !important;
+            }
+
+            /* OPPORTUNITY PAGE - FIVE DOORS */
+            [class*="door-row"] {
+                flex-direction: column !important;
+                gap: 20px !important;
+                text-align: center !important;
+            }
+
+            [class*="door-icon"] {
+                margin: 0 auto 16px !important;
+            }
+
+            [class*="door-text"] {
+                text-align: left !important;
+            }
+
+            /* ABOUT PAGE - FOUNDER AND STATS */
+            [class*="founder-card"],
+            [class*="founder-layout"] {
+                flex-direction: column !important;
+                gap: 24px !important;
+                text-align: center !important;
+            }
+
+            [class*="stats-grid"],
+            [class*="shortage-grid"] {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 12px !important;
+            }
+
+            /* SECURITY PAGE */
+            [class*="security-grid"],
+            [class*="trust-grid"] {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            [class*="faq-item"] {
+                padding: 16px 0 !important;
+            }
+
+            /* HOW IT WORKS PAGE */
+            [class*="pipeline-steps"],
+            [class*="steps-container"] {
+                flex-direction: column !important;
+                gap: 24px !important;
+            }
+
+            [class*="step-arrow"],
+            [class*="connecting-arrow"] {
+                display: none !important;
+            }
+
+            /* OUTPUTS PAGE */
+            [class*="output-row"] {
+                flex-direction: column !important;
+                gap: 32px !important;
+            }
+
+            [class*="output-visual"] {
+                width: 100% !important;
+            }
+
+            /* LEGAL PAGES */
+            .legal-container {
+                padding: 60px 20px !important;
+            }
+
+            .legal-content h1 {
+                font-size: 32px !important;
+            }
+
+            /* FINAL CTA */
+            [class*="final-cta"],
+            .final-cta-section {
+                padding: 60px 20px !important;
+                text-align: center !important;
+            }
+        }
+
+        /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
+        /* Sticky CTA Bar - hidden by default, mobile only */
+        .sticky-cta-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--color-dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            z-index: 998;
+            box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        .sticky-cta-btn {
+            width: 100%;
+            background: var(--color-highlight);
+            color: white;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            min-height: 48px;
+        }
+
+        .sticky-cta-btn:hover {
+            background: #0b7a70;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta-bar {
+                display: none;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* ===== MOBILE ENHANCEMENTS - M-2 ===== */
+        @media (max-width: 768px) {
+
+            /* Seven step pipeline - vertical stack */
+            [class*="pipeline"],
+            [class*="steps-row"],
+            [class*="steps-container"] {
+                flex-direction: column !important;
+                gap: 0 !important;
+            }
+
+            /* Step cards full width */
+            [class*="step-card"],
+            [class*="pipeline-step"] {
+                width: 100% !important;
+                min-width: 0 !important;
+                border-radius: 12px !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* Hide horizontal arrows between steps */
+            [class*="step-arrow"],
+            [class*="arrow-connector"],
+            [class*="connecting-arrow"] {
+                display: none !important;
+            }
+
+            /* Add vertical connector line between steps */
+            [class*="step-card"]:not(:last-child)::after,
+            [class*="pipeline-step"]:not(:last-child)::after {
+                content: '';
+                display: block;
+                width: 2px;
+                height: 24px;
+                background: var(--color-highlight);
+                opacity: 0.3;
+                margin: 0 auto;
+            }
+
+            /* Data sources grid - two column on mobile */
+            [class*="data-sources"],
+            [class*="sources-grid"] {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 12px !important;
+            }
+
+            /* Output formats grid - two column on mobile */
+            [class*="outputs-grid"],
+            [class*="output-formats"] {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 12px !important;
+            }
+
+            /* Hero padding adjust */
+            [class*="how-hero"],
+            [class*="page-hero"] {
+                padding: 100px 20px 48px !important;
+            }
+
+            /* Three step cards on homepage how it works */
+            [class*="how-cards"],
+            [class*="three-steps"] {
+                flex-direction: column !important;
+                gap: 16px !important;
+            }
+        }
     </style>
-  <link rel="stylesheet" href="site-uniform.css"></head>
+    <link rel="stylesheet" href="site-uniform.css">
+</head>
+
 <body>
 
     <!-- Navigation -->
-<nav>
-  <div class="nav-container">
-    <a href="index.html" class="logo">      <img src="logo.svg" alt="Rocovit" class="logo-image">      <span class="logo-diamond" aria-hidden="true"></span>    </a>
-    <div class="nav-links">
-      <a href="how-it-works.html">How It Works</a>
-      <a href="outputs.html">Outputs</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="security.html">Security</a>
-      <a href="about.html">About Us</a>
-    </div>
-    <div class="nav-actions">
-<button class="btn-login">Login</button>
-      <button class="cta-demo">Book a Demo</button>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-</nav>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"> <img src="logo.svg" alt="Rocovit" class="logo-image"> <span
+                    class="logo-diamond" aria-hidden="true"></span> </a>
+            <div class="nav-links">
+                <a href="how-it-works.html">How It Works</a>
+                <a href="outputs.html">Outputs</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="security.html">Security</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-login">Login</button>
+                <button class="cta-demo">Book a Demo</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<!-- Mobile Drawer -->
-<div class="mobile-drawer" id="mobileDrawer">
-  <a href="how-it-works.html">How It Works</a>
-  <a href="outputs.html">Outputs</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="security.html">Security</a>
-  <a href="about.html">About Us</a>
-  <div class="drawer-cta">
-    <button class="cta-demo">Book a Demo</button>
-  </div>
-</div>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Security</a>
+        <a href="about.html">About Us</a>
+        <div class="drawer-cta">
+            <button class="cta-demo">Book a Demo</button>
+        </div>
+    </div>
 
     <!-- Section 1: Hero -->
     <section class="hero">
         <div class="hero-container">
             <span class="eyebrow">HOW IT WORKS</span>
             <h1 class="hero-headline">From raw financial data to completed statements in under 3 hours.</h1>
-            <p class="hero-subheadline">Rocovit replaces 15 days of fragmented, judgment-heavy manual work with a structured 7-step engine. Every step is auditable. Every output is traceable.</p>
+            <p class="hero-subheadline">Rocovit replaces 15 days of fragmented, judgment-heavy manual work with a
+                structured 7-step engine. Every step is auditable. Every output is traceable.</p>
             <div class="step-pills">
                 <div class="step-pill">01 - Engagement Setup</div>
                 <div class="step-pill">02 - Data Setup</div>
@@ -1770,7 +1674,10 @@ nav .cta-demo:hover {
         <div class="problem-container">
             <span class="eyebrow">WHY THIS EXISTS</span>
             <h2 class="problem-headline">Financial statement preparation has not changed in 20 years.</h2>
-            <p class="problem-body">The traditional workflow is fragmented across Excel, email, and multiple accounting systems. Each engagement requires rebuilding the same work from scratch. Errors compound across steps. Reviews take days. The process is so slow it makes SME clients unprofitable to serve - so most firms turn them away entirely. Rocovit replaces that workflow with a single structured engine.</p>
+            <p class="problem-body">The traditional workflow is fragmented across Excel, email, and multiple accounting
+                systems. Each engagement requires rebuilding the same work from scratch. Errors compound across steps.
+                Reviews take days. The process is so slow it makes SME clients unprofitable to serve - so most firms
+                turn them away entirely. Rocovit replaces that workflow with a single structured engine.</p>
         </div>
     </section>
 
@@ -1780,8 +1687,11 @@ nav .cta-demo:hover {
             <div class="time-content">
                 <span class="eyebrow">TOTAL TIME</span>
                 <h2 class="time-headline">Under 3 hours. Start to finish.</h2>
-                <p class="time-body">A process that previously consumed 10 to 15 working days across multiple team members, tools, and review cycles is now a single structured session. The same accountant who starts the engagement finishes it.</p>
-                <p class="proof-line">Audit firms using Rocovit report preparation time reduced from 10 days to under 3 hours.</p>
+                <p class="time-body">A process that previously consumed 10 to 15 working days across multiple team
+                    members, tools, and review cycles is now a single structured session. The same accountant who starts
+                    the engagement finishes it.</p>
+                <p class="proof-line">Audit firms using Rocovit report preparation time reduced from 10 days to under 3
+                    hours.</p>
             </div>
             <div class="time-card">
                 <div class="step-row">
@@ -1825,7 +1735,8 @@ nav .cta-demo:hover {
         <div class="pipeline-container">
             <div class="pipeline-header">
                 <span class="eyebrow">THE ENGINE</span>
-                <h2 class="step-title" style="font-size: 36px; margin-bottom: 0;">Seven steps. One engine. Every time.</h2>
+                <h2 class="step-title" style="font-size: 36px; margin-bottom: 0;">Seven steps. One engine. Every time.
+                </h2>
             </div>
 
             <!-- STEP 1 -->
@@ -1834,7 +1745,8 @@ nav .cta-demo:hover {
                     <span class="step-num-display">01</span>
                     <span class="step-label">STEP 01 - SETUP</span>
                     <h3 class="step-title">Define the engagement</h3>
-                    <p class="step-summary">Configure the client entity, financial year, applicable reporting framework, and output mapping template before any data is touched.</p>
+                    <p class="step-summary">Configure the client entity, financial year, applicable reporting framework,
+                        and output mapping template before any data is touched.</p>
                     <div class="duration-badge">5-10 minutes</div>
                 </div>
                 <div class="card-col">
@@ -1842,27 +1754,47 @@ nav .cta-demo:hover {
                         <span class="card-header-label">WHAT YOU CONFIGURE</span>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);"></div>
-                                <span class="feature-text">Client entity name, registration number, and financial year end</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);">
+                                </div>
+                                <span class="feature-text">Client entity name, registration number, and financial year
+                                    end</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);"></div>
-                                <span class="feature-text">Reporting framework - IFRS for SMEs, Full IFRS, or country-specific standard</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);">
+                                </div>
+                                <span class="feature-text">Reporting framework - IFRS for SMEs, Full IFRS, or
+                                    country-specific standard</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);"></div>
-                                <span class="feature-text">Output mapping template - which of the 7 compliance packs are required</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);">
+                                </div>
+                                <span class="feature-text">Output mapping template - which of the 7 compliance packs are
+                                    required</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);">
+                                </div>
                                 <span class="feature-text">Engagement team members and reviewer assignment</span>
                             </div>
                         </div>
                         <div class="illustration-container">
                             <div class="illus-step-1">
-                                <div class="illus-line"><div class="illus-fill"></div><div class="illus-cursor"></div></div>
-                                <div class="illus-line"><div class="illus-fill" style="animation-delay: 0.5s;"></div><div class="illus-cursor" style="animation-delay: 0.5s;"></div></div>
-                                <div class="illus-line"><div class="illus-fill" style="animation-delay: 1s;"></div><div class="illus-cursor" style="animation-delay: 1s;"></div></div>
+                                <div class="illus-line">
+                                    <div class="illus-fill"></div>
+                                    <div class="illus-cursor"></div>
+                                </div>
+                                <div class="illus-line">
+                                    <div class="illus-fill" style="animation-delay: 0.5s;"></div>
+                                    <div class="illus-cursor" style="animation-delay: 0.5s;"></div>
+                                </div>
+                                <div class="illus-line">
+                                    <div class="illus-fill" style="animation-delay: 1s;"></div>
+                                    <div class="illus-cursor" style="animation-delay: 1s;"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1877,7 +1809,8 @@ nav .cta-demo:hover {
                     <span class="step-num-display">02</span>
                     <span class="step-label">STEP 02 - DATA</span>
                     <h3 class="step-title">Connect your data sources</h3>
-                    <p class="step-summary">Rocovit ingests from four sources simultaneously - prior year financial statements, open banking feeds, uploaded bank statements, and existing bookkeeping ledgers.</p>
+                    <p class="step-summary">Rocovit ingests from four sources simultaneously - prior year financial
+                        statements, open banking feeds, uploaded bank statements, and existing bookkeeping ledgers.</p>
                     <div class="duration-badge">10-20 minutes</div>
                 </div>
                 <div class="card-col">
@@ -1885,20 +1818,32 @@ nav .cta-demo:hover {
                         <span class="card-header-label">FOUR DATA SOURCES</span>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
-                                <span class="feature-text">Prior year AFS upload - opening balances pre-populate automatically</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
+                                <span class="feature-text">Prior year AFS upload - opening balances pre-populate
+                                    automatically</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
-                                <span class="feature-text">Open banking API connection - live transaction feed ingested directly</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
+                                <span class="feature-text">Open banking API connection - live transaction feed ingested
+                                    directly</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
-                                <span class="feature-text">Bank statement upload - PDF or CSV accepted, parsed automatically</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
+                                <span class="feature-text">Bank statement upload - PDF or CSV accepted, parsed
+                                    automatically</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
-                                <span class="feature-text">Bookkeeping ledger export - QuickBooks, Xero, Sage, or Excel import</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
+                                <span class="feature-text">Bookkeeping ledger export - QuickBooks, Xero, Sage, or Excel
+                                    import</span>
                             </div>
                         </div>
                         <div class="illustration-container">
@@ -1907,10 +1852,18 @@ nav .cta-demo:hover {
                                 <div class="source-dot"></div>
                                 <div class="source-dot"></div>
                                 <div class="source-dot"></div>
-                                <div class="flow-line"><div class="travel-dot"></div></div>
-                                <div class="flow-line"><div class="travel-dot" style="animation-delay: 0.5s;"></div></div>
-                                <div class="flow-line"><div class="travel-dot" style="animation-delay: 1s;"></div></div>
-                                <div class="flow-line"><div class="travel-dot" style="animation-delay: 1.5s;"></div></div>
+                                <div class="flow-line">
+                                    <div class="travel-dot"></div>
+                                </div>
+                                <div class="flow-line">
+                                    <div class="travel-dot" style="animation-delay: 0.5s;"></div>
+                                </div>
+                                <div class="flow-line">
+                                    <div class="travel-dot" style="animation-delay: 1s;"></div>
+                                </div>
+                                <div class="flow-line">
+                                    <div class="travel-dot" style="animation-delay: 1.5s;"></div>
+                                </div>
                                 <div class="central-hub">HUB</div>
                             </div>
                         </div>
@@ -1926,7 +1879,9 @@ nav .cta-demo:hover {
                     <span class="step-num-display">03</span>
                     <span class="step-label">STEP 03 - ALLOCATION</span>
                     <h3 class="step-title">Review AI-clustered allocations</h3>
-                    <p class="step-summary">Rocovit clusters transactions by pattern and predicts the correct chart of accounts mapping for each cluster. You review flagged exceptions and approve. The audit trail builds automatically.</p>
+                    <p class="step-summary">Rocovit clusters transactions by pattern and predicts the correct chart of
+                        accounts mapping for each cluster. You review flagged exceptions and approve. The audit trail
+                        builds automatically.</p>
                     <div class="duration-badge">30-60 minutes</div>
                 </div>
                 <div class="card-col">
@@ -1934,20 +1889,31 @@ nav .cta-demo:hover {
                         <span class="card-header-label">HOW ALLOCATION WORKS</span>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);"></div>
-                                <span class="feature-text">Transactions clustered by merchant, amount pattern, and frequency</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);">
+                                </div>
+                                <span class="feature-text">Transactions clustered by merchant, amount pattern, and
+                                    frequency</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);"></div>
-                                <span class="feature-text">AI predicts COA mapping with a confidence score per cluster</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);">
+                                </div>
+                                <span class="feature-text">AI predicts COA mapping with a confidence score per
+                                    cluster</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);">
+                                </div>
                                 <span class="feature-text">Low-confidence clusters flagged for accountant review</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);"></div>
-                                <span class="feature-text">Every allocation decision logged - source, prediction, reviewer, timestamp</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);">
+                                </div>
+                                <span class="feature-text">Every allocation decision logged - source, prediction,
+                                    reviewer, timestamp</span>
                             </div>
                         </div>
                         <div class="illustration-container">
@@ -1955,17 +1921,27 @@ nav .cta-demo:hover {
                                 <div class="illus-row">
                                     <div class="illus-text-bar"></div>
                                     <div class="illus-tag">SALES</div>
-                                    <div class="illus-conf-bar"><div class="illus-conf-fill"></div></div>
+                                    <div class="illus-conf-bar">
+                                        <div class="illus-conf-fill"></div>
+                                    </div>
                                 </div>
                                 <div class="illus-row">
                                     <div class="illus-text-bar"></div>
                                     <div class="illus-tag" style="animation-delay: 0.5s;">RENT</div>
-                                    <div class="illus-conf-bar"><div class="illus-conf-fill" style="animation-delay: 0.5s;"></div></div>
+                                    <div class="illus-conf-bar">
+                                        <div class="illus-conf-fill" style="animation-delay: 0.5s;"></div>
+                                    </div>
                                 </div>
                                 <div class="illus-row">
                                     <div class="illus-text-bar"></div>
-                                    <div class="illus-tag" style="animation-delay: 1s; color: #ef4444; background: rgba(239,68,68,0.1);">MISC</div>
-                                    <div class="illus-conf-bar"><div class="illus-conf-fill" style="animation-delay: 1s; background: #ef4444; width: 30% !important;"></div></div>
+                                    <div class="illus-tag"
+                                        style="animation-delay: 1s; color: #ef4444; background: rgba(239,68,68,0.1);">
+                                        MISC</div>
+                                    <div class="illus-conf-bar">
+                                        <div class="illus-conf-fill"
+                                            style="animation-delay: 1s; background: #ef4444; width: 30% !important;">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1981,7 +1957,8 @@ nav .cta-demo:hover {
                     <span class="step-num-display">04</span>
                     <span class="step-label">STEP 04 - PREVIEW</span>
                     <h3 class="step-title">Review before statements are generated</h3>
-                    <p class="step-summary">Before generating any output, Rocovit surfaces a complete financial summary so you can identify anomalies and make journal adjustments.</p>
+                    <p class="step-summary">Before generating any output, Rocovit surfaces a complete financial summary
+                        so you can identify anomalies and make journal adjustments.</p>
                     <div class="duration-badge">15-30 minutes</div>
                 </div>
                 <div class="card-col">
@@ -1989,27 +1966,41 @@ nav .cta-demo:hover {
                         <span class="card-header-label">WHAT YOU REVIEW</span>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);"></div>
-                                <span class="feature-text">Income and expense summary by category with variance flags</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);">
+                                </div>
+                                <span class="feature-text">Income and expense summary by category with variance
+                                    flags</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);"></div>
-                                <span class="feature-text">Balance sheet snapshot - assets, liabilities, and equity preview</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);">
+                                </div>
+                                <span class="feature-text">Balance sheet snapshot - assets, liabilities, and equity
+                                    preview</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);"></div>
-                                <span class="feature-text">Opening versus closing balance reconciliation per schedule</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);">
+                                </div>
+                                <span class="feature-text">Opening versus closing balance reconciliation per
+                                    schedule</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);"></div>
-                                <span class="feature-text">Journal adjustment workspace - add corrections before output generation</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(217,119,6,0.2); border: 1px solid rgba(217,119,6,0.4);">
+                                </div>
+                                <span class="feature-text">Journal adjustment workspace - add corrections before output
+                                    generation</span>
                             </div>
                         </div>
                         <div class="illustration-container">
                             <div class="illus-step-4">
                                 <div class="preview-row"></div>
                                 <div class="preview-row"></div>
-                                <div class="preview-row"><div class="anomaly-flag"></div></div>
+                                <div class="preview-row">
+                                    <div class="anomaly-flag"></div>
+                                </div>
                                 <div class="preview-row"></div>
                             </div>
                         </div>
@@ -2025,7 +2016,9 @@ nav .cta-demo:hover {
                     <span class="step-num-display">05</span>
                     <span class="step-label">STEP 05 - STATEMENTS</span>
                     <h3 class="step-title">Generate the complete financial statements</h3>
-                    <p class="step-summary">Rocovit generates the full set of IFRS-compliant financial statements from the approved schedule data. Every note and disclosure is pre-populated from the underlying data.</p>
+                    <p class="step-summary">Rocovit generates the full set of IFRS-compliant financial statements from
+                        the approved schedule data. Every note and disclosure is pre-populated from the underlying data.
+                    </p>
                     <div class="duration-badge">20-40 minutes</div>
                 </div>
                 <div class="card-col">
@@ -2033,24 +2026,35 @@ nav .cta-demo:hover {
                         <span class="card-header-label">WHAT IS GENERATED</span>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);">
+                                </div>
                                 <span class="feature-text">Statement of Financial Position - Balance Sheet</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);">
+                                </div>
                                 <span class="feature-text">Statement of Comprehensive Income - Income Statement</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);">
+                                </div>
                                 <span class="feature-text">Statement of Changes in Equity</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);">
+                                </div>
                                 <span class="feature-text">Cash Flow Statement - direct and indirect method</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);"></div>
-                                <span class="feature-text">Notes and disclosures - pre-populated from schedule data</span>
+                                <div class="feature-dot"
+                                    style="background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.4);">
+                                </div>
+                                <span class="feature-text">Notes and disclosures - pre-populated from schedule
+                                    data</span>
                             </div>
                         </div>
                         <div class="illustration-container">
@@ -2075,7 +2079,9 @@ nav .cta-demo:hover {
                     <span class="step-num-display">06</span>
                     <span class="step-label">STEP 06 - TAX</span>
                     <h3 class="step-title">Prepare the tax computation</h3>
-                    <p class="step-summary">Rocovit bridges from the financial statements to the tax computation - calculating taxable profit, capital allowances, and the final tax liability with full schedule traceability.</p>
+                    <p class="step-summary">Rocovit bridges from the financial statements to the tax computation -
+                        calculating taxable profit, capital allowances, and the final tax liability with full schedule
+                        traceability.</p>
                     <div class="duration-badge">15-30 minutes</div>
                 </div>
                 <div class="card-col">
@@ -2083,19 +2089,27 @@ nav .cta-demo:hover {
                         <span class="card-header-label">TAX OUTPUTS GENERATED</span>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);">
+                                </div>
                                 <span class="feature-text">Taxable profit bridge from accounting profit</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);">
+                                </div>
                                 <span class="feature-text">Capital allowances schedule with asset register</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);">
+                                </div>
                                 <span class="feature-text">Tax liability computation - current and deferred</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(22,163,74,0.2); border: 1px solid rgba(22,163,74,0.4);">
+                                </div>
                                 <span class="feature-text">Prior year comparison and effective tax rate summary</span>
                             </div>
                         </div>
@@ -2122,7 +2136,8 @@ nav .cta-demo:hover {
                     <span class="step-num-display">07</span>
                     <span class="step-label">STEP 07 - OUTPUT</span>
                     <h3 class="step-title">Generate and export the compliance pack</h3>
-                    <p class="step-summary">The final step converts the completed engagement into every required compliance document. One click generates all seven output formats simultaneously.</p>
+                    <p class="step-summary">The final step converts the completed engagement into every required
+                        compliance document. One click generates all seven output formats simultaneously.</p>
                     <div class="duration-badge">5-10 minutes</div>
                 </div>
                 <div class="card-col">
@@ -2130,31 +2145,45 @@ nav .cta-demo:hover {
                         <span class="card-header-label">SEVEN OUTPUTS GENERATED</span>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
                                 <span class="feature-text">Tax Compliance Pack - 78 country tax filing formats</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
                                 <span class="feature-text">Bank Loan Pack - lender-ready financial statements</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
                                 <span class="feature-text">Investor Due Diligence - audit-ready financials</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
                                 <span class="feature-text">Audit Working Papers - full working paper pack</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
                                 <span class="feature-text">Visa Financial Pack - UK, UAE, Canada formats</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
                                 <span class="feature-text">Tender and Procurement Pack - Africa and EU formats</span>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-dot" style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);"></div>
+                                <div class="feature-dot"
+                                    style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.4);">
+                                </div>
                                 <span class="feature-text">M&A Readiness Pack - acquisition and exit financials</span>
                             </div>
                         </div>
@@ -2180,20 +2209,27 @@ nav .cta-demo:hover {
         <div class="different-container">
             <div class="pipeline-header">
                 <span class="eyebrow">DIFFERENTIATION</span>
-                <h2 class="step-title" style="font-size: 36px; margin-bottom: 0;">Why Rocovit is not just another tool.</h2>
+                <h2 class="step-title" style="font-size: 36px; margin-bottom: 0;">Why Rocovit is not just another tool.
+                </h2>
             </div>
             <div class="different-grid">
                 <div class="diff-card" style="border-top-color: var(--color-primary);">
                     <h3 class="diff-title">Structured Pipeline</h3>
-                    <p class="diff-text">Unlike generic accounting software, Rocovit enforces a rigid, step-by-step pipeline. This ensures consistency across every engagement, regardless of which team member is performing the work.</p>
+                    <p class="diff-text">Unlike generic accounting software, Rocovit enforces a rigid, step-by-step
+                        pipeline. This ensures consistency across every engagement, regardless of which team member is
+                        performing the work.</p>
                 </div>
                 <div class="diff-card" style="border-top-color: var(--color-highlight);">
                     <h3 class="diff-title">Audit-Ready Traceability</h3>
-                    <p class="diff-text">Every single figure in the final AFS pack is traceable back to the raw bank transaction or ledger entry. The audit trail is built automatically as you work, not as an afterthought.</p>
+                    <p class="diff-text">Every single figure in the final AFS pack is traceable back to the raw bank
+                        transaction or ledger entry. The audit trail is built automatically as you work, not as an
+                        afterthought.</p>
                 </div>
                 <div class="diff-card" style="border-top-color: #7C3AED;">
                     <h3 class="diff-title">Compliance-First Logic</h3>
-                    <p class="diff-text">Our engine is built on IFRS logic, not just data entry. It understands the relationship between schedules, notes, and disclosures, preventing logical errors before they happen.</p>
+                    <p class="diff-text">Our engine is built on IFRS logic, not just data entry. It understands the
+                        relationship between schedules, notes, and disclosures, preventing logical errors before they
+                        happen.</p>
                 </div>
             </div>
         </div>
@@ -2203,7 +2239,9 @@ nav .cta-demo:hover {
     <section class="testimonial-section">
         <div class="testimonial-container">
             <span class="quote-mark">"</span>
-            <p class="testimonial-text">Rocovit ingests from four data sources, runs the allocations, generates the statements, and produces the tax pack in a single session. What used to involve three team members across two weeks now involves one accountant across one morning.</p>
+            <p class="testimonial-text">Rocovit ingests from four data sources, runs the allocations, generates the
+                statements, and produces the tax pack in a single session. What used to involve three team members
+                across two weeks now involves one accountant across one morning.</p>
             <p class="testimonial-author">AUDIT FIRM - LAGOS, NIGERIA</p>
         </div>
     </section>
@@ -2212,8 +2250,11 @@ nav .cta-demo:hover {
     <section class="cta-section">
         <div class="cta-container">
             <h2 class="cta-headline">See the engine in action.</h2>
-            <p class="cta-subheadline">Book a 20-minute demo and we will walk you through a live engagement from raw data to completed statements.</p>
-            <button class="btn-demo cta-demo" style="padding: 16px 40px; font-size: 16px; background: white; color: var(--color-highlight);">Book a Demo</button>
+            <p class="cta-subheadline">Book a 20-minute demo and we will walk you through a live engagement from raw
+                data to completed statements.</p>
+            <button class="btn-demo cta-demo"
+                style="padding: 16px 40px; font-size: 16px; background: white; color: var(--color-highlight);">Book a
+                Demo</button>
             <p class="cta-footer-text">First engagement free. No credit card required.</p>
         </div>
     </section>
@@ -2221,60 +2262,60 @@ nav .cta-demo:hover {
     <!-- Master Footer -->
     <!-- MASTER FOOTER -->
     <footer>
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <span class="footer-diamond"></span>
-            <span class="footer-wordmark">Rocovit</span>
-          </div>
-          <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
-          <div class="footer-socials">
-            <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
-            <a href="#" class="social-icon" aria-label="Twitter">X</a>
-            <a href="#" class="social-icon" aria-label="Website">⊕</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-col-header">Product</h4>
-          <a href="how-it-works.html">How It Works</a>
-          <a href="outputs.html">Outputs</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="security.html">Security</a>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-col-header">Company</h4>
-          <a href="about.html">About Us</a>
-          <a href="blog.html">Blog</a>
-          <a href="opportunity.html">SME Opportunity</a>
-          <a href="mailto:hello@rocovit.com">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-col-header">Compliance</h4>
-          <div class="compliance-badge">
-            <div class="dot dot-green"></div>
-            <div>
-              <span class="badge-title">NDPR / POPIA</span>
-              <span class="badge-sub">Fully Compliant</span>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="footer-diamond"></span>
+                    <span class="footer-wordmark">Rocovit</span>
+                </div>
+                <p class="footer-tagline">Unlocking unreached markets for accountants.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+                    <a href="#" class="social-icon" aria-label="Twitter">X</a>
+                    <a href="#" class="social-icon" aria-label="Website">⊕</a>
+                </div>
             </div>
-          </div>
-          <div class="compliance-badge">
-            <div class="dot dot-blue"></div>
-            <div>
-              <span class="badge-title">SOC 2 TYPE II</span>
-              <span class="badge-sub">In Progress</span>
+            <div class="footer-col">
+                <h4 class="footer-col-header">Product</h4>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="outputs.html">Outputs</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="security.html">Security</a>
             </div>
-          </div>
+            <div class="footer-col">
+                <h4 class="footer-col-header">Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="blog.html">Blog</a>
+                <a href="opportunity.html">SME Opportunity</a>
+                <a href="mailto:hello@rocovit.com">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-header">Compliance</h4>
+                <div class="compliance-badge">
+                    <div class="dot dot-green"></div>
+                    <div>
+                        <span class="badge-title">NDPR / POPIA</span>
+                        <span class="badge-sub">Fully Compliant</span>
+                    </div>
+                </div>
+                <div class="compliance-badge">
+                    <div class="dot dot-blue"></div>
+                    <div>
+                        <span class="badge-title">SOC 2 TYPE II</span>
+                        <span class="badge-sub">In Progress</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="footer-divider"></div>
-      <div class="footer-bottom">
-        <span>© 2026 Rocovit Limited. All rights reserved.</span>
-        <div class="footer-legal">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms of Service</a>
-          <a href="cookie-policy.html">Cookie Policy</a>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <span>© 2026 Rocovit Limited. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
         </div>
-      </div>
     </footer>
 
     <!-- Modal -->
@@ -2338,8 +2379,8 @@ nav .cta-demo:hover {
 
             // Close drawer when clicking outside
             document.addEventListener('click', (e) => {
-                if (mobileDrawer.classList.contains('open') && 
-                    !mobileDrawer.contains(e.target) && 
+                if (mobileDrawer.classList.contains('open') &&
+                    !mobileDrawer.contains(e.target) &&
                     !hamburger.contains(e.target)) {
                     mobileDrawer.classList.remove('open');
                 }
@@ -2394,34 +2435,28 @@ nav .cta-demo:hover {
         });
 
         // Sticky CTA Bar - show after 300px scroll, hide near footer
-        (function() {
-          const bar = document.getElementById('sticky-cta-bar');
-          if (!bar) return;
-          const footer = document.querySelector('footer');
-          function updateStickyBar() {
-            if (window.innerWidth > 768) {
-              bar.style.display = 'none';
-              return;
+        (function () {
+            const bar = document.getElementById('sticky-cta-bar');
+            if (!bar) return;
+            const footer = document.querySelector('footer');
+            function updateStickyBar() {
+                if (window.innerWidth > 768) {
+                    bar.style.display = 'none';
+                    return;
+                }
+                const scrolled = window.scrollY > 300;
+                const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight + 80 : false;
+                bar.style.display = (scrolled && !footerVisible) ? 'block' : 'none';
             }
-            const scrolled = window.scrollY > 300;
-            const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight + 80 : false;
-            bar.style.display = (scrolled && !footerVisible) ? 'block' : 'none';
-          }
-          window.addEventListener('scroll', updateStickyBar);
-          window.addEventListener('resize', updateStickyBar);
-          updateStickyBar();
+            window.addEventListener('scroll', updateStickyBar);
+            window.addEventListener('resize', updateStickyBar);
+            updateStickyBar();
         })();
     </script>
     <!-- Sticky Mobile CTA Bar -->
     <div class="sticky-cta-bar" id="sticky-cta-bar">
-      <button class="cta-demo sticky-cta-btn">Book a Demo - First Engagement Free</button>
+        <button class="cta-demo sticky-cta-btn">Book a Demo - First Engagement Free</button>
     </div>
 </body>
+
 </html>
-
-
-
-
-
-
-
