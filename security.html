@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Security & Trust - Rocovit</title>
+  <link rel="stylesheet" href="site-uniform.css">
   <style>
     .currency-indicator {
       display: flex;
@@ -56,17 +57,8 @@
     /* 
            SECTION 1 - HERO
         */
+
     .security-hero {
-      background:
-        radial-gradient(circle at 20% 20%, rgba(13, 148, 136, 0.18), transparent 45%),
-        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.2), transparent 40%),
-        linear-gradient(140deg, #020617 0%, #0b1326 45%, #0f172a 100%);
-      min-height: clamp(520px, 74vh, 760px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(96px, 11vw, 140px) 24px clamp(72px, 8vw, 110px);
-      text-align: center;
       position: relative;
       overflow: hidden;
     }
@@ -79,58 +71,18 @@
       pointer-events: none;
     }
 
-    .hero-container {
+    .security-hero .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--color-highlight);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      display: block;
     }
 
     .hero-headline {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: clamp(2.2rem, 4.3vw, 3.4rem);
-      color: var(--color-white);
-      line-height: 1.1;
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
       text-wrap: balance;
     }
 
     .hero-sub {
-      font-family: var(--font-sans);
-      font-size: 18px;
-      color: #94a3b8;
-      line-height: 1.6;
       max-width: 680px;
-      margin: 0 auto 48px;
-    }
-
-    .trust-pills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .trust-pill {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      padding: 10px 18px;
-      border-radius: 20px;
-      background: rgba(15, 23, 42, 0.4);
-      border: 1px solid rgba(148, 163, 184, 0.34);
-      color: #e2e8f0;
     }
 
     /* 
@@ -146,16 +98,9 @@
       margin: 0 auto;
     }
 
+    /* .section-header — uses shared class from site-uniform.css */
     .section-header {
-      text-align: center;
       margin-bottom: 60px;
-    }
-
-    .section-headline {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 36px;
-      color: var(--color-dark);
     }
 
     .pillars-grid {
@@ -715,49 +660,14 @@
     }
 
     /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-
-    img,
-    video,
-    iframe {
-      max-width: 100%;
-      height: auto;
-    }
-
-    @media (max-width: 1024px) {
-      section {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-
-    }
-
     @media (max-width: 768px) {
-      body {
-        padding-top: var(--nav-height-mobile) !important;
-      }
 
-      .security-hero {
+      /* .security-hero {
         min-height: calc(100vh - var(--nav-height-mobile));
         padding: 40px 24px;
-      }
+      } */
 
-      .mobile-drawer {
-        top: var(--nav-height-mobile) !important;
-      }
-
-      .security-hero,
+      /* .security-hero,
       [class*="hero"],
       [class*="page-hero"],
       [class*="article-hero"],
@@ -765,336 +675,27 @@
       [class*="legal-hero"],
       [class*="policy-hero"] {
         padding-top: 40px !important;
-      }
-
-      h1 {
-        font-size: 28px !important;
-        line-height: 1.15 !important;
-      }
-
-      h2 {
-        font-size: 24px !important;
-        line-height: 1.2 !important;
-      }
-
-      h3 {
-        font-size: 18px !important;
-      }
-
-      p {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-      }
-
-      /* Section spacing */
-      section {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-
-
-
-      /* Footer */
-      .footer-top {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
-
-      .footer-bottom {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 12px !important;
-      }
-
-      .footer-legal {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 16px !important;
-      }
-
-      /* Modal full screen */
-      #modal-overlay {
-        align-items: flex-end !important;
-      }
-
-      #modal-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-height: 90vh !important;
-        border-radius: 16px 16px 0 0 !important;
-        padding: 32px 20px !important;
-        overflow-y: auto !important;
-      }
-
-      input,
-      select,
-      textarea {
-        font-size: 16px !important;
-      }
-
-      /* Buttons */
-      button.cta-demo,
-      a.cta-demo {
-        min-height: 48px !important;
-        font-size: 15px !important;
-      }
+      } */
     }
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
-    @media (max-width: 768px) {
-
-      /* Hero two column to single column */
-      .hero-container,
-      [class*="hero-layout"],
-      [class*="hero-columns"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-
-      .hero-text,
-      [class*="hero-left"],
-      [class*="hero-content"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      .hero-visual,
-      #hero-visual-placeholder,
-      [class*="hero-right"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* Hero stat pills wrap */
-      [class*="stat-pills"],
-      [class*="hero-pills"] {
-        flex-wrap: wrap !important;
-        gap: 8px !important;
-      }
-
-      /* Revenue card numbers smaller on mobile */
-      .rev-number {
-        font-size: 22px !important;
-      }
-
-      .revenue-divider {
-        padding: 0 8px !important;
-      }
-
-      /* All three column grids to single column */
-      [class*="three-col"],
-      [class*="cards-grid"],
-      [class*="article-grid"],
-      [class*="blog-cards"],
-      [class*="output-cards"],
-      [class*="related-cards"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-
-      /* All two column grids to single column */
-      [class*="two-col"],
-      [class*="alternating"],
-      [class*="split-layout"] {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-
-      /* Cards full width */
-      [class*="card"],
-      [class*="-card"] {
-        width: 100% !important;
-        min-width: 0 !important;
-      }
-
-      /* FLEX ROWS TO COLUMN */
-      [class*="trust-bar"],
-      [class*="sme-callout"],
-      [class*="profession-crisis"],
-      [class*="roi-container"],
-      [class*="calculator-container"],
-      [class*="footer-brand"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-      }
-
-      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
-      .bundle-cards-row,
-      [class*="bundle-cards"],
-      [class*="pricing-cards"] {
-        display: flex !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        gap: 16px !important;
-        padding-bottom: 20px !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-
-      .bundle-card,
-      [class*="bundle-card"],
-      [class*="pricing-card"] {
-        min-width: 260px !important;
-        flex-shrink: 0 !important;
-        scroll-snap-align: start !important;
-      }
-
-      /* Swipe hint label */
-      .swipe-hint {
-        display: block !important;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        color: #94a3b8;
-        text-align: center;
-        margin-bottom: 12px;
-        letter-spacing: 0.1em;
-      }
-
-      /* ARTICLE PAGES */
-      [class*="article-hero"],
-      .article-hero {
-        padding: 100px 20px 40px !important;
-      }
-
-      [class*="article-body"],
-      .article-body {
-        padding: 40px 20px !important;
-      }
-
-      [class*="stat-callout"],
-      .stat-callout {
-        padding: 16px !important;
-      }
-
-      [class*="stat-number"] {
-        font-size: 28px !important;
-      }
-
-      [class*="pull-quote"],
-      blockquote {
-        margin: 20px 0 !important;
-        padding: 12px 16px !important;
-        font-size: 16px !important;
-      }
-
-      [class*="related-articles"] {
-        padding: 40px 20px !important;
-      }
-
-      [class*="related-cards"] {
-        flex-direction: column !important;
-        gap: 16px !important;
-      }
-
-      /* BLOG INDEX PAGE */
-      [class*="featured-article"],
-      .featured-article {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-
-      [class*="featured-visual"],
-      .featured-visual {
-        height: 180px !important;
-        min-height: 0 !important;
-      }
-
-      [class*="subscribe-form"],
-      #subscribe-form {
-        flex-direction: column !important;
-        gap: 8px !important;
-      }
-
-      #subscribe-form input {
-        width: 100% !important;
-      }
-
-      #subscribe-form button {
-        width: 100% !important;
-        margin-left: 0 !important;
-      }
-
-      /* OPPORTUNITY PAGE - FIVE DOORS */
-      [class*="door-row"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-        text-align: center !important;
-      }
-
-      [class*="door-icon"] {
-        margin: 0 auto 16px !important;
-      }
-
-      [class*="door-text"] {
-        text-align: left !important;
-      }
-
-      /* ABOUT PAGE - FOUNDER AND STATS */
-      [class*="founder-card"],
-      [class*="founder-layout"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-        text-align: center !important;
-      }
-
-      [class*="stats-grid"],
-      [class*="shortage-grid"] {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-      }
-
-      /* SECURITY PAGE */
-      [class*="security-grid"],
-      [class*="trust-grid"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-
-      [class*="faq-item"] {
-        padding: 16px 0 !important;
-      }
-
-      /* HOW IT WORKS PAGE */
-      [class*="pipeline-steps"],
-      [class*="steps-container"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-      }
-
-      [class*="step-arrow"],
-      [class*="connecting-arrow"] {
-        display: none !important;
-      }
-
-      /* OUTPUTS PAGE */
-      [class*="output-row"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-
-      [class*="output-visual"] {
-        width: 100% !important;
-      }
-
-      /* LEGAL PAGES */
-      .legal-container {
-        padding: 60px 20px !important;
-      }
-
-      .legal-content h1 {
-        font-size: 32px !important;
-      }
-
-      /* FINAL CTA */
-      [class*="final-cta"],
-      .final-cta-section {
-        padding: 60px 20px !important;
-        text-align: center !important;
-      }
+    /* SECURITY PAGE */
+    [class*="security-grid"],
+    [class*="trust-grid"] {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
     }
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
+    [class*="faq-item"] {
+      padding: 16px 0 !important;
+    }
+
+    /* FINAL CTA */
+    [class*="final-cta"],
+    .final-cta-section {
+      padding: 60px 20px !important;
+      text-align: center !important;
+    }
+
     /* Sticky CTA Bar - hidden by default, mobile only */
     .sticky-cta-bar {
       display: none;
@@ -1196,7 +797,6 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="site-uniform.css">
 </head>
 
 <body>
@@ -1239,18 +839,18 @@
   <!-- 
         SECTION 1 - HERO
     -->
-  <section class="hero security-hero">
-    <div class="hero-container">
+  <section class="page-hero security-hero">
+    <div class="hero-content hero-content-lg">
       <span class="eyebrow">SECURITY AND TRUST</span>
       <h1 class="hero-headline">Built for accountants who cannot afford errors.</h1>
       <p class="hero-sub">Every number Rocovit produces is traceable to its source. Every action is logged. Every file
         is protected.</p>
 
-      <div class="trust-pills">
-        <span class="trust-pill">AES-256 Encryption</span>
-        <span class="trust-pill">Full Audit Trail</span>
-        <span class="trust-pill">Data Isolation</span>
-        <span class="trust-pill">7-Year Retention</span>
+      <div class="hero-pills">
+        <span class="pill pill-muted">AES-256 Encryption</span>
+        <span class="pill pill-muted">Full Audit Trail</span>
+        <span class="pill pill-muted">Data Isolation</span>
+        <span class="pill pill-muted">7-Year Retention</span>
       </div>
     </div>
   </section>
@@ -1661,19 +1261,33 @@
         <a href="mailto:hello@rocovit.com">Contact</a>
       </div>
       <div class="footer-col">
-        <h4 class="footer-col-header">Compliance</h4>
+        <p class="footer-col-header">COMPLIANCE</p>
         <div class="compliance-badge">
-          <div class="dot dot-green"></div>
+          <span class="dot dot-green"></span>
           <div>
-            <span class="badge-title">NDPR / POPIA</span>
-            <span class="badge-sub">Fully Compliant</span>
+            <span class="badge-title">NDPR Compliant</span>
+            <span class="badge-sub">Nigeria Data Protection Regulation</span>
           </div>
         </div>
         <div class="compliance-badge">
-          <div class="dot dot-blue"></div>
+          <span class="dot dot-green"></span>
           <div>
-            <span class="badge-title">SOC 2 TYPE II</span>
-            <span class="badge-sub">In Progress</span>
+            <span class="badge-title">POPIA Compliant</span>
+            <span class="badge-sub">South Africa</span>
+          </div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-green"></span>
+          <div>
+            <span class="badge-title">GDPR Compliant</span>
+            <span class="badge-sub">European Union</span>
+          </div>
+        </div>
+        <div class="compliance-badge">
+          <span class="dot dot-blue"></span>
+          <div>
+            <span class="badge-title">SOC 2 - In Progress</span>
+            <span class="badge-sub">Certification underway</span>
           </div>
         </div>
       </div>

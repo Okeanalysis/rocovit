@@ -7,76 +7,18 @@
   <title>About Us | Rocovit</title>
   <link rel="stylesheet" href="site-uniform.css">
   <style>
-
-
-
     /* Section 1 - Hero */
-    .hero {
-      background: var(--color-dark);
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
-      padding: 60px 24px;
-      text-align: center;
-    }
-
-    .hero-content {
+    /* Section 1 - Hero — uses .page-hero, .hero-content, .pill, .pill-blue, .pill-teal, .hero-pills from site-uniform.css */
+    .hero-about .hero-content {
       max-width: 800px;
-      margin: 0 auto;
     }
 
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--color-highlight);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      display: block;
+    .hero-about h1 {
+      font-size: 56px;
     }
 
-    .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 52px;
-      color: var(--color-white);
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-
-    .hero p {
-      font-family: var(--font-sans);
-      font-size: 18px;
-      color: #94a3b8;
-      line-height: 1.6;
+    .hero-about p {
       max-width: 640px;
-      margin: 0 auto 48px;
-    }
-
-    .stat-pills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .pill {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      padding: 8px 20px;
-      border-radius: 20px;
-    }
-
-    .pill-blue {
-      background: rgba(37, 99, 235, 0.15);
-      border: 1px solid rgba(37, 99, 235, 0.3);
-      color: var(--color-primary);
-    }
-
-    .pill-teal {
-      background: rgba(13, 148, 136, 0.15);
-      border: 1px solid rgba(13, 148, 136, 0.3);
-      color: var(--color-highlight);
     }
 
     /* Section 2 - Founding Story */
@@ -91,10 +33,7 @@
     }
 
     .founding-story h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 36px;
-      color: var(--color-dark);
       margin-bottom: 32px;
     }
 
@@ -137,8 +76,6 @@
     }
 
     .shortage-text h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 36px;
       color: var(--color-white);
       line-height: 1.2;
@@ -159,30 +96,19 @@
       gap: 12px;
     }
 
+    /* .stat-card — uses .card-dark .card-sm from site-uniform.css */
     .stat-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
       padding: 20px;
     }
 
     .stat-card .number {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 32px;
       color: var(--color-white);
-      line-height: 1;
-      display: block;
     }
 
     .stat-card .label {
-      font-family: var(--font-mono);
-      font-size: 10px;
       color: var(--color-highlight);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
       margin: 6px 0;
-      display: block;
     }
 
     .stat-card .source {
@@ -207,21 +133,10 @@
       align-items: stretch;
     }
 
+    /* .mission-card, .vision-card — use .card .card-lg .card-accent-primary/highlight from site-uniform.css */
     .mission-card,
     .vision-card {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      padding: 48px;
       flex: 1;
-    }
-
-    .mission-card {
-      border-top: 4px solid var(--color-primary);
-    }
-
-    .vision-card {
-      border-top: 4px solid var(--color-highlight);
     }
 
     .mission-card h3,
@@ -253,8 +168,6 @@
     }
 
     .traction h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 36px;
       color: var(--color-white);
       margin-bottom: 48px;
@@ -271,23 +184,10 @@
       flex: 1;
     }
 
-    .traction-stat .number {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 56px;
-      color: var(--color-white);
-      line-height: 1;
-      display: block;
-    }
-
+    /* .traction-stat .number — uses .stat-number .stat-number-lg .stat-number-white from site-uniform.css */
     .traction-stat .label {
-      font-family: var(--font-mono);
-      font-size: 11px;
       color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
       margin: 8px 0 6px;
-      display: block;
     }
 
     .traction-stat .description {
@@ -316,10 +216,7 @@
     }
 
     .emerging-markets h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 36px;
-      color: var(--color-dark);
       margin-bottom: 32px;
     }
 
@@ -361,10 +258,7 @@
     }
 
     .founder h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 36px;
-      color: var(--color-dark);
       margin-bottom: 16px;
     }
 
@@ -377,11 +271,8 @@
       text-align: center;
     }
 
+    /* .founder-card — uses .card .card-lg from site-uniform.css */
     .founder-card {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      padding: 40px;
       max-width: 480px;
       margin: 0 auto;
       text-align: center;
@@ -472,10 +363,7 @@
     }
 
     .built-alongside h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 32px;
-      color: var(--color-dark);
       margin-bottom: 20px;
     }
 
@@ -496,30 +384,12 @@
       margin: 0 auto;
     }
 
+    /* .built-card — uses .card .card-sm .card-light from site-uniform.css */
     .built-card {
-      background: var(--color-light);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
       padding: 28px;
     }
 
-    .built-number {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 36px;
-      color: var(--color-primary);
-      display: block;
-    }
-
-    .built-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin: 6px 0 8px;
-      display: block;
-    }
+    /* .built-number / .built-label — use .stat-number / .stat-label from site-uniform.css */
 
     .built-desc {
       font-family: var(--font-sans);
@@ -540,8 +410,6 @@
     }
 
     .final-cta h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 40px;
       color: var(--color-white);
       line-height: 1.2;
@@ -669,368 +537,35 @@
     }
 
     /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-
-    img,
-    video,
-    iframe {
-      max-width: 100%;
-      height: auto;
-    }
-
-    @media (max-width: 1024px) {
-      section {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-
-    }
-
     @media (max-width: 768px) {
-      body {
-        padding-top: var(--nav-height-mobile) !important;
-      }
 
       .hero {
         min-height: calc(100vh - var(--nav-height-mobile));
         padding: 40px 24px;
       }
-
-      .mobile-drawer {
-        top: var(--nav-height-mobile) !important;
-      }
-
-      /* Fix hero padding below fixed nav */
-      .hero,
-      [class*="hero"],
-      [class*="page-hero"],
-      [class*="article-hero"],
-      [class*="blog-hero"],
-      [class*="legal-hero"],
-      [class*="policy-hero"] {
-        padding-top: 40px !important;
-      }
-
-      /* Typography */
-      h1 {
-        font-size: 28px !important;
-        line-height: 1.15 !important;
-      }
-
-      h2 {
-        font-size: 24px !important;
-        line-height: 1.2 !important;
-      }
-
-      h3 {
-        font-size: 18px !important;
-      }
-
-      p {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-      }
-
-      /* Section spacing */
-      section {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-
-      /* Modal full screen */
-      #modal-overlay {
-        align-items: flex-end !important;
-      }
-
-      #modal-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-height: 90vh !important;
-        border-radius: 16px 16px 0 0 !important;
-        padding: 32px 20px !important;
-        overflow-y: auto !important;
-      }
-
-      input,
-      select,
-      textarea {
-        font-size: 16px !important;
-      }
-
-      /* Buttons */
-      button.cta-demo,
-      a.cta-demo {
-        min-height: 48px !important;
-        font-size: 15px !important;
-      }
     }
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
-    @media (max-width: 768px) {
-
-      /* Hero two column to single column */
-      .hero-container,
-      [class*="hero-layout"],
-      [class*="hero-columns"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-
-      .hero-text,
-      [class*="hero-left"],
-      [class*="hero-content"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      .hero-visual,
-      #hero-visual-placeholder,
-      [class*="hero-right"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* Hero stat pills wrap */
-      [class*="stat-pills"],
-      [class*="hero-pills"] {
-        flex-wrap: wrap !important;
-        gap: 8px !important;
-      }
-
-      /* Revenue card numbers smaller on mobile */
-      .rev-number {
-        font-size: 22px !important;
-      }
-
-      .revenue-divider {
-        padding: 0 8px !important;
-      }
-
-      /* All three column grids to single column */
-      [class*="three-col"],
-      [class*="cards-grid"],
-      [class*="article-grid"],
-      [class*="blog-cards"],
-      [class*="output-cards"],
-      [class*="related-cards"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-
-      /* All two column grids to single column */
-      [class*="two-col"],
-      [class*="alternating"],
-      [class*="split-layout"] {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-
-      /* Cards full width */
-      [class*="card"],
-      [class*="-card"] {
-        width: 100% !important;
-        min-width: 0 !important;
-      }
-
-      /* FLEX ROWS TO COLUMN */
-      [class*="trust-bar"],
-      [class*="sme-callout"],
-      [class*="profession-crisis"],
-      [class*="roi-container"],
-      [class*="calculator-container"],
-      [class*="footer-brand"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-      }
-
-      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
-      .bundle-cards-row,
-      [class*="bundle-cards"],
-      [class*="pricing-cards"] {
-        display: flex !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        gap: 16px !important;
-        padding-bottom: 20px !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-
-      .bundle-card,
-      [class*="bundle-card"],
-      [class*="pricing-card"] {
-        min-width: 260px !important;
-        flex-shrink: 0 !important;
-        scroll-snap-align: start !important;
-      }
-
-      /* Swipe hint label */
-      .swipe-hint {
-        display: block !important;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        color: #94a3b8;
-        text-align: center;
-        margin-bottom: 12px;
-        letter-spacing: 0.1em;
-      }
-
-      /* ARTICLE PAGES */
-      [class*="article-hero"],
-      .article-hero {
-        padding: 100px 20px 40px !important;
-      }
-
-      [class*="article-body"],
-      .article-body {
-        padding: 40px 20px !important;
-      }
-
-      [class*="stat-callout"],
-      .stat-callout {
-        padding: 16px !important;
-      }
-
-      [class*="stat-number"] {
-        font-size: 28px !important;
-      }
-
-      [class*="pull-quote"],
-      blockquote {
-        margin: 20px 0 !important;
-        padding: 12px 16px !important;
-        font-size: 16px !important;
-      }
-
-      [class*="related-articles"] {
-        padding: 40px 20px !important;
-      }
-
-      [class*="related-cards"] {
-        flex-direction: column !important;
-        gap: 16px !important;
-      }
-
-      /* BLOG INDEX PAGE */
-      [class*="featured-article"],
-      .featured-article {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-
-      [class*="featured-visual"],
-      .featured-visual {
-        height: 180px !important;
-        min-height: 0 !important;
-      }
-
-      [class*="subscribe-form"],
-      #subscribe-form {
-        flex-direction: column !important;
-        gap: 8px !important;
-      }
-
-      #subscribe-form input {
-        width: 100% !important;
-      }
-
-      #subscribe-form button {
-        width: 100% !important;
-        margin-left: 0 !important;
-      }
-
-      /* OPPORTUNITY PAGE - FIVE DOORS */
-      [class*="door-row"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-        text-align: center !important;
-      }
-
-      [class*="door-icon"] {
-        margin: 0 auto 16px !important;
-      }
-
-      [class*="door-text"] {
-        text-align: left !important;
-      }
-
-      /* ABOUT PAGE - FOUNDER AND STATS */
-      [class*="founder-card"],
-      [class*="founder-layout"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-        text-align: center !important;
-      }
-
-      [class*="stats-grid"],
-      [class*="shortage-grid"] {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-      }
-
-      /* SECURITY PAGE */
-      [class*="security-grid"],
-      [class*="trust-grid"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-
-      [class*="faq-item"] {
-        padding: 16px 0 !important;
-      }
-
-      /* HOW IT WORKS PAGE */
-      [class*="pipeline-steps"],
-      [class*="steps-container"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-      }
-
-      [class*="step-arrow"],
-      [class*="connecting-arrow"] {
-        display: none !important;
-      }
-
-      /* OUTPUTS PAGE */
-      [class*="output-row"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-
-      [class*="output-visual"] {
-        width: 100% !important;
-      }
-
-      /* LEGAL PAGES */
-      .legal-container {
-        padding: 60px 20px !important;
-      }
-
-      .legal-content h1 {
-        font-size: 32px !important;
-      }
-
-      /* FINAL CTA */
-      [class*="final-cta"],
-      .final-cta-section {
-        padding: 60px 20px !important;
-        text-align: center !important;
-      }
+    /* ABOUT PAGE - FOUNDER AND STATS */
+    [class*="founder-card"],
+    [class*="founder-layout"] {
+      flex-direction: column !important;
+      gap: 24px !important;
+      text-align: center !important;
     }
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
+    [class*="stats-grid"],
+    [class*="shortage-grid"] {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px !important;
+    }
+
+    /* FINAL CTA */
+    [class*="final-cta"],
+    .final-cta-section {
+      padding: 60px 20px !important;
+      text-align: center !important;
+    }
+
     /* Sticky CTA Bar - hidden by default, mobile only */
     .sticky-cta-bar {
       display: none;
@@ -1191,14 +726,14 @@
   </div>
 
   <!-- Section 1 - Hero -->
-  <section class="hero">
+  <section class="page-hero about-hero">
     <div class="hero-content">
       <span class="eyebrow">OUR STORY</span>
       <h1 class="hero-headline">Built to unlock a market most accountants have been forced to reject.</h1>
       <p class="hero-subheadline">SMEs across emerging markets need financial statements. The accountants who could
         serve them turn them away because it is not profitable. Rocovit changes the economics - permanently.</p>
 
-      <div class="stat-pills">
+      <div class="hero-pills">
         <div class="pill pill-blue">65M unserved SMEs</div>
         <div class="pill pill-teal">$168K revenue unlocked per accountant</div>
         <div class="pill pill-blue">$5.7T financing gap</div>
@@ -1248,34 +783,34 @@
       </div>
 
       <div class="stat-grid">
-        <div class="stat-card">
-          <span class="number">300,000+</span>
-          <span class="label">ACCOUNTANTS GONE</span>
+        <div class="stat-card card-dark card-sm">
+          <span class="number stat-number">300,000+</span>
+          <span class="label stat-label">ACCOUNTANTS GONE</span>
           <span class="source">Left the profession since 2020 - Bureau of Labor Statistics</span>
         </div>
-        <div class="stat-card">
-          <span class="number">75%</span>
-          <span class="label">NEARING RETIREMENT</span>
+        <div class="stat-card card-dark card-sm">
+          <span class="number stat-number">75%</span>
+          <span class="label stat-label">NEARING RETIREMENT</span>
           <span class="source">Current CPAs approaching retirement age - AICPA</span>
         </div>
-        <div class="stat-card">
-          <span class="number">30%+</span>
-          <span class="label">CPA EXAM DECLINE</span>
+        <div class="stat-card card-dark card-sm">
+          <span class="number stat-number">30%+</span>
+          <span class="label stat-label">CPA EXAM DECLINE</span>
           <span class="source">Drop in exam candidates since 2016 - Wall Street Journal</span>
         </div>
-        <div class="stat-card">
-          <span class="number">20%</span>
-          <span class="label">GRADUATE DROP</span>
+        <div class="stat-card card-dark card-sm">
+          <span class="number stat-number">20%</span>
+          <span class="label stat-label">GRADUATE DROP</span>
           <span class="source">Fewer accounting graduates since 2010 - AICPA and CIMA</span>
         </div>
-        <div class="stat-card">
-          <span class="number">120,000+</span>
-          <span class="label">ANNUAL OPENINGS</span>
+        <div class="stat-card card-dark card-sm">
+          <span class="number stat-number">120,000+</span>
+          <span class="label stat-label">ANNUAL OPENINGS</span>
           <span class="source">New positions needed every year through 2034 - BLS</span>
         </div>
-        <div class="stat-card">
-          <span class="number">$8.2B</span>
-          <span class="label">BIG FOUR AI BET</span>
+        <div class="stat-card card-dark card-sm">
+          <span class="number stat-number">$8.2B</span>
+          <span class="label stat-label">BIG FOUR AI BET</span>
           <span class="source">Deloitte $3B + KPMG $4.2B + EY $1B - verified 2025</span>
         </div>
       </div>
@@ -1285,14 +820,14 @@
   <!-- Section 4 - Mission and Vision -->
   <section class="mission-vision">
     <div class="mission-vision-container">
-      <div class="mission-card">
+      <div class="mission-card card card-lg card-accent-primary">
         <span class="eyebrow" style="color: var(--color-primary);">OUR MISSION</span>
         <h3>Make it profitable for accountants to serve the SMEs they currently turn away.</h3>
         <p>Manual preparation makes SME engagements unprofitable. Rocovit changes the economics. Any accounting firm can
           now build a profitable SME practice without adding headcount - and when accountants can serve them, these
           businesses gain access to the financial proof they need to borrow, grow, and stay compliant.</p>
       </div>
-      <div class="vision-card">
+      <div class="vision-card card card-lg card-accent-highlight">
         <span class="eyebrow" style="color: var(--color-highlight);">OUR VISION</span>
         <h3>Global infrastructure for SME financial credibility.</h3>
         <p>To become the global infrastructure that turns any SME's raw financial data into every document they need to
@@ -1311,26 +846,26 @@
 
       <div class="traction-grid">
         <div class="traction-stat">
-          <span class="number">18+</span>
-          <span class="label">ENGAGEMENTS LIVE</span>
+          <span class="number stat-number">18+</span>
+          <span class="label stat-label">ENGAGEMENTS LIVE</span>
           <p class="description">Completed with accounting and audit firms in Nigeria</p>
         </div>
         <div class="divider"></div>
         <div class="traction-stat">
-          <span class="number">3</span>
-          <span class="label">AUDIT FIRMS</span>
+          <span class="number stat-number">3</span>
+          <span class="label stat-label">AUDIT FIRMS</span>
           <p class="description">Actively shaping the product and pricing model</p>
         </div>
         <div class="divider"></div>
         <div class="traction-stat">
-          <span class="number">75%</span>
-          <span class="label">ERROR REDUCTION</span>
+          <span class="number stat-number">75%</span>
+          <span class="label stat-label">ERROR REDUCTION</span>
           <p class="description">Reported by audit firms using Rocovit</p>
         </div>
         <div class="divider"></div>
         <div class="traction-stat">
-          <span class="number">2 yrs</span>
-          <span class="label">IN DEVELOPMENT</span>
+          <span class="number stat-number">2 yrs</span>
+          <span class="label stat-label">IN DEVELOPMENT</span>
           <p class="description">Built iteratively with real accounting firm feedback</p>
         </div>
       </div>

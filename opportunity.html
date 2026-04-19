@@ -6,303 +6,13 @@
   <title>The SME Opportunity | Rocovit</title>
   <link rel="stylesheet" href="site-uniform.css">
   <style>
-/* ===== NAVIGATION MASTER ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  z-index: 1000;
-  height: var(--nav-height);
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  transition: 300ms ease;
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--color-primary);
-}
-.logo-symbol {
-  color: var(--color-highlight);
-  margin-left: 4px;
-  font-size: 18px;
-}
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-.nav-links a {
-  text-decoration: none;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  color: var(--color-dark);
-  transition: 200ms;
-}
-.nav-links a:hover {
-  color: var(--color-primary);
-}
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.currency-nav-pill {
-  background: var(--color-light);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 4px 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.btn-login {
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
-  background: transparent;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 200ms;
-}
-.btn-login:hover {
-  background: rgba(37,99,235,0.05);
-}
-nav .cta-demo {
-  background: var(--color-highlight);
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: 200ms;
-}
-nav .cta-demo:hover {
-  opacity: 0.9;
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  z-index: 1001;
-  padding: 0;
-}
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-dark);
-  transition: 0.3s ease;
-}
-.mobile-drawer {
-  position: fixed;
-  top: var(--nav-height);
-  left: 0;
-  width: 100%;
-  background: var(--color-white);
-  z-index: 1000;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-  display: flex;
-  flex-direction: column;
-}
-.mobile-drawer.open {
-  max-height: 500px;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.mobile-drawer a {
-  padding: 16px 24px;
-  text-decoration: none;
-  color: var(--color-dark);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 16px;
-  display: block;
-}
-.mobile-drawer a:hover {
-  color: var(--color-primary);
-  background: var(--color-light);
-}
-.mobile-drawer .drawer-cta {
-  padding: 20px 24px;
-  background: #f8fafc;
-}
-.mobile-drawer .drawer-cta .cta-demo {
-  width: 100%;
-  padding: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  background: var(--color-highlight);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: var(--font-sans);
-}
-@media (max-width: 768px) {
-  nav {
-    padding: 16px !important;
-  }
-  .nav-links {
-    display: none !important;
-  }
-  .btn-login {
-    display: none !important;
-  }
-  .currency-nav-pill {
-    display: none !important;
-  }
-  .hamburger {
-    display: flex !important;
-  }
-  .nav-actions {
-    gap: 8px !important;
-  }
-  nav .cta-demo {
-    font-size: 11px !important;
-    padding: 6px 10px !important;
-    white-space: nowrap !important;
-    height: auto !important;
-    line-height: 1.4 !important;
-  }
-  .nav-container {
-    padding: 0 !important;
-  }
-}
-/* ===== END NAVIGATION MASTER ===== */
-
-    :root {
-      --color-primary: #2563eb;
-      --color-dark: #0f172a;
-      --color-highlight: #0d9488;
-      --color-light: #f8fafc;
-      --color-white: #ffffff;
-      --color-border: #e2e8f0;
-      --font-display: "Syne", sans-serif;
-      --font-sans: "DM Sans", sans-serif;
-      --font-mono: "DM Mono", monospace;
-      --nav-height: 72px;
-      --nav-height-mobile: 64px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      color: var(--color-dark);
-      background-color: var(--color-white);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      padding-top: var(--nav-height);
-    }
-
-
-
-    /* SECTION 1 - HERO */
-    .hero {
-      background: var(--color-dark);
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
-      padding: 60px 24px;
-      text-align: center;
-    }
-
-    .hero-container {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--color-highlight);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      display: block;
-    }
-
+/* SECTION 1 - HERO — uses .page-hero, .hero-content-md, .pill, .pill-blue, .pill-teal, .hero-pills from site-uniform.css */
     .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 52px;
-      color: var(--color-white);
-      line-height: 1.1;
-      margin-bottom: 24px;
     }
 
     .hero p {
-      font-family: var(--font-sans);
-      font-size: 18px;
-      color: #94a3b8;
-      line-height: 1.6;
       max-width: 700px;
-      margin: 0 auto 48px;
-    }
-
-    .stat-pills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .pill {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-weight: 500;
-    }
-
-    .pill-blue {
-      background: rgba(37, 99, 235, 0.15);
-      border: 1px solid rgba(37, 99, 235, 0.3);
-      color: var(--color-primary);
-    }
-
-    .pill-teal {
-      background: rgba(13, 148, 136, 0.15);
-      border: 1px solid rgba(13, 148, 136, 0.3);
-      color: var(--color-highlight);
     }
 
     /* SECTION 2 - THE CREDIBILITY GAP */
@@ -454,9 +164,8 @@ nav .cta-demo:hover {
         flex: 0 0 100%;
       }
     }
-    footer{background:#080F1E;padding:80px 24px 40px}.footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:48px}.footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:12px}.footer-diamond{color:#0d9488;font-size:18px}.footer-wordmark{font-family:"Syne",sans-serif;font-weight:700;font-size:20px;color:#2563eb}.footer-tagline{font-family:"DM Sans",sans-serif;font-size:14px;color:#64748b;margin-bottom:24px;line-height:1.5}.footer-socials{display:flex;gap:8px}.social-icon{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;text-decoration:none;font-family:"DM Sans",sans-serif}.footer-col-header{font-family:"DM Mono",monospace;font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px}.footer-col a{display:block;font-family:"DM Sans",sans-serif;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:12px}.footer-col a:hover{color:#fff}.compliance-badge{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;margin-bottom:8px}.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px}.dot-green{background:#16A34A}.dot-blue{background:#2563eb}.badge-title{display:block;font-family:"DM Mono",monospace;font-size:11px;color:#fff}.badge-sub{display:block;font-family:"DM Sans",sans-serif;font-size:11px;color:#64748b;margin-top:2px}.footer-divider{max-width:1200px;margin:48px auto 24px;height:1px;background:rgba(255,255,255,0.06)}.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.footer-bottom span,.footer-bottom a{font-family:"DM Sans",sans-serif;font-size:13px;color:#64748b;text-decoration:none}.footer-bottom a:hover{color:#fff}.footer-legal{display:flex;gap:24px}@media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}@media(max-width:640px){.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
-  </style>
-  <link rel="stylesheet" href="site-uniform.css"></head>
+</style>
+</head>
 <body>
 
 <nav>
@@ -494,12 +203,12 @@ nav .cta-demo:hover {
 </div>
 
   <!-- SECTION 1 - HERO -->
-  <section class="hero">
-    <div class="hero-container">
+  <section class="page-hero hero">
+    <div class="hero-content hero-content-md">
       <span class="eyebrow">THE SME OPPORTUNITY</span>
       <h1>Your business is creditworthy. The proof is what is missing.</h1>
       <p>65 million SMEs across emerging markets are locked out of financing, contracts, and investment - not because they are bad businesses, but because they cannot produce the documents that lenders, partners, and regulators trust. Rocovit gives accountants the tools to produce that proof.</p>
-      <div class="stat-pills">
+      <div class="hero-pills">
         <div class="pill pill-blue">65M unserved SMEs</div>
         <div class="pill pill-blue">$5.7T financing gap</div>
         <div class="pill pill-teal">78 countries covered</div>
@@ -685,7 +394,7 @@ nav .cta-demo:hover {
       <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.7); margin-bottom: 16px; text-transform: uppercase; display: block;">GET STARTED</span>
       <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 40px; color: var(--color-white); line-height: 1.2; margin-bottom: 16px;" class="final-headline">First engagement free. No credit card. No commitment.</h2>
       <p style="font-family: var(--font-sans); font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 40px;">See what Rocovit unlocks for your practice in under 3 hours.</p>
-      <button class="cta-demo" style="background: white; color: var(--color-highlight); font-family: var(--font-sans); font-weight: 600; font-size: 16px; padding: 16px 48px; border-radius: 8px; border: none; cursor: pointer;">Book a Demo</button>
+      <button class="cta-demo cta-primary inverted">Book a Demo</button>
     </div>
   </section>
 
@@ -754,22 +463,6 @@ nav .cta-demo:hover {
       }
 
 
-
-      /* Footer */
-      .footer-top {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
-      .footer-bottom {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 12px !important;
-      }
-      .footer-legal {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 16px !important;
-      }
 
       /* Modal full screen */
       #modal-overlay {

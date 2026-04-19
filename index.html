@@ -102,8 +102,8 @@
     }
 
     .hero-btn {
-      font-size: 16px;
-      padding: 15px 40px;
+      font-size: 15px;
+      padding: 14px 40px;
       display: inline-block;
       text-decoration: none;
       text-align: center;
@@ -395,13 +395,9 @@
       text-align: center;
       margin-bottom: 60px;
     }
+    /* .proof-eyebrow — uses .eyebrow from site-uniform.css */
     .proof-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--color-highlight);
       margin-bottom: 12px;
-      display: block;
     }
     .proof-headline {
       font-family: var(--font-display);
@@ -489,13 +485,9 @@
       margin: 0 auto;
       text-align: center;
     }
+    /* .problem-eyebrow — uses .eyebrow from site-uniform.css */
     .problem-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--color-highlight);
       margin-bottom: 12px;
-      display: block;
     }
     .problem-headline {
       font-family: var(--font-display);
@@ -1161,339 +1153,9 @@
       .blog-grid { grid-template-columns: 1fr; }
     }
 
+/* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
+}
 
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-a ===== */
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    html, body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-    img, video, iframe {
-      max-width: 100%;
-      height: auto;
-    }
-
-    @media (max-width: 1024px) {
-      section {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-    }
-
-    @media (max-width: 768px) {
-      /* Typography */
-      h1 {
-        font-size: 28px !important;
-        line-height: 1.15 !important;
-      }
-      h2 {
-        font-size: 24px !important;
-        line-height: 1.2 !important;
-      }
-      h3 {
-        font-size: 18px !important;
-      }
-      p {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-      }
-
-      /* Section spacing */
-      section {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-
-      /* Modal full screen */
-      #modal-overlay {
-        align-items: flex-end !important;
-      }
-      #modal-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-height: 90vh !important;
-        border-radius: 16px 16px 0 0 !important;
-        padding: 32px 20px !important;
-        overflow-y: auto !important;
-      }
-      input, select, textarea {
-        font-size: 16px !important;
-      }
-    }
-
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
-    @media (max-width: 768px) {
-      /* Hero two column to single column */
-      .hero-container,
-      [class*="hero-layout"],
-      [class*="hero-columns"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-      .hero-text,
-      [class*="hero-left"],
-      [class*="hero-content"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .hero-visual,
-      #hero-visual-placeholder,
-      [class*="hero-right"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* Hero stat pills wrap */
-      [class*="stat-pills"],
-      [class*="hero-pills"] {
-        flex-wrap: wrap !important;
-        gap: 8px !important;
-      }
-
-      /* Revenue card numbers smaller on mobile */
-      .rev-number {
-        font-size: 22px !important;
-      }
-      .revenue-divider {
-        padding: 0 8px !important;
-      }
-
-      /* All three column grids to single column */
-      [class*="three-col"],
-      [class*="cards-grid"],
-      [class*="article-grid"],
-      [class*="blog-cards"],
-      [class*="output-cards"],
-      [class*="related-cards"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-
-      /* All two column grids to single column */
-      [class*="two-col"],
-      [class*="alternating"],
-      [class*="split-layout"] {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-
-      /* Cards full width */
-      [class*="card"],
-      [class*="-card"] {
-        width: 100% !important;
-        min-width: 0 !important;
-      }
-
-      /* FLEX ROWS TO COLUMN */
-      [class*="trust-bar"],
-      [class*="sme-callout"],
-      [class*="profession-crisis"],
-      [class*="roi-container"],
-      [class*="calculator-container"],
-      [class*="footer-brand"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-      }
-
-      /* PRICING BUNDLE CARDS - HORIZONTAL SCROLL */
-      .bundle-cards-row,
-      [class*="bundle-cards"],
-      [class*="pricing-cards"] {
-        display: flex !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        gap: 16px !important;
-        padding-bottom: 20px !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-      .bundle-card,
-      [class*="bundle-card"],
-      [class*="pricing-card"] {
-        min-width: 260px !important;
-        flex-shrink: 0 !important;
-        scroll-snap-align: start !important;
-      }
-
-      /* Swipe hint label */
-      .swipe-hint {
-        display: block !important;
-        font-family: var(--font-mono);
-        font-size: 10px;
-        color: #94a3b8;
-        text-align: center;
-        margin-bottom: 12px;
-        letter-spacing: 0.1em;
-      }
-
-      /* ARTICLE PAGES */
-      [class*="article-hero"],
-      .article-hero {
-        padding: 100px 20px 40px !important;
-      }
-      [class*="article-body"],
-      .article-body {
-        padding: 40px 20px !important;
-      }
-      [class*="stat-callout"],
-      .stat-callout {
-        padding: 16px !important;
-      }
-      [class*="stat-number"] {
-        font-size: 28px !important;
-      }
-      [class*="pull-quote"],
-      blockquote {
-        margin: 20px 0 !important;
-        padding: 12px 16px !important;
-        font-size: 16px !important;
-      }
-      [class*="related-articles"] {
-        padding: 40px 20px !important;
-      }
-      [class*="related-cards"] {
-        flex-direction: column !important;
-        gap: 16px !important;
-      }
-
-      /* BLOG INDEX PAGE */
-      [class*="featured-article"],
-      .featured-article {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-      [class*="featured-visual"],
-      .featured-visual {
-        height: 180px !important;
-        min-height: 0 !important;
-      }
-      [class*="subscribe-form"],
-      #subscribe-form {
-        flex-direction: column !important;
-        gap: 8px !important;
-      }
-      #subscribe-form input {
-        width: 100% !important;
-      }
-      #subscribe-form button {
-        width: 100% !important;
-        margin-left: 0 !important;
-      }
-
-      /* OPPORTUNITY PAGE - FIVE DOORS */
-      [class*="door-row"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-        text-align: center !important;
-      }
-      [class*="door-icon"] {
-        margin: 0 auto 16px !important;
-      }
-      [class*="door-text"] {
-        text-align: left !important;
-      }
-
-      /* ABOUT PAGE - FOUNDER AND STATS */
-      [class*="founder-card"],
-      [class*="founder-layout"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-        text-align: center !important;
-      }
-      [class*="stats-grid"],
-      [class*="shortage-grid"] {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-      }
-
-      /* SECURITY PAGE */
-      [class*="security-grid"],
-      [class*="trust-grid"] {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-      [class*="faq-item"] {
-        padding: 16px 0 !important;
-      }
-
-      /* HOW IT WORKS PAGE */
-      [class*="pipeline-steps"],
-      [class*="steps-container"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-      }
-      [class*="step-arrow"],
-      [class*="connecting-arrow"] {
-        display: none !important;
-      }
-      [class*="step-card"] {
-        width: 100% !important;
-      }
-
-      /* OUTPUTS PAGE */
-      [class*="output-row"],
-      [class*="output-alternating"] {
-        flex-direction: column !important;
-        gap: 24px !important;
-      }
-      [class*="output-row"].even,
-      [class*="output-row"].odd {
-        flex-direction: column !important;
-      }
-      [class*="output-visual"] {
-        min-height: 160px !important;
-        height: 160px !important;
-      }
-
-      /* LEGAL PAGES */
-      [class*="legal-hero"],
-      .legal-hero {
-        padding: 80px 20px 40px !important;
-      }
-      [class*="legal-body"],
-      .legal-body {
-        padding: 40px 20px !important;
-      }
-      table {
-        display: block !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        font-size: 13px !important;
-        width: 100% !important;
-      }
-      th, td {
-        min-width: 100px !important;
-        padding: 10px 12px !important;
-      }
-
-      /* PROOF NUMBERS SECTION */
-      [class*="proof-numbers"],
-      [class*="stats-row"] {
-        flex-direction: column !important;
-        gap: 32px !important;
-      }
-      [class*="proof-divider"],
-      [class*="stat-divider"] {
-        display: none !important;
-      }
-      [class*="proof-number"],
-      [class*="stat-number-large"] {
-        font-size: 48px !important;
-      }
-
-      /* FINAL CTA SECTIONS */
-      [class*="final-cta"] button,
-      [class*="final-cta"] .cta-demo {
-        width: 100% !important;
-        max-width: 360px !important;
-      }
-    }
-
-    /* ===== MOBILE RESPONSIVE STYLES - M-0-c ===== */
     /* Sticky CTA Bar - hidden by default, mobile only */
     .sticky-cta-bar {
       display: none;
@@ -1723,11 +1385,7 @@
         line-height: 1.2 !important;
         margin-bottom: 16px !important;
       }
-      .crisis-p {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-        margin-bottom: 14px !important;
-      }
+      .crisis-
       .crisis-stats {
         width: 100% !important;
         max-width: 100% !important;
@@ -1794,7 +1452,7 @@
       transition: opacity 500ms ease;
     }
   </style>
-  <link rel="stylesheet" href="site-uniform.css"></head>
+</head>
 <body>
 
   <nav>
@@ -1836,7 +1494,7 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-text">
-        <span class="hero-eyebrow">FOR ACCOUNTING FIRMS AND AUDIT PRACTICES</span>
+        <span class="hero-eyebrow eyebrow">FOR ACCOUNTING FIRMS AND AUDIT PRACTICES</span>
         <h1 class="hero-headline">Unlock more revenue without increasing your workforce or work time.</h1>
         <p class="hero-subheadline">Turn slow, manual financial statement preparation into fast, profitable engagements, including tax computations and schedules, so you can serve more clients profitably.</p>
         
@@ -1930,7 +1588,7 @@
   <section class="proof">
     <div class="proof-container">
       <div class="proof-header">
-        <span class="proof-eyebrow">THE RESULTS</span>
+        <span class="proof-eyebrow eyebrow">THE RESULTS</span>
         <h2 class="proof-headline">Already working. Already proven.</h2>
       </div>
       <div class="proof-grid">
@@ -1958,7 +1616,7 @@
 
   <section class="problem">
     <div class="problem-container">
-      <span class="problem-eyebrow">WHY THIS EXISTS</span>
+      <span class="problem-eyebrow eyebrow">WHY THIS EXISTS</span>
       <h2 class="problem-headline">The SME market is not unprofitable. Your current workflow makes it unprofitable.</h2>
       <div class="problem-grid">
         <div class="problem-col">
@@ -2311,7 +1969,7 @@
       <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-highlight); margin-bottom: 16px; display: block;">GET STARTED</span>
       <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 44px; color: var(--color-white); line-height: 1.2; margin-bottom: 16px;">First engagement free. No credit card. No commitment.</h2>
       <p style="font-family: var(--font-sans); font-size: 17px; color: #94a3b8; margin-bottom: 40px; line-height: 1.6;">Join accounting firms already unlocking the SME market across Nigeria, UAE, Kenya and beyond.</p>
-      <button class="cta-demo" style="background: var(--color-highlight); color: white; font-family: var(--font-sans); font-weight: 600; font-size: 16px; padding: 16px 48px; border-radius: 8px; border: none; cursor: pointer; transition: all 200ms;" onmouseover="this.style.background='#0b7a70';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,148,136,0.35)'" onmouseout="this.style.background='var(--color-highlight)';this.style.transform='translateY(0)';this.style.boxShadow='none'">Book a Demo</button>
+      <button class="cta-demo cta-primary">Book a Demo</button>
       <p style="font-family: var(--font-sans); font-size: 13px; color: #64748b; margin-top: 16px;">First engagement completely free. No setup fee. No credit card.</p>
     </div>
   </section>
