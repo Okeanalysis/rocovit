@@ -1154,8 +1154,24 @@
     }
 
 /* ===== MOBILE RESPONSIVE STYLES - M-0-b ===== */
-}
+@media (max-width: 768px) {
 
+      /* Founder card - stack photo above text */
+      [class*="founder-card"],
+      [class*="founder-layout"],
+      [class*="founder-section"] {
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+      }
+
+      [class*="founder-photo"],
+      [class*="founder-image"] {
+        margin: 0 auto !important;
+        width: 120px !important;
+        height: 120px !important;
+      }
+    }
     /* Sticky CTA Bar - hidden by default, mobile only */
     .sticky-cta-bar {
       display: none;
