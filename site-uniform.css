@@ -155,7 +155,6 @@ h6 {
   line-height: 1.7;
 }
 
-/* Hero section spacing */
 .hero,
 .page-hero,
 .article-hero,
@@ -164,7 +163,7 @@ h6 {
 .policy-hero,
 .security-hero,
 .banner {
-  min-height: 620px;
+  min-height: 700px;
   padding-top: clamp(104px, 11vw, 152px);
   padding-bottom: clamp(72px, 9vw, 120px);
 }
@@ -201,6 +200,7 @@ nav {
   font-family: var(--font-display) !important;
   font-weight: 700;
   font-size: 22px;
+
   color: var(--color-primary);
 }
 
@@ -250,6 +250,14 @@ nav {
   gap: 12px;
 }
 
+.nav-actions .cta-demo {
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  white-space: nowrap;
+  min-height: auto;
+}
+
 .currency-nav-pill {
   background: var(--color-light);
   border: 1px solid var(--color-border);
@@ -295,6 +303,50 @@ nav {
 
 .cta-demo:hover {
   opacity: 0.9;
+}
+
+/* Large body CTA button (Book a Demo, final CTA sections) */
+.cta-primary {
+  background: var(--color-highlight);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 200ms;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-primary:hover {
+  background: #0b7a70;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.35);
+}
+
+.cta-primary.outlined {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.cta-primary.outlined:hover {
+  background: rgba(37, 99, 235, 0.05);
+  box-shadow: none;
+  transform: none;
+}
+
+.cta-primary.inverted {
+  background: var(--color-white);
+  color: var(--color-highlight);
+}
+
+.cta-primary.inverted:hover {
+  background: #f0fdf4;
+  box-shadow: none;
 }
 
 /* Hamburger (mobile) */
@@ -543,6 +595,20 @@ footer {
     font-size: 0.97rem;
   }
 
+  /* Hero headings — blow up on mobile to fill the space */
+  .hero h1,
+  .page-hero h1,
+  .article-hero h1,
+  .blog-hero h1,
+  .legal-hero h1,
+  .policy-hero h1,
+  .security-hero h1,
+  .banner h1,
+  .hero-headline {
+    font-size: clamp(2.8rem, 8vw, 3.4rem) !important;
+    line-height: 1.15 !important;
+  }
+
   .hero p,
   .page-hero p,
   .article-hero p,
@@ -556,10 +622,11 @@ footer {
   .lead,
   .cta-subheadline,
   .compliance-sub {
-    font-size: 1rem;
+    font-size: 1.5rem !important;
+    line-height: 1.65 !important;
   }
 
-  /* Hero spacing */
+  /* Hero spacing — maintain tall hero on mobile */
   .hero,
   .page-hero,
   .article-hero,
@@ -568,9 +635,9 @@ footer {
   .policy-hero,
   .security-hero,
   .banner {
-    min-height: 470px;
-    padding-top: clamp(84px, 14vw, 112px);
-    padding-bottom: clamp(56px, 10vw, 88px);
+    min-height: auto !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
   }
 
   /* Nav mobile */
@@ -620,13 +687,11 @@ footer {
   }
 
   .nav-actions .cta-demo {
-    font-size: 11px;
-    padding: 6px 10px;
+    font-size: 14px;
+    padding: 8px 20px;
     border-radius: 6px;
     white-space: nowrap;
-    min-height: 0;
-    height: auto;
-    line-height: 1.4;
+    min-height: auto;
   }
 
   .logo-image {
@@ -687,23 +752,514 @@ footer {
     width: calc(100% - 32px);
     text-align: center;
   }
-}
 
-/* ===== RESPONSIVE: TABLET (1024px) ===== */
-@media (max-width: 1024px) {
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
+  /* Body mobile padding */
+  body {
+    padding-top: var(--nav-height-mobile) !important;
   }
-}
 
-/* ===== RESPONSIVE: SMALL MOBILE (640px) ===== */
-@media (max-width: 640px) {
+  /* Heading sizes — mobile overrides */
+  h1 {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Section spacing */
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Buttons — body CTAs get touch-friendly sizing, nav button stays consistent */
+  button.cta-demo,
+  a.cta-demo {
+    min-height: 44px;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 6px;
+  }
+
+  /* Nav CTA keeps desktop size — defined above in nav mobile block */
+
+  /* Hero padding below fixed nav — handled above in hero spacing block */
+
+  /* Hero two column to single column */
+  .hero-container,
+  [class*="hero-layout"],
+  [class*="hero-columns"] {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  .hero-text,
+  [class*="hero-left"],
+  [class*="hero-content"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-visual,
+  #hero-visual-placeholder,
+  [class*="hero-right"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero stat pills wrap */
+  [class*="stat-pills"],
+  [class*="hero-pills"] {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* Revenue card numbers */
+  .rev-number {
+    font-size: 22px !important;
+  }
+
+  .revenue-divider {
+    padding: 0 8px !important;
+  }
+
+  /* All three column grids to single column */
+  [class*="three-col"],
+  [class*="cards-grid"],
+  [class*="article-grid"],
+  [class*="blog-cards"],
+  [class*="output-cards"],
+  [class*="related-cards"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* All two column grids to single column */
+  [class*="two-col"],
+  [class*="alternating"],
+  [class*="split-layout"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Cards full width */
+  [class*="card"],
+  [class*="-card"] {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Flex rows to column */
+  [class*="trust-bar"],
+  [class*="sme-callout"],
+  [class*="profession-crisis"],
+  [class*="roi-container"],
+  [class*="calculator-container"],
+  [class*="footer-brand"] {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* Final CTA sections */
+  [class*="final-cta"] button,
+  [class*="final-cta"] .cta-demo {
+    width: 100% !important;
+    max-width: 360px !important;
+  }
+
+  /* Proof numbers section */
+  [class*="proof-numbers"],
+  [class*="stats-row"] {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  [class*="proof-divider"],
+  [class*="stat-divider"] {
+    display: none !important;
+  }
+
+  [class*="proof-number"],
+  [class*="stat-number-large"] {
+    font-size: 48px !important;
+  }
+
+  /* Footer mobile */
   .footer-top {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
   }
 
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* ============================================================
+   REUSABLE COMPONENTS
+   Extracted from per-page inline styles into shared classes.
+   ============================================================ */
+
+/* ===== EYEBROW LABELS ===== */
+.eyebrow {
+  font-family: var(--font-mono) !important;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--color-highlight);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* ===== PILLS / BADGES ===== */
+.pill {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.pill-teal {
+  background: rgba(13, 148, 136, 0.15);
+  border: 1px solid rgba(13, 148, 136, 0.3);
+  color: var(--color-highlight);
+}
+
+.pill-blue {
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  color: var(--color-primary);
+}
+
+/* Subtle variant — for dark-background contexts */
+.pill-muted {
+  font-size: 11px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+}
+
+/* Small variant — for tags, categories */
+.pill-sm {
+  font-size: 10px;
+  padding: 4px 12px;
+  text-transform: uppercase;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.card-lg {
+  padding: 40px;
+}
+
+.card-sm {
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.card-light {
+  background: var(--color-light);
+}
+
+/* Dark-background card */
+.card-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Accent top-border modifiers */
+.card-accent-primary {
+  border-top: 4px solid var(--color-primary);
+}
+
+.card-accent-highlight {
+  border-top: 4px solid var(--color-highlight);
+}
+
+/* Left-border accent (for detail cards) */
+.card-accent-left {
+  border-left: 4px solid var(--color-primary);
+}
+
+/* Interactive card (hover lift) */
+.card-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+/* ===== FEATURE ROWS ===== */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--color-light);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.feature-dot-primary {
+  background: var(--color-primary);
+}
+
+.feature-dot-highlight {
+  background: var(--color-highlight);
+}
+
+.feature-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+
+/* ===== STAT CALLOUTS ===== */
+.stat-callout {
+  background: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.stat-number {
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--color-primary);
+  display: block;
+  line-height: 1;
+}
+
+.stat-number-lg {
+  font-size: 56px;
+}
+
+.stat-number-xl {
+  font-size: 64px;
+}
+
+.stat-number-white {
+  color: var(--color-white);
+}
+
+.stat-label {
+  font-family: var(--font-mono) !important;
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 8px;
+  display: block;
+}
+
+/* ===== HERO SECTIONS ===== */
+.page-hero {
+  background: var(--color-dark);
+  /* min-height: calc(100vh - var(--nav-height)); */
+  display: flex;
+  align-items: center;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.hero-content {
+  margin: 0 auto;
+}
+
+.hero-content-sm {
+  max-width: 760px;
+}
+
+.hero-content-md {
+  max-width: 860px;
+}
+
+.hero-content-lg {
+  max-width: 1000px;
+}
+
+.hero-content-xl {
+  max-width: 1200px;
+}
+
+.page-hero h1 {
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.page-hero p {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 0 auto 48px;
+}
+
+.hero-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ===== SECTION HEADERS ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--color-dark);
+  margin-top: 12px;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 16px auto 0;
+}
+
+/* ===== RELATED CARDS (blog / article) ===== */
+.related-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE: COMPONENTS (768px) ===== */
+@media (max-width: 768px) {
+  .pill {
+    font-size: 11px;
+    padding: 6px 16px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .card-lg {
+    padding: 28px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-number-lg {
+    font-size: 40px;
+  }
+
+  .stat-number-xl {
+    font-size: 48px;
+  }
+
+  .page-hero {
+    min-height: auto !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .hero-pills {
+    gap: 10px;
+  }
+
+  .hero-pills .pill,
+  .hero-pills .pill-muted,
+  .hero-pills .pill-teal,
+  .hero-pills .pill-blue {
+    font-size: 13px !important;
+    padding: 8px 18px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+}
+
+/* ===== RESPONSIVE: TABLET (769px–1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+
+  nav .nav-centre-links {
+    display: none !important;
   }
 }
